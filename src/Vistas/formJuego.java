@@ -9,12 +9,14 @@ import Clases.ClassDados;
 import Clases.ClassJugador;
 import Util.Cola;
 import Util.Lista;
+import Util.Pila;
 import static Vistas.formInicio.message;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import javax.swing.JOptionPane;
 
 import javax.swing.JPanel;
 
@@ -39,6 +41,8 @@ public class formJuego extends javax.swing.JFrame {
     
     Cola jugadores = new Cola();
    
+     Pila comunal = new Pila();
+    Pila suerte = new Pila();
 
     public formJuego() {
         initComponents();
@@ -388,6 +392,7 @@ public class formJuego extends javax.swing.JFrame {
         jPanelBase.add(resultadoDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 80, 70));
 
         btnSuerte.setText("SUERTE");
+        btnSuerte.setEnabled(false);
         btnSuerte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuerteActionPerformed(evt);
@@ -396,6 +401,12 @@ public class formJuego extends javax.swing.JFrame {
         jPanelBase.add(btnSuerte, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 400, 110));
 
         btnArcaComunal.setText("ARCA COMUNAL");
+        btnArcaComunal.setEnabled(false);
+        btnArcaComunal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArcaComunalActionPerformed(evt);
+            }
+        });
         jPanelBase.add(btnArcaComunal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 400, 110));
 
         panelJuego.add(jPanelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 554, 540));
@@ -1000,6 +1011,8 @@ public class formJuego extends javax.swing.JFrame {
             memo.avanzar(casillas);
             jugadores.encolar(memo);
             jugador1.getPosicion();
+              
+            ValidarCasillaComunalSuerte();
         /*}
 
        // }
@@ -1079,6 +1092,56 @@ public class formJuego extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_tirarDadosActionPerformed
 
+     public void ValidarCasillaComunalSuerte(){ 
+             
+        if(jugador1.getPosicion()==8||jugador1.getPosicion()==23||jugador1.getPosicion()==37){
+            btnSuerte.setEnabled(true);
+        }
+        
+        if(jugador1.getPosicion()==3||jugador1.getPosicion()==18||jugador1.getPosicion()==34){
+            btnArcaComunal.setEnabled(true);
+        }
+    }
+
+    
+    public void asignarCarta(){
+    
+        Object salirCarcel = JOptionPane.showConfirmDialog(null,"Salir de la carcel");
+        Object honoMedicos = JOptionPane.showConfirmDialog(null,"Honorarios médicos, pague $50");
+        Object vencimientoFondo = JOptionPane.showConfirmDialog(null,"Vencimiento de fondo vacacional, reciba $100");
+        Object vencimientoSeguro = JOptionPane.showConfirmDialog(null,"Vencimiento de seguro de vida, Cobre $100. ");
+        Object pagoCole = JOptionPane.showConfirmDialog(null,"Pague colegiaturas por $50");
+        Object devolucionIm = JOptionPane.showConfirmDialog(null,"Devolución de impuestos. Cobre $20");
+        Object hospital = JOptionPane.showConfirmDialog(null,"Pague cuenta de hospital por $100");
+        Object irCarcel = JOptionPane.showConfirmDialog(null,"Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200.");
+        Object consultoria = JOptionPane.showConfirmDialog(null,"Reciba $25 por consultoría");
+        Object cumple = JOptionPane.showConfirmDialog(null,"Es su cumpleaños. Cobre $10 a cada jugador");
+        Object heredar = JOptionPane.showConfirmDialog(null,"Herede $100");
+        Object acciones = JOptionPane.showConfirmDialog(null,"Por venta de acciones reciba $50");
+        Object concurso = JOptionPane.showConfirmDialog(null,"Ganó el segundo lugar en un concurso de belleza, cobre $10");
+        Object reparacion = JOptionPane.showConfirmDialog(null,"Por reparación vial le cobran: $40 por casa, $115 por hotel");
+        Object avanzar = JOptionPane.showConfirmDialog(null,"Avance a la SALIDA, cobre $200");
+        Object error = JOptionPane.showConfirmDialog(null,"Error bancario a su favor. Cobre $200.");
+        
+        comunal.apilar(salirCarcel);
+        comunal.apilar(honoMedicos);
+        comunal.apilar(vencimientoFondo);
+        comunal.apilar(vencimientoSeguro);
+        comunal.apilar(pagoCole);
+        comunal.apilar(devolucionIm);
+        comunal.apilar(hospital);
+        comunal.apilar(irCarcel);
+        comunal.apilar(consultoria);
+        comunal.apilar(cumple);
+        comunal.apilar(heredar);
+        comunal.apilar(acciones);
+        comunal.apilar(concurso);
+        comunal.apilar(reparacion);
+        comunal.apilar(avanzar);
+        comunal.apilar(error);
+     
+    
+} 
     private void jLabelJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelJugador1MouseClicked
        
     }//GEN-LAST:event_jLabelJugador1MouseClicked
@@ -1090,13 +1153,15 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_revovlerDadosActionPerformed
 
     private void btnSuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuerteActionPerformed
-        // TODO add your handling code here:
+        btnSuerte.setEnabled(false);
     }//GEN-LAST:event_btnSuerteActionPerformed
 
+    private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
+       btnArcaComunal.setEnabled(false);
+    }//GEN-LAST:event_btnArcaComunalActionPerformed
 
-    public void ValidarCasillaComunalSuerte(){ 
-        
-    }
+
+    
         
     
     public void asignar(){

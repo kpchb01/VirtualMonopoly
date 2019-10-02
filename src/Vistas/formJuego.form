@@ -501,6 +501,7 @@
             <Component class="javax.swing.JButton" name="btnSuerte">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SUERTE"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuerteActionPerformed"/>
@@ -514,7 +515,11 @@
             <Component class="javax.swing.JButton" name="btnArcaComunal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ARCA COMUNAL"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnArcaComunalActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="90" y="130" width="400" height="110"/>
