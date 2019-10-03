@@ -30,33 +30,33 @@ public class ClassDados {
     public ImageIcon icoImagen;
     
     public ImageIcon gifDado1(){
-        icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\dados-01.gif");
+        icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/dados-01.gif"));
         return icoImagen;
     }
     public ImageIcon gifDado2(){
-        icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\dados-02.gif");
+        icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/dados-02.gif"));
         return icoImagen;
     }
     
     public ImageIcon pngDado(int Dado){
         switch(Dado){
             case 1: 
-                icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\d1.png");
+                icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/d1.png"));
                 break;
             case 2:
-                icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\d2.png");
+                icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/d2.png"));
                 break;
             case 3:
-                icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\d3.png");
+                icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/d3.png"));
                 break;
             case 4:
-                icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\d4.png");
+                icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/d4.png"));
                 break;
             case 5:
-                icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\d5.png");
+                icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/d5.png"));
                 break;
             case 6:
-                icoImagen = new ImageIcon("C:\\Users\\kpchb\\Desktop\\workSpace\\VirtualMonopoly\\VirtualMonopoly\\src\\IMG\\d6.png");
+                icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/d6.png"));
                 break;
         }
         return icoImagen;
