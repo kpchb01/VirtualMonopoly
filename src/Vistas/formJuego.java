@@ -9,12 +9,14 @@ import Clases.ClassDados;
 import Clases.ClassJugador;
 import Util.Cola;
 import Util.Lista;
+import Util.Pila;
 import static Vistas.formInicio.message;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import javax.swing.JOptionPane;
 
 import javax.swing.JPanel;
 
@@ -39,6 +41,8 @@ public class formJuego extends javax.swing.JFrame {
     
     Cola jugadores = new Cola();
    
+     Pila comunal = new Pila();
+    Pila suerte = new Pila();
 
     public formJuego() {
         initComponents();
@@ -69,17 +73,29 @@ public class formJuego extends javax.swing.JFrame {
         panelJuego = new javax.swing.JPanel();
         X = new javax.swing.JLabel();
         jPanelCarcel = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
         jPanelGo = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         jPanelAvNewYork = new javax.swing.JPanel();
+        jLabel54 = new javax.swing.JLabel();
         jPanelAvTennesse = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
         jPanelFerroPensilvania = new javax.swing.JPanel();
+        jLabel50 = new javax.swing.JLabel();
         jPanelArcaComunal2 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
         jPanelPlazaJames = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
         jPanelAvVirginia = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
         jPanelAvStatus = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
         jPanelElectricidad = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
         jPanelPlazaSanCarlos = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jPanelDescanso = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
         jPanelBase = new javax.swing.JPanel();
         tirarDados = new javax.swing.JButton();
         resultadoDado2 = new javax.swing.JLabel();
@@ -88,33 +104,61 @@ public class formJuego extends javax.swing.JFrame {
         btnSuerte = new javax.swing.JButton();
         btnArcaComunal = new javax.swing.JButton();
         jPanelAvKentucky = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
         jPanelSuerte2 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
         jPanelAvIndiana = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
         jPanelAvIllinois = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
         jPanelFerroByO = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
         jPanelAvAtlantico = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
         jPanelAvVentnor = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
         jPanelAgua = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
         jPanelJardinesMarvin = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
         jPanelIrACarcel = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
         jPanelAvPacifico = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
         jPanelAvCarolinaNorte = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
         jPanelArcaComunal3 = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
         jPanelAvPensilvania = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
         jPanelFerroViaRapida = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
         jPanelSuerte3 = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
         jPanelPlazaPark = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
         jPanelImpuestoLujo = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
         jPanelMuelle = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
         jPanelAvConnecticut = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
         jPanelAvOriental = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
         jPanelAvMediterraneo = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
         jPanelSuerte1 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jPanelAvVermont = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
         jPanelAvBaltica = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
         jPanelFerroReading = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
         jPanelArcaComunal1 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
         jPanelImpuestoIngresos = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -171,15 +215,19 @@ public class formJuego extends javax.swing.JFrame {
         jPanelCarcel.setBackground(new java.awt.Color(220, 245, 245));
         jPanelCarcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/carcel.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelCarcelLayout = new javax.swing.GroupLayout(jPanelCarcel);
         jPanelCarcel.setLayout(jPanelCarcelLayout);
         jPanelCarcelLayout.setHorizontalGroup(
             jPanelCarcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCarcelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
         );
         jPanelCarcelLayout.setVerticalGroup(
             jPanelCarcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 630, 80, 80));
@@ -187,15 +235,20 @@ public class formJuego extends javax.swing.JFrame {
         jPanelGo.setBackground(new java.awt.Color(220, 245, 245));
         jPanelGo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-retroceder-40.png"))); // NOI18N
+        jLabel15.setText("GO");
+
         javax.swing.GroupLayout jPanelGoLayout = new javax.swing.GroupLayout(jPanelGo);
         jPanelGo.setLayout(jPanelGoLayout);
         jPanelGoLayout.setHorizontalGroup(
             jPanelGoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         jPanelGoLayout.setVerticalGroup(
             jPanelGoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelGo, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 630, 80, 80));
@@ -203,15 +256,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvNewYork.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvNewYork.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvNewYorkLayout = new javax.swing.GroupLayout(jPanelAvNewYork);
         jPanelAvNewYork.setLayout(jPanelAvNewYorkLayout);
         jPanelAvNewYorkLayout.setHorizontalGroup(
             jPanelAvNewYorkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvNewYorkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanelAvNewYorkLayout.setVerticalGroup(
             jPanelAvNewYorkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvNewYorkLayout.createSequentialGroup()
+                .addComponent(jLabel54)
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelAvNewYork, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 80, 60));
@@ -219,15 +281,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvTennesse.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvTennesse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel53.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvTennesseLayout = new javax.swing.GroupLayout(jPanelAvTennesse);
         jPanelAvTennesse.setLayout(jPanelAvTennesseLayout);
         jPanelAvTennesseLayout.setHorizontalGroup(
             jPanelAvTennesseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvTennesseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanelAvTennesseLayout.setVerticalGroup(
             jPanelAvTennesseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvTennesseLayout.createSequentialGroup()
+                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelAvTennesse, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 80, 60));
@@ -235,15 +306,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelFerroPensilvania.setBackground(new java.awt.Color(220, 245, 245));
         jPanelFerroPensilvania.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-vagón-de-ferrocarril-40.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelFerroPensilvaniaLayout = new javax.swing.GroupLayout(jPanelFerroPensilvania);
         jPanelFerroPensilvania.setLayout(jPanelFerroPensilvaniaLayout);
         jPanelFerroPensilvaniaLayout.setHorizontalGroup(
             jPanelFerroPensilvaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFerroPensilvaniaLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel50)
+                .addGap(18, 18, 18))
         );
         jPanelFerroPensilvaniaLayout.setVerticalGroup(
             jPanelFerroPensilvaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelFerroPensilvaniaLayout.createSequentialGroup()
+                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelFerroPensilvania, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 80, 60));
@@ -251,15 +331,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelArcaComunal2.setBackground(new java.awt.Color(220, 245, 245));
         jPanelArcaComunal2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-cofre-del-tesoro-40.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelArcaComunal2Layout = new javax.swing.GroupLayout(jPanelArcaComunal2);
         jPanelArcaComunal2.setLayout(jPanelArcaComunal2Layout);
         jPanelArcaComunal2Layout.setHorizontalGroup(
             jPanelArcaComunal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelArcaComunal2Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanelArcaComunal2Layout.setVerticalGroup(
             jPanelArcaComunal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelArcaComunal2Layout.createSequentialGroup()
+                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelArcaComunal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 80, 60));
@@ -267,15 +356,19 @@ public class formJuego extends javax.swing.JFrame {
         jPanelPlazaJames.setBackground(new java.awt.Color(220, 245, 245));
         jPanelPlazaJames.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-plaza-de-la-ciudad-40.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelPlazaJamesLayout = new javax.swing.GroupLayout(jPanelPlazaJames);
         jPanelPlazaJames.setLayout(jPanelPlazaJamesLayout);
         jPanelPlazaJamesLayout.setHorizontalGroup(
             jPanelPlazaJamesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPlazaJamesLayout.createSequentialGroup()
+                .addGap(0, 18, Short.MAX_VALUE)
+                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelPlazaJamesLayout.setVerticalGroup(
             jPanelPlazaJamesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelPlazaJames, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 80, 60));
@@ -283,15 +376,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvVirginia.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvVirginia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvVirginiaLayout = new javax.swing.GroupLayout(jPanelAvVirginia);
         jPanelAvVirginia.setLayout(jPanelAvVirginiaLayout);
         jPanelAvVirginiaLayout.setHorizontalGroup(
             jPanelAvVirginiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvVirginiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvVirginiaLayout.createSequentialGroup()
+                    .addGap(14, 14, 14)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(14, Short.MAX_VALUE)))
         );
         jPanelAvVirginiaLayout.setVerticalGroup(
             jPanelAvVirginiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 64, Short.MAX_VALUE)
+            .addGroup(jPanelAvVirginiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvVirginiaLayout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addComponent(jLabel36)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvVirginia, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 80, 60));
@@ -299,15 +406,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvStatus.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvStatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvStatusLayout = new javax.swing.GroupLayout(jPanelAvStatus);
         jPanelAvStatus.setLayout(jPanelAvStatusLayout);
         jPanelAvStatusLayout.setHorizontalGroup(
             jPanelAvStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvStatusLayout.createSequentialGroup()
+                    .addGap(14, 14, 14)
+                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(14, Short.MAX_VALUE)))
         );
         jPanelAvStatusLayout.setVerticalGroup(
             jPanelAvStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 64, Short.MAX_VALUE)
+            .addGroup(jPanelAvStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvStatusLayout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addComponent(jLabel40)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 80, 60));
@@ -315,15 +436,19 @@ public class formJuego extends javax.swing.JFrame {
         jPanelElectricidad.setBackground(new java.awt.Color(220, 245, 245));
         jPanelElectricidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-bombilla-edison-60.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelElectricidadLayout = new javax.swing.GroupLayout(jPanelElectricidad);
         jPanelElectricidad.setLayout(jPanelElectricidadLayout);
         jPanelElectricidadLayout.setHorizontalGroup(
             jPanelElectricidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelElectricidadLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
         );
         jPanelElectricidadLayout.setVerticalGroup(
             jPanelElectricidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelElectricidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 80, 60));
@@ -331,15 +456,19 @@ public class formJuego extends javax.swing.JFrame {
         jPanelPlazaSanCarlos.setBackground(new java.awt.Color(220, 245, 245));
         jPanelPlazaSanCarlos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-plaza-de-la-ciudad-40.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelPlazaSanCarlosLayout = new javax.swing.GroupLayout(jPanelPlazaSanCarlos);
         jPanelPlazaSanCarlos.setLayout(jPanelPlazaSanCarlosLayout);
         jPanelPlazaSanCarlosLayout.setHorizontalGroup(
             jPanelPlazaSanCarlosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPlazaSanCarlosLayout.createSequentialGroup()
+                .addGap(0, 18, Short.MAX_VALUE)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelPlazaSanCarlosLayout.setVerticalGroup(
             jPanelPlazaSanCarlosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelPlazaSanCarlos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 570, 80, 60));
@@ -347,15 +476,19 @@ public class formJuego extends javax.swing.JFrame {
         jPanelDescanso.setBackground(new java.awt.Color(220, 245, 245));
         jPanelDescanso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/aparcamiento.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelDescansoLayout = new javax.swing.GroupLayout(jPanelDescanso);
         jPanelDescanso.setLayout(jPanelDescansoLayout);
         jPanelDescansoLayout.setHorizontalGroup(
             jPanelDescansoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDescansoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
         );
         jPanelDescansoLayout.setVerticalGroup(
             jPanelDescansoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelDescanso, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 80, 80));
@@ -388,6 +521,7 @@ public class formJuego extends javax.swing.JFrame {
         jPanelBase.add(resultadoDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 80, 70));
 
         btnSuerte.setText("SUERTE");
+        btnSuerte.setEnabled(false);
         btnSuerte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuerteActionPerformed(evt);
@@ -396,6 +530,12 @@ public class formJuego extends javax.swing.JFrame {
         jPanelBase.add(btnSuerte, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 400, 110));
 
         btnArcaComunal.setText("ARCA COMUNAL");
+        btnArcaComunal.setEnabled(false);
+        btnArcaComunal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArcaComunalActionPerformed(evt);
+            }
+        });
         jPanelBase.add(btnArcaComunal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 400, 110));
 
         panelJuego.add(jPanelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 554, 540));
@@ -403,15 +543,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvKentucky.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvKentucky.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvKentuckyLayout = new javax.swing.GroupLayout(jPanelAvKentucky);
         jPanelAvKentucky.setLayout(jPanelAvKentuckyLayout);
         jPanelAvKentuckyLayout.setHorizontalGroup(
             jPanelAvKentuckyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvKentuckyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvKentuckyLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvKentuckyLayout.setVerticalGroup(
             jPanelAvKentuckyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvKentuckyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvKentuckyLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvKentucky, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 60, 80));
@@ -419,15 +573,17 @@ public class formJuego extends javax.swing.JFrame {
         jPanelSuerte2.setBackground(new java.awt.Color(220, 245, 245));
         jPanelSuerte2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-signo-de-interrogación-60.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelSuerte2Layout = new javax.swing.GroupLayout(jPanelSuerte2);
         jPanelSuerte2.setLayout(jPanelSuerte2Layout);
         jPanelSuerte2Layout.setHorizontalGroup(
             jPanelSuerte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelSuerte2Layout.setVerticalGroup(
             jPanelSuerte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelSuerte2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, 80));
@@ -435,15 +591,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvIndiana.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvIndiana.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvIndianaLayout = new javax.swing.GroupLayout(jPanelAvIndiana);
         jPanelAvIndiana.setLayout(jPanelAvIndianaLayout);
         jPanelAvIndianaLayout.setHorizontalGroup(
             jPanelAvIndianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanelAvIndianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvIndianaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvIndianaLayout.setVerticalGroup(
             jPanelAvIndianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvIndianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvIndianaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvIndiana, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 10, -1, 80));
@@ -451,15 +621,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvIllinois.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvIllinois.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvIllinoisLayout = new javax.swing.GroupLayout(jPanelAvIllinois);
         jPanelAvIllinois.setLayout(jPanelAvIllinoisLayout);
         jPanelAvIllinoisLayout.setHorizontalGroup(
             jPanelAvIllinoisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanelAvIllinoisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvIllinoisLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvIllinoisLayout.setVerticalGroup(
             jPanelAvIllinoisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvIllinoisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvIllinoisLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvIllinois, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 10, -1, 80));
@@ -467,15 +651,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelFerroByO.setBackground(new java.awt.Color(220, 245, 245));
         jPanelFerroByO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-vagón-de-ferrocarril-40.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelFerroByOLayout = new javax.swing.GroupLayout(jPanelFerroByO);
         jPanelFerroByO.setLayout(jPanelFerroByOLayout);
         jPanelFerroByOLayout.setHorizontalGroup(
             jPanelFerroByOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanelFerroByOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelFerroByOLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelFerroByOLayout.setVerticalGroup(
             jPanelFerroByOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelFerroByOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelFerroByOLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelFerroByO, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 10, -1, 80));
@@ -483,15 +681,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvAtlantico.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvAtlantico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvAtlanticoLayout = new javax.swing.GroupLayout(jPanelAvAtlantico);
         jPanelAvAtlantico.setLayout(jPanelAvAtlanticoLayout);
         jPanelAvAtlanticoLayout.setHorizontalGroup(
             jPanelAvAtlanticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanelAvAtlanticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvAtlanticoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvAtlanticoLayout.setVerticalGroup(
             jPanelAvAtlanticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvAtlanticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvAtlanticoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvAtlantico, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 10, -1, 80));
@@ -499,15 +711,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvVentnor.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvVentnor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvVentnorLayout = new javax.swing.GroupLayout(jPanelAvVentnor);
         jPanelAvVentnor.setLayout(jPanelAvVentnorLayout);
         jPanelAvVentnorLayout.setHorizontalGroup(
             jPanelAvVentnorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanelAvVentnorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvVentnorLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvVentnorLayout.setVerticalGroup(
             jPanelAvVentnorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvVentnorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvVentnorLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvVentnor, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, -1, 80));
@@ -515,15 +741,17 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAgua.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAgua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/llave-de-paso-de-agua.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAguaLayout = new javax.swing.GroupLayout(jPanelAgua);
         jPanelAgua.setLayout(jPanelAguaLayout);
         jPanelAguaLayout.setHorizontalGroup(
             jPanelAguaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelAguaLayout.setVerticalGroup(
             jPanelAguaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelAgua, new org.netbeans.lib.awtextra.AbsoluteConstraints(862, 10, -1, 80));
@@ -531,15 +759,17 @@ public class formJuego extends javax.swing.JFrame {
         jPanelJardinesMarvin.setBackground(new java.awt.Color(220, 245, 245));
         jPanelJardinesMarvin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/dahlia.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelJardinesMarvinLayout = new javax.swing.GroupLayout(jPanelJardinesMarvin);
         jPanelJardinesMarvin.setLayout(jPanelJardinesMarvinLayout);
         jPanelJardinesMarvinLayout.setHorizontalGroup(
             jPanelJardinesMarvinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelJardinesMarvinLayout.setVerticalGroup(
             jPanelJardinesMarvinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelJardinesMarvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 10, -1, 80));
@@ -547,15 +777,19 @@ public class formJuego extends javax.swing.JFrame {
         jPanelIrACarcel.setBackground(new java.awt.Color(220, 245, 245));
         jPanelIrACarcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/esposas.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelIrACarcelLayout = new javax.swing.GroupLayout(jPanelIrACarcel);
         jPanelIrACarcel.setLayout(jPanelIrACarcelLayout);
         jPanelIrACarcelLayout.setHorizontalGroup(
             jPanelIrACarcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIrACarcelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
         );
         jPanelIrACarcelLayout.setVerticalGroup(
             jPanelIrACarcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelIrACarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 10, 80, 80));
@@ -563,15 +797,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvPacifico.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvPacifico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvPacificoLayout = new javax.swing.GroupLayout(jPanelAvPacifico);
         jPanelAvPacifico.setLayout(jPanelAvPacificoLayout);
         jPanelAvPacificoLayout.setHorizontalGroup(
             jPanelAvPacificoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvPacificoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelAvPacificoLayout.setVerticalGroup(
             jPanelAvPacificoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvPacificoLayout.createSequentialGroup()
+                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelAvPacifico, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 90, 80, 60));
@@ -579,15 +822,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvCarolinaNorte.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvCarolinaNorte.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvCarolinaNorteLayout = new javax.swing.GroupLayout(jPanelAvCarolinaNorte);
         jPanelAvCarolinaNorte.setLayout(jPanelAvCarolinaNorteLayout);
         jPanelAvCarolinaNorteLayout.setHorizontalGroup(
             jPanelAvCarolinaNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvCarolinaNorteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelAvCarolinaNorteLayout.setVerticalGroup(
             jPanelAvCarolinaNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvCarolinaNorteLayout.createSequentialGroup()
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelAvCarolinaNorte, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 150, 80, 60));
@@ -595,15 +847,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelArcaComunal3.setBackground(new java.awt.Color(220, 245, 245));
         jPanelArcaComunal3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-cofre-del-tesoro-40.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelArcaComunal3Layout = new javax.swing.GroupLayout(jPanelArcaComunal3);
         jPanelArcaComunal3.setLayout(jPanelArcaComunal3Layout);
         jPanelArcaComunal3Layout.setHorizontalGroup(
             jPanelArcaComunal3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelArcaComunal3Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanelArcaComunal3Layout.setVerticalGroup(
             jPanelArcaComunal3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelArcaComunal3Layout.createSequentialGroup()
+                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelArcaComunal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 210, 80, 60));
@@ -611,15 +872,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvPensilvania.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvPensilvania.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvPensilvaniaLayout = new javax.swing.GroupLayout(jPanelAvPensilvania);
         jPanelAvPensilvania.setLayout(jPanelAvPensilvaniaLayout);
         jPanelAvPensilvaniaLayout.setHorizontalGroup(
             jPanelAvPensilvaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelAvPensilvaniaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelAvPensilvaniaLayout.setVerticalGroup(
             jPanelAvPensilvaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvPensilvaniaLayout.createSequentialGroup()
+                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         panelJuego.add(jPanelAvPensilvania, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 270, 80, 60));
@@ -627,20 +897,28 @@ public class formJuego extends javax.swing.JFrame {
         jPanelFerroViaRapida.setBackground(new java.awt.Color(220, 245, 245));
         jPanelFerroViaRapida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelFerroViaRapida.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-vagón-de-ferrocarril-40.png"))); // NOI18N
+        jPanelFerroViaRapida.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 60));
+
         panelJuego.add(jPanelFerroViaRapida, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 330, 80, 60));
 
         jPanelSuerte3.setBackground(new java.awt.Color(220, 245, 245));
         jPanelSuerte3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-signo-de-interrogación-60.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelSuerte3Layout = new javax.swing.GroupLayout(jPanelSuerte3);
         jPanelSuerte3.setLayout(jPanelSuerte3Layout);
         jPanelSuerte3Layout.setHorizontalGroup(
             jPanelSuerte3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelSuerte3Layout.setVerticalGroup(
             jPanelSuerte3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelSuerte3, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 390, 80, 60));
@@ -648,15 +926,20 @@ public class formJuego extends javax.swing.JFrame {
         jPanelPlazaPark.setBackground(new java.awt.Color(220, 245, 245));
         jPanelPlazaPark.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/parque.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelPlazaParkLayout = new javax.swing.GroupLayout(jPanelPlazaPark);
         jPanelPlazaPark.setLayout(jPanelPlazaParkLayout);
         jPanelPlazaParkLayout.setHorizontalGroup(
             jPanelPlazaParkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelPlazaParkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelPlazaParkLayout.setVerticalGroup(
             jPanelPlazaParkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelPlazaPark, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 450, 80, 60));
@@ -664,15 +947,20 @@ public class formJuego extends javax.swing.JFrame {
         jPanelImpuestoLujo.setBackground(new java.awt.Color(220, 245, 245));
         jPanelImpuestoLujo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/anillo.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelImpuestoLujoLayout = new javax.swing.GroupLayout(jPanelImpuestoLujo);
         jPanelImpuestoLujo.setLayout(jPanelImpuestoLujoLayout);
         jPanelImpuestoLujoLayout.setHorizontalGroup(
             jPanelImpuestoLujoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGroup(jPanelImpuestoLujoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelImpuestoLujoLayout.setVerticalGroup(
             jPanelImpuestoLujoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelImpuestoLujo, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 510, 80, 60));
@@ -680,15 +968,17 @@ public class formJuego extends javax.swing.JFrame {
         jPanelMuelle.setBackground(new java.awt.Color(220, 245, 245));
         jPanelMuelle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/pier.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelMuelleLayout = new javax.swing.GroupLayout(jPanelMuelle);
         jPanelMuelle.setLayout(jPanelMuelleLayout);
         jPanelMuelleLayout.setHorizontalGroup(
             jPanelMuelleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         jPanelMuelleLayout.setVerticalGroup(
             jPanelMuelleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelMuelle, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 570, 80, 60));
@@ -696,15 +986,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvConnecticut.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvConnecticut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvConnecticutLayout = new javax.swing.GroupLayout(jPanelAvConnecticut);
         jPanelAvConnecticut.setLayout(jPanelAvConnecticutLayout);
         jPanelAvConnecticutLayout.setHorizontalGroup(
             jPanelAvConnecticutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(jPanelAvConnecticutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvConnecticutLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvConnecticutLayout.setVerticalGroup(
             jPanelAvConnecticutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvConnecticutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvConnecticutLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvConnecticut, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, -1, -1));
@@ -712,25 +1016,39 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvOriental.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvOriental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelAvOriental.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+        jPanelAvOriental.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 80));
+
         panelJuego.add(jPanelAvOriental, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 630, 62, 80));
 
         jPanelAvMediterraneo.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvMediterraneo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelAvMediterraneo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+        jPanelAvMediterraneo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 80));
+
         panelJuego.add(jPanelAvMediterraneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(922, 630, 62, 80));
 
         jPanelSuerte1.setBackground(new java.awt.Color(220, 245, 245));
         jPanelSuerte1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-signo-de-interrogación-60.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelSuerte1Layout = new javax.swing.GroupLayout(jPanelSuerte1);
         jPanelSuerte1.setLayout(jPanelSuerte1Layout);
         jPanelSuerte1Layout.setHorizontalGroup(
             jPanelSuerte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelSuerte1Layout.setVerticalGroup(
             jPanelSuerte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelSuerte1, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 630, -1, -1));
@@ -738,15 +1056,29 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvVermont.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvVermont.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelAvVermontLayout = new javax.swing.GroupLayout(jPanelAvVermont);
         jPanelAvVermont.setLayout(jPanelAvVermontLayout);
         jPanelAvVermontLayout.setHorizontalGroup(
             jPanelAvVermontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanelAvVermontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvVermontLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanelAvVermontLayout.setVerticalGroup(
             jPanelAvVermontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanelAvVermontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAvVermontLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         panelJuego.add(jPanelAvVermont, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 630, -1, 80));
@@ -754,21 +1086,45 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAvBaltica.setBackground(new java.awt.Color(220, 245, 245));
         jPanelAvBaltica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelAvBaltica.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
+        jPanelAvBaltica.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 80));
+
         panelJuego.add(jPanelAvBaltica, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 62, 80));
 
         jPanelFerroReading.setBackground(new java.awt.Color(220, 245, 245));
         jPanelFerroReading.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelFerroReading.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-vagón-de-ferrocarril-40.png"))); // NOI18N
+        jPanelFerroReading.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 80));
+
         panelJuego.add(jPanelFerroReading, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 630, 62, 80));
 
         jPanelArcaComunal1.setBackground(new java.awt.Color(220, 245, 245));
         jPanelArcaComunal1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelArcaComunal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-cofre-del-tesoro-40.png"))); // NOI18N
+        jPanelArcaComunal1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 80));
+
         panelJuego.add(jPanelArcaComunal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(862, 630, 60, 80));
 
         jPanelImpuestoIngresos.setBackground(new java.awt.Color(220, 245, 245));
         jPanelImpuestoIngresos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelImpuestoIngresos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-impuesto-40.png"))); // NOI18N
+        jPanelImpuestoIngresos.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 80));
+
         panelJuego.add(jPanelImpuestoIngresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 630, 62, 80));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -1000,6 +1356,8 @@ public class formJuego extends javax.swing.JFrame {
             memo.avanzar(casillas);
             jugadores.encolar(memo);
             jugador1.getPosicion();
+              
+            ValidarCasillaComunalSuerte();
         /*}
 
        // }
@@ -1079,6 +1437,56 @@ public class formJuego extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_tirarDadosActionPerformed
 
+     public void ValidarCasillaComunalSuerte(){ 
+             
+        if(jugador1.getPosicion()==8||jugador1.getPosicion()==23||jugador1.getPosicion()==37){
+            btnSuerte.setEnabled(true);
+        }
+        
+        if(jugador1.getPosicion()==3||jugador1.getPosicion()==18||jugador1.getPosicion()==34){
+            btnArcaComunal.setEnabled(true);
+        }
+    }
+
+    
+    public void asignarCarta(){
+    
+        Object salirCarcel = JOptionPane.showConfirmDialog(null,"Salir de la carcel");
+        Object honoMedicos = JOptionPane.showConfirmDialog(null,"Honorarios médicos, pague $50");
+        Object vencimientoFondo = JOptionPane.showConfirmDialog(null,"Vencimiento de fondo vacacional, reciba $100");
+        Object vencimientoSeguro = JOptionPane.showConfirmDialog(null,"Vencimiento de seguro de vida, Cobre $100. ");
+        Object pagoCole = JOptionPane.showConfirmDialog(null,"Pague colegiaturas por $50");
+        Object devolucionIm = JOptionPane.showConfirmDialog(null,"Devolución de impuestos. Cobre $20");
+        Object hospital = JOptionPane.showConfirmDialog(null,"Pague cuenta de hospital por $100");
+        Object irCarcel = JOptionPane.showConfirmDialog(null,"Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200.");
+        Object consultoria = JOptionPane.showConfirmDialog(null,"Reciba $25 por consultoría");
+        Object cumple = JOptionPane.showConfirmDialog(null,"Es su cumpleaños. Cobre $10 a cada jugador");
+        Object heredar = JOptionPane.showConfirmDialog(null,"Herede $100");
+        Object acciones = JOptionPane.showConfirmDialog(null,"Por venta de acciones reciba $50");
+        Object concurso = JOptionPane.showConfirmDialog(null,"Ganó el segundo lugar en un concurso de belleza, cobre $10");
+        Object reparacion = JOptionPane.showConfirmDialog(null,"Por reparación vial le cobran: $40 por casa, $115 por hotel");
+        Object avanzar = JOptionPane.showConfirmDialog(null,"Avance a la SALIDA, cobre $200");
+        Object error = JOptionPane.showConfirmDialog(null,"Error bancario a su favor. Cobre $200.");
+        
+        comunal.apilar(salirCarcel);
+        comunal.apilar(honoMedicos);
+        comunal.apilar(vencimientoFondo);
+        comunal.apilar(vencimientoSeguro);
+        comunal.apilar(pagoCole);
+        comunal.apilar(devolucionIm);
+        comunal.apilar(hospital);
+        comunal.apilar(irCarcel);
+        comunal.apilar(consultoria);
+        comunal.apilar(cumple);
+        comunal.apilar(heredar);
+        comunal.apilar(acciones);
+        comunal.apilar(concurso);
+        comunal.apilar(reparacion);
+        comunal.apilar(avanzar);
+        comunal.apilar(error);
+     
+    
+} 
     private void jLabelJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelJugador1MouseClicked
        
     }//GEN-LAST:event_jLabelJugador1MouseClicked
@@ -1090,13 +1498,15 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_revovlerDadosActionPerformed
 
     private void btnSuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuerteActionPerformed
-        // TODO add your handling code here:
+        btnSuerte.setEnabled(false);
     }//GEN-LAST:event_btnSuerteActionPerformed
 
+    private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
+       btnArcaComunal.setEnabled(false);
+    }//GEN-LAST:event_btnArcaComunalActionPerformed
 
-    public void ValidarCasillaComunalSuerte(){ 
-        
-    }
+
+    
         
     
     public void asignar(){
@@ -1205,10 +1615,50 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
