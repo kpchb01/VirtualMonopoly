@@ -29,19 +29,18 @@ public class formJuego extends javax.swing.JFrame {
     /**
      * Creates new form formJuego
      */
-    
     Lista casillas = new Lista();
-    
+
     Boolean seleccion = true;
-    
-    ClassJugador jugador1 = new ClassJugador(1,Color.RED,"jugador1");
-    ClassJugador jugador2 = new ClassJugador(1,new java.awt.Color(255,204,0),"jugador2");
-    ClassJugador jugador3 = new ClassJugador(1,new java.awt.Color(102,204,0),"jugador3");
-    ClassJugador jugador4 = new ClassJugador(1,new java.awt.Color(102,0,204),"jugador4");
-    
+
+    ClassJugador jugador1 = new ClassJugador(1, Color.RED, "jugador1");
+    ClassJugador jugador2 = new ClassJugador(1, new java.awt.Color(255, 204, 0), "jugador2");
+    ClassJugador jugador3 = new ClassJugador(1, new java.awt.Color(102, 204, 0), "jugador3");
+    ClassJugador jugador4 = new ClassJugador(1, new java.awt.Color(102, 0, 204), "jugador4");
+
     Cola jugadores = new Cola();
-   
-     Pila comunal = new Pila();
+
+    Pila comunal = new Pila();
     Pila suerte = new Pila();
 
     public formJuego() {
@@ -55,10 +54,9 @@ public class formJuego extends javax.swing.JFrame {
         jLabelJugador4.setVisible(false);
         jLabelDinero4.setVisible(false);
         jLabelBillete4.setVisible(false);
-      
+
         asignar();
-        
-        
+
     }
 
     /**
@@ -1003,126 +1001,58 @@ public class formJuego extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_XMouseClicked
 
-    
+
     private void tirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarDadosActionPerformed
 
-       // if(seleccion){
+        if (seleccion) {
             ClassJugador memo = (ClassJugador) jugadores.desencolar();
             memo.avanzar(casillas);
             jugadores.encolar(memo);
             jugador1.getPosicion();
-              
+
             ValidarCasillaComunalSuerte();
-        /*}
-
-       // }
-
-        
-      /*  else{
+        } else {
             ClassJugador memo2 = (ClassJugador) jugadores.desencolar();
-            if(memo2!=null){
-                 memo2.tirarDado();
-                 return;
+            if (memo2 != null) {
+                memo2.tirarDado();
+                return;
             }
-            
+
             this.seleccion = false;
-            this.jugadores = new Cola();
-
-            switch (formInicio.message){
-            
-                case "2":
-                   
-                    if(jugador1.getTiro()>jugador2.getTiro()){
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador2);
-                    }else
-                    if(jugador1.getTiro()==jugador2.getTiro()){
-                        
-                    }
-                    else{
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador1);
-                    }
-                break; 
-                
-                 case "3":
-                     if(jugador1.getTiro()>jugador2.getTiro()&&jugador1.getTiro()>jugador3.getTiro()&&jugador2.getTiro()>jugador3.getTiro()){
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador3);
-                    }else
-                      if(jugador2.getTiro()>jugador1.getTiro()&&jugador2.getTiro()>jugador3.getTiro()&&jugador1.getTiro()>jugador3.getTiro()){
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador1);
-                    }
-                      else{
-                        jugadores.encolar(jugador3);
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador1);
-                      }
-                break;
-                
-                 case "4":
-                     if(jugador1.getTiro()>jugador2.getTiro()&&jugador1.getTiro()>jugador3.getTiro()&&jugador1.getTiro()>jugador4.getTiro()&&
-                             jugador2.getTiro()>jugador3.getTiro()&&jugador2.getTiro()>jugador4.getTiro()&&jugador3.getTiro()>jugador4.getTiro()){
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador3);
-                        jugadores.encolar(jugador4);
-                    }else
-                      if(jugador2.getTiro()>jugador1.getTiro()&&jugador2.getTiro()>jugador3.getTiro()&&jugador2.getTiro()>jugador4.getTiro()&&
-                             jugador1.getTiro()>jugador3.getTiro()&&jugador1.getTiro()>jugador4.getTiro()&&jugador3.getTiro()>jugador4.getTiro()){
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador3);
-                        jugadores.encolar(jugador3);
-                    }else
-                      if(jugador3.getTiro()>jugador1.getTiro()&&jugador3.getTiro()>jugador2.getTiro()&&jugador3.getTiro()>jugador4.getTiro()&&
-                             jugador1.getTiro()>jugador2.getTiro()&&jugador1.getTiro()>jugador4.getTiro()&&jugador2.getTiro()>jugador4.getTiro()){
-                        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador3);
-                        jugadores.encolar(jugador3);
-                    }
-                     
-                break;
-
+            Util.Util.ordenarCola(jugadores);
         }
-        }*/
     }//GEN-LAST:event_tirarDadosActionPerformed
 
-     public void ValidarCasillaComunalSuerte(){ 
-             
-        if(jugador1.getPosicion()==8||jugador1.getPosicion()==23||jugador1.getPosicion()==37){
+    public void ValidarCasillaComunalSuerte() {
+
+        if (jugador1.getPosicion() == 8 || jugador1.getPosicion() == 23 || jugador1.getPosicion() == 37) {
             btnSuerte.setEnabled(true);
         }
-        
-        if(jugador1.getPosicion()==3||jugador1.getPosicion()==18||jugador1.getPosicion()==34){
+
+        if (jugador1.getPosicion() == 3 || jugador1.getPosicion() == 18 || jugador1.getPosicion() == 34) {
             btnArcaComunal.setEnabled(true);
         }
     }
 
-    
-    public void asignarCarta(){
-    
-        Object salirCarcel = JOptionPane.showConfirmDialog(null,"Salir de la carcel");
-        Object honoMedicos = JOptionPane.showConfirmDialog(null,"Honorarios médicos, pague $50");
-        Object vencimientoFondo = JOptionPane.showConfirmDialog(null,"Vencimiento de fondo vacacional, reciba $100");
-        Object vencimientoSeguro = JOptionPane.showConfirmDialog(null,"Vencimiento de seguro de vida, Cobre $100. ");
-        Object pagoCole = JOptionPane.showConfirmDialog(null,"Pague colegiaturas por $50");
-        Object devolucionIm = JOptionPane.showConfirmDialog(null,"Devolución de impuestos. Cobre $20");
-        Object hospital = JOptionPane.showConfirmDialog(null,"Pague cuenta de hospital por $100");
-        Object irCarcel = JOptionPane.showConfirmDialog(null,"Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200.");
-        Object consultoria = JOptionPane.showConfirmDialog(null,"Reciba $25 por consultoría");
-        Object cumple = JOptionPane.showConfirmDialog(null,"Es su cumpleaños. Cobre $10 a cada jugador");
-        Object heredar = JOptionPane.showConfirmDialog(null,"Herede $100");
-        Object acciones = JOptionPane.showConfirmDialog(null,"Por venta de acciones reciba $50");
-        Object concurso = JOptionPane.showConfirmDialog(null,"Ganó el segundo lugar en un concurso de belleza, cobre $10");
-        Object reparacion = JOptionPane.showConfirmDialog(null,"Por reparación vial le cobran: $40 por casa, $115 por hotel");
-        Object avanzar = JOptionPane.showConfirmDialog(null,"Avance a la SALIDA, cobre $200");
-        Object error = JOptionPane.showConfirmDialog(null,"Error bancario a su favor. Cobre $200.");
-        
+    public void asignarCarta() {
+
+        Object salirCarcel = JOptionPane.showConfirmDialog(null, "Salir de la carcel");
+        Object honoMedicos = JOptionPane.showConfirmDialog(null, "Honorarios médicos, pague $50");
+        Object vencimientoFondo = JOptionPane.showConfirmDialog(null, "Vencimiento de fondo vacacional, reciba $100");
+        Object vencimientoSeguro = JOptionPane.showConfirmDialog(null, "Vencimiento de seguro de vida, Cobre $100. ");
+        Object pagoCole = JOptionPane.showConfirmDialog(null, "Pague colegiaturas por $50");
+        Object devolucionIm = JOptionPane.showConfirmDialog(null, "Devolución de impuestos. Cobre $20");
+        Object hospital = JOptionPane.showConfirmDialog(null, "Pague cuenta de hospital por $100");
+        Object irCarcel = JOptionPane.showConfirmDialog(null, "Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200.");
+        Object consultoria = JOptionPane.showConfirmDialog(null, "Reciba $25 por consultoría");
+        Object cumple = JOptionPane.showConfirmDialog(null, "Es su cumpleaños. Cobre $10 a cada jugador");
+        Object heredar = JOptionPane.showConfirmDialog(null, "Herede $100");
+        Object acciones = JOptionPane.showConfirmDialog(null, "Por venta de acciones reciba $50");
+        Object concurso = JOptionPane.showConfirmDialog(null, "Ganó el segundo lugar en un concurso de belleza, cobre $10");
+        Object reparacion = JOptionPane.showConfirmDialog(null, "Por reparación vial le cobran: $40 por casa, $115 por hotel");
+        Object avanzar = JOptionPane.showConfirmDialog(null, "Avance a la SALIDA, cobre $200");
+        Object error = JOptionPane.showConfirmDialog(null, "Error bancario a su favor. Cobre $200.");
+
         comunal.apilar(salirCarcel);
         comunal.apilar(honoMedicos);
         comunal.apilar(vencimientoFondo);
@@ -1139,11 +1069,10 @@ public class formJuego extends javax.swing.JFrame {
         comunal.apilar(reparacion);
         comunal.apilar(avanzar);
         comunal.apilar(error);
-     
-    
-} 
+        
+    }
     private void jLabelJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelJugador1MouseClicked
-       
+
     }//GEN-LAST:event_jLabelJugador1MouseClicked
 
     private void revovlerDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revovlerDadosActionPerformed
@@ -1157,14 +1086,10 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSuerteActionPerformed
 
     private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
-       btnArcaComunal.setEnabled(false);
+        btnArcaComunal.setEnabled(false);
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
-
-    
-        
-    
-    public void asignar(){
+    public void asignar() {
         casillas.add(jPanelGo);
         casillas.add(jPanelAvMediterraneo);
         casillas.add(jPanelArcaComunal1);
@@ -1204,25 +1129,37 @@ public class formJuego extends javax.swing.JFrame {
         casillas.add(jPanelSuerte3);
         casillas.add(jPanelPlazaPark);
         casillas.add(jPanelImpuestoLujo);
-        casillas.add(jPanelMuelle); 
-        jugadores.encolar(jugador2);
-                        jugadores.encolar(jugador1);
-                        jugadores.encolar(jugador3);
-                        jugadores.encolar(jugador4);
-        
-        jugadores.encolar(jugador1);
-        jugadores.encolar(jugador2);
-        jugadores.encolar(jugador3);
-        jugadores.encolar(jugador4);
-        
-    }
-    
-    public void mostrarTarjeta(int posicion){
-        
-    }
-    
+        casillas.add(jPanelMuelle);
+        switch (formInicio.message) {
 
-    
+            case "2":
+                    jugadores.encolar(jugador1);
+                    jugadores.encolar(jugador2);
+                break;
+
+            case "3":
+                
+                    jugadores.encolar(jugador1);
+                    jugadores.encolar(jugador2);
+                    jugadores.encolar(jugador3);
+                break;
+
+            case "4":
+                    jugadores.encolar(jugador1);
+                    jugadores.encolar(jugador2);
+                    jugadores.encolar(jugador3);
+                    jugadores.encolar(jugador4);
+                break;
+
+        }
+
+
+    }
+
+    public void mostrarTarjeta(int posicion) {
+
+    }
+
     /**
      * @param args the command line arguments
      */
