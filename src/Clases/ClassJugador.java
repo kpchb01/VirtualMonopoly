@@ -57,7 +57,6 @@ public class ClassJugador {
         int valorDado1 = (int)(Math.random()*6)+1;
         int valorDado2 = (int)(Math.random()+6)+1;
         int sumaDados = dados.SumaDados(valorDado1, valorDado2);
-        this.setPosicion(sumaDados);
         this.tiro=sumaDados;
         return sumaDados;
     }
