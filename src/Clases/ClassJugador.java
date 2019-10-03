@@ -38,7 +38,7 @@ public class ClassJugador {
       
       if(this.getPosicion()>-1){
             JPanel panel = (JPanel) casillas.get(this.getPosicion());
-            panel.setBackground(new java.awt.Color(220,245,245));
+            panel.setBackground(new java.awt.Color(0,204,204));
         }
 
         int valorDado1 = (int)(Math.random()*6)+1;
@@ -57,6 +57,8 @@ public class ClassJugador {
         int valorDado1 = (int)(Math.random()*6)+1;
         int valorDado2 = (int)(Math.random()+6)+1;
         int sumaDados = dados.SumaDados(valorDado1, valorDado2);
+        formJuego.resultadoDado1.setIcon(dados.pngDado(valorDado1));
+        formJuego.resultadoDado2.setIcon(dados.pngDado(valorDado2));
         this.tiro=sumaDados;
         return sumaDados;
     }

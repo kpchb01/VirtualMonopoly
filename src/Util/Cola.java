@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Util;
 
 import java.util.ArrayList;
@@ -14,38 +13,41 @@ import javax.swing.JTextArea;
  * @author dev-
  */
 public class Cola {
+
     private ListaLigada cola;
-    
-    public Cola(){
+
+    public Cola() {
         cola = new ListaLigada();
     }
-    
-    public void encolar(Object dato){
+
+    public void encolar(Object dato) {
         cola.insertarUltimo(dato);
     }
-    
-    public Object desencolar(){
-        Object dato = cola.getElementos()[0];
-        cola.eliminarPrimero();
-        return dato;
+
+    public Object desencolar() {
+        try {
+            Object dato = cola.getElementos()[0];
+            cola.eliminarPrimero();
+            return dato;
+        } catch (Exception e) {
+            return null;
+        }
+
     }
-    
-    public Object frente(){
+
+    public Object frente() {
         return cola.getElementos()[0];
     }
-    
-    public int size(){
+
+    public int size() {
         return cola.getTamaño();
     }
-    
-    public Object[] getElementos(){
+
+    public Object[] getElementos() {
         return cola.getElementos();
     }
-    
-   
 
-    
-     public void listar(JTextArea txtArea) {
+    public void listar(JTextArea txtArea) {
         // Crea una copia de la pila.
         Node aux = cola.getPrimero();
         String impresion = "";
@@ -57,5 +59,5 @@ public class Cola {
         }
         txtArea.setText(impresion);
     }
-   
+
 }
