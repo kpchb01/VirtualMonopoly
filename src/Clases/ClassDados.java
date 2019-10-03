@@ -30,17 +30,22 @@ public class ClassDados {
     public ImageIcon icoImagen;
     
     public ImageIcon gifDado1(){
+
         icoImagen = new ImageIcon(getClass().getResource("/IMGDado/dados-01.gif"));
         return icoImagen;
     }
     public ImageIcon gifDado2(){
         icoImagen = new ImageIcon(getClass().getResource("/IMGDado/dados-02.gif"));
+
+        icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/dados-01.gif"));
         return icoImagen;
     }
+   
     
     public ImageIcon pngDado(int Dado){
         switch(Dado){
             case 1: 
+
                 icoImagen = new ImageIcon(getClass().getResource("/IMGDado/d1.png"));break;
                 
             case 2:
@@ -58,6 +63,8 @@ public class ClassDados {
             case 6:
                 icoImagen = new ImageIcon(getClass().getResource("/IMGDado/d6.png")); break;
               
+
+
         }
         return icoImagen;
 }
