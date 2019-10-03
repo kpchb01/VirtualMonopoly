@@ -6,6 +6,7 @@ import Vistas.formJuego;
 
 
 
+
 /**
  *
  * @author ARMENI
@@ -91,17 +92,18 @@ public class formInicio extends javax.swing.JFrame {
         formJuego j = new formJuego();
         if (Integer.parseInt(message)==3){
             formJuego.jLabelJugador3.setVisible(true);
-            formJuego.jLabelDinero3.setVisible(true);
-            formJuego.jLabelBillete3.setVisible(true);
+            formJuego.jTextFieldDinero3.setVisible(true);
+            formJuego.turno3.setVisible(true);
+            
         }
         
         if(Integer.parseInt(message)==4){
             formJuego.jLabelJugador3.setVisible(true);
-            formJuego.jLabelDinero3.setVisible(true);
-            formJuego.jLabelBillete3.setVisible(true);
+            formJuego.jTextFieldDinero3.setVisible(true);
+            formJuego.turno3.setVisible(true);
             formJuego.jLabelJugador4.setVisible(true);
-            formJuego.jLabelDinero4.setVisible(true);
-            formJuego.jLabelBillete4.setVisible(true);
+            formJuego.jTextFieldDinero4.setVisible(true);
+            formJuego.turno4.setVisible(true);
         }
     }//GEN-LAST:event_btnJugarActionPerformed
 
