@@ -96,12 +96,10 @@ public class Pila {
      * @return valor del nodo.
      * @throws Exception
      */
-    public Object cima() throws Exception {
-        if (!esVacia()) {
+    public Object cima() {
+        
             return inicio.getValue();
-        } else {
-            throw new Exception("La pila se encuentra vacia.");
-        }
+        
     }
 
     /**
@@ -262,7 +260,7 @@ public class Pila {
         txtArea.setText(impresion);
     }
 
-    public Object[] getElementos(){
+    public Object[] getElementos(int n){
         if(tamanio == 0)return new Object[0];
         Object[] elementos = new Object[tamanio];
         int i = 0;

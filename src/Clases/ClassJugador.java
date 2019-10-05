@@ -55,7 +55,7 @@ public class ClassJugador {
     public int tirarDado (){
         ClassDados dados = new ClassDados();
         int valorDado1 = (int)(Math.random()*6)+1;
-        int valorDado2 = (int)(Math.random()+6)+1;
+        int valorDado2 = (int)(Math.random()*6)+1;
         int sumaDados = dados.SumaDados(valorDado1, valorDado2);
         formJuego.resultadoDado1.setIcon(dados.pngDado(valorDado1));
         formJuego.resultadoDado2.setIcon(dados.pngDado(valorDado2));

@@ -37,8 +37,7 @@ public class ClassDados {
     public ImageIcon gifDado2(){
         icoImagen = new ImageIcon(getClass().getResource("/IMGDado/dados-02.gif"));
 
-        icoImagen = new ImageIcon(ClassLoader.getSystemResource("IMG/dados-01.gif"));
-        return icoImagen;
+       return icoImagen;
     }
    
     
