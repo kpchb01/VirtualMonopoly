@@ -36,6 +36,8 @@ public class formJuego extends javax.swing.JFrame {
     ClassJugador jugador2 = new ClassJugador(1, new java.awt.Color(255, 204, 0), "jugador2");
     ClassJugador jugador3 = new ClassJugador(1, new java.awt.Color(102, 204, 0), "jugador3");
     ClassJugador jugador4 = new ClassJugador(1, new java.awt.Color(102, 0, 204), "jugador4");
+    public static ClassJugador doble = null;
+    ClassJugador memo;
 
     //COMUNAL
     ClassTarjeta comunal1 = new ClassTarjeta("SALGA DE LA CÁRCEL GRATIS");
@@ -56,7 +58,9 @@ public class formJuego extends javax.swing.JFrame {
     
     Cola jugadores = new Cola();
 
-    Pila comunal = new Pila();
+    Pila primerComunal = new Pila();
+    Pila segundComunal = new Pila();
+    Pila tercerComunal = new Pila();
     Pila suerte = new Pila();
  
     
@@ -74,7 +78,7 @@ public class formJuego extends javax.swing.JFrame {
         turno4.setVisible(false);
         asignar();
         
-        
+        asignarCarta();
 
     }
 
@@ -1493,8 +1497,16 @@ public class formJuego extends javax.swing.JFrame {
 
  
     private void tirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarDadosActionPerformed
-        ClassJugador memo = (ClassJugador) jugadores.desencolar();
-        jugadores.encolar(memo);
+
+        if(this.doble == null) {
+            memo = (ClassJugador) jugadores.desencolar();
+            jugadores.encolar(memo);
+        }
+       
+        else {
+            memo = this.doble;
+        }
+        
         this.seleccion--;
         if (seleccion >= 0) {
             memo.tirarDado();
@@ -1504,9 +1516,13 @@ public class formJuego extends javax.swing.JFrame {
                 System.out.println("seleccion : " + this.seleccion);
             }
         } else {
-            memo.avanzar(casillas);
-            ValidarCasillaComunalSuerte();
+
+                memo.avanzar(casillas);
+                ValidarCasillaComunalSuerte();
+               
         }
+        
+        
     }//GEN-LAST:event_tirarDadosActionPerformed
 
     public void ValidarCasillaComunalSuerte() {
@@ -1537,25 +1553,31 @@ public class formJuego extends javax.swing.JFrame {
 
     
     private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
-        btnArcaComunal.setEnabled(false);
-        //asignarCarta();
-                
-        JOptionPane.showMessageDialog(null, comunal.cima());
+        //btnArcaComunal.setEnabled(false);
+        
+        ClassTarjeta memo = (ClassTarjeta) primerComunal.retirarEl();
+        JOptionPane.showMessageDialog(null, memo.getNombre());
+        
+       /*  while(primerComunal.esVacia()==false){
+        
+            for(int i=0; i<primerComunal.getTamanio();i++){
+            segundComunal.apilar(15);  
+            }
+        }*/
         
         
         
         
-        
-
+         System.out.println("m  "+segundComunal);
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
     public void asignarCarta(){
-        comunal.apilar(comunal1);
-        comunal.apilar(comunal2);
-        comunal.apilar(comunal3);
-        comunal.apilar(comunal4);
-        comunal.apilar(comunal5);
-        comunal.apilar(comunal6);
+        primerComunal.apilar(comunal1);
+        primerComunal.apilar(comunal2);
+        primerComunal.apilar(comunal3);
+        primerComunal.apilar(comunal4);
+        primerComunal.apilar(comunal5);
+        primerComunal.apilar(comunal6);
         
         suerte.apilar(suerte1);
         suerte.apilar(suerte2);

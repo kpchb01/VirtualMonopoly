@@ -66,9 +66,7 @@ public class Pila {
         tamanio++;
     }
 
-    /**
-     * Elimina el elemento que se encuentra en el tope de la piala.
-     */
+   
     public void retirar() {
         if (!esVacia()) {
             // Asigna como primer nodo al siguiente de la pila.
@@ -87,34 +85,22 @@ public class Pila {
             tamanio--;
             return aux;
         }
-       return 0;
+       return null;
     }
 
-    /**
-     * Consulta el valor del nodo que se encuentra en la cima de la pila
-     *
-     * @return valor del nodo.
-     * @throws Exception
-     */
+   
     public Object cima() {
         
             return inicio.getValue();
         
     }
 
-    /**
-     * Busca un elemento en la pila.
-     *
-     * @param referencia valor del nodo a buscar.
-     * @return true si el valor de referencia existe en la pila.
-     */
     public boolean buscar(Object referencia) {
         // Crea una copia de la pila.
         Node aux = inicio;
         // Bandera para verificar si existe el elemento a buscar.
         boolean existe = false;
-        // Recorre la pila hasta llegar encontrar el nodo o llegar al final
-        // de la pila.
+
         while (existe != true && aux != null) {
             // Compara si el valor del nodo es igual que al de referencia.
             if (referencia == aux.getValue()) {
@@ -125,15 +111,9 @@ public class Pila {
                 aux = aux.getNextElement();
             }
         }
-        // Retorna el valor de la bandera.
         return existe;
     }
 
-    /**
-     * Elimina un nodo de la pila ubicado por su valor.
-     *
-     * @param referencia valor de referencia para ubicar el nodo.
-     */
     public void remover(Object referencia) {
         // Consulta si el valor existe en la pila.
         if (buscar(referencia)) {
@@ -157,8 +137,7 @@ public class Pila {
                     temp.setNextElement(pilaAux);
                     pilaAux = temp;
                 }
-                // Elimina el nodo del tope de la pila hasta llegar al nodo
-                // que se desea eliminar.
+              
                 retirar();
             }
             // Elimina el nodo que coincide con el de referencia.
@@ -166,8 +145,7 @@ public class Pila {
             // Regresa los valores de la pila auxiliar a la pila original
             // mientras la pila auxiliar tenga elementos.
             while (pilaAux != null) {
-                // Utiliza el metodo apilar para regresar los elementos a 
-                // la pila original.
+           
                 apilar(pilaAux.getValue());
                 // Avansa al siguiente nodo de la pila auxiliar.
                 pilaAux = pilaAux.getNextElement();
