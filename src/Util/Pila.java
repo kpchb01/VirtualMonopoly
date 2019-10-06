@@ -66,6 +66,15 @@ public class Pila {
         tamanio++;
     }
 
+    public Node getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Node inicio) {
+        this.inicio = inicio;
+    }
+
+    
    
     public void retirar() {
         if (!esVacia()) {

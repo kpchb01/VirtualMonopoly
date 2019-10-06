@@ -13,6 +13,7 @@ public class ClassJugador {
     private Color color;
     private String nombre;
     private Integer tiro = 0;
+    private Integer puntos=1500;
 
 
     public ClassJugador() {
@@ -59,9 +60,7 @@ public class ClassJugador {
         formJuego.resultadoDado2.setIcon(dados.pngDado(valorDado2));
         JPanel panel = (JPanel) casillas.get(this.getPosicion());
         panel.setBackground(this.getColor());
-        
-        
-       
+    
     }
     
     public int tirarDado (){
@@ -100,6 +99,15 @@ public class ClassJugador {
     public void setTiro(Integer tiro) {
         this.tiro = tiro;
     }
+
+    public Integer getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(Integer puntos) {
+        this.puntos = puntos;
+    }
+    
     
     
     

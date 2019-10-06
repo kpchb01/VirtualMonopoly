@@ -5,14 +5,19 @@
  */
 package Clases;
 
+import Util.Lista;
+import Vistas.formJuego;
+
 /**
  *
  * @author viviana
  */
 public class ClassTarjeta {
     private String nombre;
-    private String descrpcion;
-
+    ClassJugador memo;
+       
+   
+    ClassJugador punto = new ClassJugador();
     public ClassTarjeta() {
     }
 
@@ -29,15 +34,55 @@ public class ClassTarjeta {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    //METODOS COMUNAL
 
-    public String getDescrpcion() {
-        return descrpcion;
-    }
-
-    public void setDescrpcion(String descrpcion) {
-        this.descrpcion = descrpcion;
+    public static void honorariosMedicos(ClassJugador jugador){
+       jugador.setPuntos(jugador.getPuntos()-50);
+        formJuego.actualizarDinero();
     }
     
+    public static void vencimientoVacacional(ClassJugador jugador){
+       jugador.setPuntos(jugador.getPuntos()+100);
+        formJuego.actualizarDinero();     
+    }
     
+    public static void colegiatura(ClassJugador jugador){
+        jugador.setPuntos(jugador.getPuntos()-70);
+        formJuego.actualizarDinero();
+    }
+    
+    public static void cuentaHospital(ClassJugador jugador){
+       jugador.setPuntos(jugador.getPuntos()-100);
+        formJuego.actualizarDinero();    
+    }
+    
+    public static void concurso(ClassJugador jugador){
+       jugador.setPuntos(jugador.getPuntos()+10);
+        formJuego.actualizarDinero();
+    }
+    //METODOS SUERTE
+
+    public static void avanzarMuelle(){
+        
+    }
+    
+    public static void cumplimientoPrestamo(ClassJugador jugador){
+       jugador.setPuntos(jugador.getPuntos()+150);
+        formJuego.actualizarDinero();
+    }
+    
+    public static void salirCarcel(){
+        formJuego.jTextCarcel.setText("1");
+    }
+    
+     public static void avanzarSalida(ClassJugador jugador){
+        
+    }
+    
+    public static void multaVelocidad(ClassJugador jugador){
+       jugador.setPuntos(jugador.getPuntos()-15);
+        formJuego.actualizarDinero();
+    }
     
 }
