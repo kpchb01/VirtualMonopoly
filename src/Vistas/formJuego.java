@@ -1,4 +1,3 @@
-
 package Vistas;
 
 import Clases.ClassDados;
@@ -23,13 +22,10 @@ import javax.swing.JPanel;
  */
 public class formJuego extends javax.swing.JFrame {
 
+    public static Lista casillas = new Lista();
 
-   public static Lista casillas = new Lista();
+    public static int seleccion = Integer.parseInt(formInicio.message);
 
-    int seleccion = Integer.parseInt(formInicio.message);
-   
-
-    
     static ClassJugador jugador1 = new ClassJugador(1, Color.RED, "jugador1");
     static ClassJugador jugador2 = new ClassJugador(1, new java.awt.Color(255, 204, 0), "jugador2");
     static ClassJugador jugador3 = new ClassJugador(1, new java.awt.Color(102, 204, 0), "jugador3");
@@ -43,8 +39,7 @@ public class formJuego extends javax.swing.JFrame {
     ClassTarjeta comunal3 = new ClassTarjeta("Pague colegiaturas por $70");
     ClassTarjeta comunal4 = new ClassTarjeta("Pague cuenta de hospital por $100");
     ClassTarjeta comunal5 = new ClassTarjeta("Ganó el segundo lugar en un concurso de belleza, cobre $10");
-    
-    
+
     //SUERTE
     ClassTarjeta suerte1 = new ClassTarjeta("Avance a EL MUELLE");
     ClassTarjeta suerte2 = new ClassTarjeta("Por cumplimiento en pago del préstamo de construcción cobre $150");
@@ -56,12 +51,11 @@ public class formJuego extends javax.swing.JFrame {
 
     Pila Comunal = new Pila();
     Pila auxComunal = new Pila();
-    Pila aux2Comunal = new Pila();
     Pila Suerte = new Pila();
     Pila auxSuerte = new Pila();
-    
+
     ClassTarjeta prueba = new ClassTarjeta();
-        
+
     public formJuego() {
         initComponents();
         this.setVisible(true);
@@ -75,10 +69,8 @@ public class formJuego extends javax.swing.JFrame {
         turno4.setVisible(false);
         asignar();
         asignarCarta();
-        
-        
-    }
 
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -1493,18 +1485,16 @@ public class formJuego extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_XMouseClicked
 
- 
+
     private void tirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarDadosActionPerformed
-        
-        if(this.doble == null) {
+
+        if (this.doble == null) {
             memo = (ClassJugador) jugadores.desencolar();
             jugadores.encolar(memo);
-        }
-       
-        else {
+        } else {
             memo = this.doble;
         }
-        
+
         this.seleccion--;
         if (seleccion >= 0) {
             memo.tirarDado();
@@ -1512,13 +1502,13 @@ public class formJuego extends javax.swing.JFrame {
                 jugadores = Util.Util.ordenarCola(jugadores);
             }
         } else {
-            
-                memo.avanzar(casillas);
-                prueba.honorariosMedicos(memo);
-                ValidarCasilla();      
-                
+
+            memo.avanzar(casillas, memo.tirarDado());
+            prueba.honorariosMedicos(memo);
+            ValidarCasilla();
+
         }
-        
+
     }//GEN-LAST:event_tirarDadosActionPerformed
 
     public void ValidarCasilla() {
@@ -1530,36 +1520,35 @@ public class formJuego extends javax.swing.JFrame {
         if (memo.getPosicion() == 3 || memo.getPosicion() == 18 || memo.getPosicion() == 34) {
             btnArcaComunal.setEnabled(true);
         }
-        
-      /*  if(memo.getPosicion()==1){
+
+        /*  if(memo.getPosicion()==1){
             String dinero = jTextFieldDinero1.getText();
             int suma = Integer.parseInt(dinero) + 200;    
             jTextFieldDinero1.setText(String.valueOf(suma)); 
         }
-        */
-        if(memo.getPosicion()==5){
+         */
+        if (memo.getPosicion() == 5) {
             String dinero = jTextFieldDinero1.getText();
-            int resta = Integer.parseInt(dinero) - 200;    
-            jTextFieldDinero1.setText(String.valueOf(resta)); 
+            int resta = Integer.parseInt(dinero) - 200;
+            jTextFieldDinero1.setText(String.valueOf(resta));
         }
-        
-        if(memo.getPosicion()==39){
+
+        if (memo.getPosicion() == 39) {
             String dinero = jTextFieldDinero1.getText();
-            int resta = Integer.parseInt(dinero) - 100;    
-            jTextFieldDinero1.setText(String.valueOf(resta)); 
+            int resta = Integer.parseInt(dinero) - 100;
+            jTextFieldDinero1.setText(String.valueOf(resta));
         }
-    } 
-    
-   
-   public static void actualizarDinero(){
-    
-       jTextFieldDinero1.setText(String.valueOf(jugador1.getPuntos()));
-       jTextFieldDinero2.setText(String.valueOf(jugador2.getPuntos()));
-       jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
-       jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
-       
-}  
-    
+    }
+
+    public static void actualizarDinero() {
+
+        jTextFieldDinero1.setText(String.valueOf(jugador1.getPuntos()));
+        jTextFieldDinero2.setText(String.valueOf(jugador2.getPuntos()));
+        jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
+        jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
+
+    }
+
 
     private void jLabelJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelJugador1MouseClicked
 
@@ -1572,64 +1561,58 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_revovlerDadosActionPerformed
 
     private void btnSuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuerteActionPerformed
-       btnSuerte.setEnabled(false);
-        
+        btnSuerte.setEnabled(false);
+
         ClassTarjeta memo = (ClassTarjeta) Suerte.retirarEl();
         JOptionPane.showMessageDialog(null, memo.getNombre());
-        
+
         auxSuerte.apilar(memo);
-        if(Suerte.esVacia()){
-            Suerte = auxSuerte;
+        if (Suerte.esVacia()) {
+            for (Object i = auxSuerte.retirarEl(); i != null; i = auxSuerte.retirarEl()) {
+                Suerte.apilar(i);
+            }
             auxSuerte = new Pila();
         }
-        
+
     }//GEN-LAST:event_btnSuerteActionPerformed
 
     
-    private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
-      
 
-       // btnArcaComunal.setEnabled(false);
-        
+    private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
+
+        // btnArcaComunal.setEnabled(false);
         ClassTarjeta memo = (ClassTarjeta) Comunal.retirarEl();
         JOptionPane.showMessageDialog(null, memo.getNombre());
-        
+
         auxComunal.apilar(memo);
-        aux2Comunal.apilar(auxComunal.retirarEl());
-        
-        if(Comunal.esVacia()){
-            Comunal = aux2Comunal;
-            aux2Comunal = new Pila();
+        if (Comunal.esVacia()) {
+            for (Object i = auxComunal.retirarEl(); i != null; i = auxComunal.retirarEl()) {
+                Comunal.apilar(i);
+            }
+            auxComunal = new Pila();
         }
-        
-        switch(memo.getNombre()){
-            //case comunal1.getNombre():
-                
-                //break;
-        }
-        
+
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         prueba.avanzarSalida(memo);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    public void asignarCarta(){
+    public void asignarCarta() {
         Comunal.apilar(comunal1);
         Comunal.apilar(comunal2);
         Comunal.apilar(comunal3);
         Comunal.apilar(comunal4);
         Comunal.apilar(comunal5);
-       
-        
+
         Suerte.apilar(suerte1);
         Suerte.apilar(suerte2);
         Suerte.apilar(suerte3);
         Suerte.apilar(suerte4);
         Suerte.apilar(suerte5);
- 
+
     }
-    
+
     public void asignar() {
         casillas.add(jPanelGo);
         casillas.add(jPanelAvMediterraneo);
@@ -1698,8 +1681,37 @@ public class formJuego extends javax.swing.JFrame {
         jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
         jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
     }
-    
+public static Lista getCasillas() {
+        return casillas;
+    }
 
+    public static void setCasillas(Lista casillas) {
+        formJuego.casillas = casillas;
+    }
+
+    public static int getSeleccion() {
+        return seleccion;
+    }
+
+    public static void setSeleccion(int seleccion) {
+        formJuego.seleccion = seleccion;
+    }
+
+    public static ClassJugador getDoble() {
+        return doble;
+    }
+
+    public static void setDoble(ClassJugador doble) {
+        formJuego.doble = doble;
+    }
+
+    public Pila getComunal() {
+        return Comunal;
+    }
+
+    public void setComunal(Pila Comunal) {
+        this.Comunal = Comunal;
+    }
 
     /**
      * @param args the command line arguments
