@@ -14,6 +14,7 @@ public class ClassJugador {
     private String nombre;
     private Integer tiro = 0;
     private Integer puntos=1500;
+    private Integer cartaCarcel=0;
 
 
     public ClassJugador() {
@@ -26,7 +27,16 @@ public class ClassJugador {
         
     }
 
+    public Integer getCartaCarcel() {
+        return cartaCarcel;
+    }
+
+    public void setCartaCarcel(Integer cartaCarcel) {
+        this.cartaCarcel = cartaCarcel;
+    }
+
   
+    
     public Integer getPosicion() {
         return posicion;
     }
@@ -43,6 +53,16 @@ public class ClassJugador {
             panel.setBackground(new java.awt.Color(0,204,204));
         }
         this.setPosicion(posicion);
+        JPanel panel = (JPanel) casillas.get(this.getPosicion());
+        panel.setBackground(this.getColor());
+    }
+    
+    public void avanzarPosicion(Lista casillas, int posicion){
+        if(this.getPosicion()>-1){
+            JPanel panel = (JPanel) casillas.get(this.getPosicion());
+            panel.setBackground(new java.awt.Color(0,204,204));
+        }
+        this.posicion= posicion;
         JPanel panel = (JPanel) casillas.get(this.getPosicion());
         panel.setBackground(this.getColor());
     }

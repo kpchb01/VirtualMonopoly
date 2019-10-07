@@ -14,7 +14,7 @@ import Vistas.formJuego;
  */
 public class ClassTarjeta {
     private String nombre;
-    ClassJugador memo;
+    static ClassJugador memo;
        
    
     ClassJugador punto = new ClassJugador();
@@ -63,22 +63,14 @@ public class ClassTarjeta {
     }
     //METODOS SUERTE
 
-    public static void avanzarMuelle(){
-        
-    }
     
     public static void cumplimientoPrestamo(ClassJugador jugador){
        jugador.setPuntos(jugador.getPuntos()+150);
         formJuego.actualizarDinero();
     }
     
-    public static void salirCarcel(){
-        formJuego.jTextCarcel.setText("1");
-    }
+   
     
-     public static void avanzarSalida(ClassJugador jugador){
-        
-    }
     
     public static void multaVelocidad(ClassJugador jugador){
        jugador.setPuntos(jugador.getPuntos()-15);

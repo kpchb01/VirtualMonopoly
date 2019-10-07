@@ -31,7 +31,7 @@ public class formJuego extends javax.swing.JFrame {
     static ClassJugador jugador3 = new ClassJugador(1, new java.awt.Color(102, 204, 0), "jugador3");
     static ClassJugador jugador4 = new ClassJugador(1, new java.awt.Color(102, 0, 204), "jugador4");
     public static ClassJugador doble = null;
-    ClassJugador memo;
+    static ClassJugador memo;
 
     //COMUNAL
     ClassTarjeta comunal1 = new ClassTarjeta("Honorarios médicos, pague $50");
@@ -48,6 +48,9 @@ public class formJuego extends javax.swing.JFrame {
     ClassTarjeta suerte5 = new ClassTarjeta("Pague multa por exceso de velocidad $15");
     ClassTarjeta pruebaCarta = new ClassTarjeta();
     Cola jugadores = new Cola();
+    
+    ClassTarjeta memoCarcel = null;
+    ClassTarjeta memoTarjeta;
 
     Pila Comunal = new Pila();
     Pila auxComunal = new Pila();
@@ -67,8 +70,11 @@ public class formJuego extends javax.swing.JFrame {
         jLabelJugador4.setVisible(false);
         jTextFieldDinero4.setVisible(false);
         turno4.setVisible(false);
+
+       
         asignar();
         asignarCarta();
+       
 
     }
 
@@ -103,9 +109,9 @@ public class formJuego extends javax.swing.JFrame {
         jPanelDescanso = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jPanelBase = new javax.swing.JPanel();
-        tirarDados = new javax.swing.JButton();
+        btntirarDados = new javax.swing.JButton();
         resultadoDado2 = new javax.swing.JLabel();
-        revovlerDados = new javax.swing.JButton();
+        btnrevovlerDados = new javax.swing.JButton();
         resultadoDado1 = new javax.swing.JLabel();
         btnSuerte = new javax.swing.JButton();
         btnArcaComunal = new javax.swing.JButton();
@@ -203,10 +209,9 @@ public class formJuego extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextRentaConHotel = new javax.swing.JTextField();
         panelJugador = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanelJugadorColor = new javax.swing.JPanel();
+        jLabelJugadorNombre = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
@@ -219,7 +224,7 @@ public class formJuego extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jButton7 = new javax.swing.JButton();
+        btnVenderCartaCarcel = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -524,24 +529,24 @@ public class formJuego extends javax.swing.JFrame {
         jPanelBase.setPreferredSize(new java.awt.Dimension(555, 540));
         jPanelBase.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tirarDados.setText("TIRAR DADOS");
-        tirarDados.addActionListener(new java.awt.event.ActionListener() {
+        btntirarDados.setText("TIRAR DADOS");
+        btntirarDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tirarDadosActionPerformed(evt);
+                btntirarDadosActionPerformed(evt);
             }
         });
-        jPanelBase.add(tirarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+        jPanelBase.add(btntirarDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
 
         resultadoDado2.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 36)); // NOI18N
         jPanelBase.add(resultadoDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 80, 70));
 
-        revovlerDados.setText("Revolver");
-        revovlerDados.addActionListener(new java.awt.event.ActionListener() {
+        btnrevovlerDados.setText("Revolver");
+        btnrevovlerDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                revovlerDadosActionPerformed(evt);
+                btnrevovlerDadosActionPerformed(evt);
             }
         });
-        jPanelBase.add(revovlerDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 80, 20));
+        jPanelBase.add(btnrevovlerDados, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 80, 20));
 
         resultadoDado1.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 36)); // NOI18N
         jPanelBase.add(resultadoDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 80, 70));
@@ -549,6 +554,7 @@ public class formJuego extends javax.swing.JFrame {
         btnSuerte.setBackground(new java.awt.Color(255, 153, 0));
         btnSuerte.setFont(new java.awt.Font("Shonar Bangla", 0, 24)); // NOI18N
         btnSuerte.setText("SUERTE");
+        btnSuerte.setEnabled(false);
         btnSuerte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuerteActionPerformed(evt);
@@ -559,6 +565,7 @@ public class formJuego extends javax.swing.JFrame {
         btnArcaComunal.setBackground(new java.awt.Color(255, 255, 105));
         btnArcaComunal.setFont(new java.awt.Font("Shonar Bangla", 0, 24)); // NOI18N
         btnArcaComunal.setText("ARCA COMUNAL");
+        btnArcaComunal.setEnabled(false);
         btnArcaComunal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnArcaComunalActionPerformed(evt);
@@ -798,14 +805,16 @@ public class formJuego extends javax.swing.JFrame {
         jPanelJardinesMarvin.setLayout(jPanelJardinesMarvinLayout);
         jPanelJardinesMarvinLayout.setHorizontalGroup(
             jPanelJardinesMarvinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelJardinesMarvinLayout.createSequentialGroup()
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 54, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelJardinesMarvinLayout.setVerticalGroup(
             jPanelJardinesMarvinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
 
-        panelJuego.add(jPanelJardinesMarvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 10, -1, 80));
+        panelJuego.add(jPanelJardinesMarvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 10, 60, 80));
 
         jPanelIrACarcel.setBackground(new java.awt.Color(0, 204, 204));
         jPanelIrACarcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1044,7 +1053,7 @@ public class formJuego extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        panelJuego.add(jPanelAvConnecticut, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, -1, -1));
+        panelJuego.add(jPanelAvConnecticut, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, -1, 80));
 
         jPanelAvOriental.setBackground(new java.awt.Color(0, 204, 204));
         jPanelAvOriental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1168,7 +1177,6 @@ public class formJuego extends javax.swing.JFrame {
         jTextFieldDinero4.setEditable(false);
         jTextFieldDinero4.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDinero4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextFieldDinero4.setText("1500");
         panelJuego.add(jTextFieldDinero4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 80, 30));
 
         jTextFieldDinero2.setEditable(false);
@@ -1204,11 +1212,6 @@ public class formJuego extends javax.swing.JFrame {
         jLabelJugador1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 5));
         jLabelJugador1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        jLabelJugador1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelJugador1MouseClicked(evt);
-            }
-        });
         panelJuego.add(jLabelJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 150, 70));
 
         jLabelJugador2.setBackground(new java.awt.Color(255, 204, 0));
@@ -1385,11 +1388,8 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 270, 440));
 
+        panelJugador.setBackground(new java.awt.Color(242, 249, 249));
         panelJugador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton5.setText("PARTICIPAR EN SUBASTA");
-        jButton5.setEnabled(false);
-        panelJugador.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 250, -1));
 
         btnSalir.setText("SALIR JUEGO");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -1399,28 +1399,29 @@ public class formJuego extends javax.swing.JFrame {
         });
         panelJugador.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 250, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelJugadorColor.setBackground(new java.awt.Color(0, 204, 204));
 
-        jLabel6.setText("jLabel6");
+        jLabelJugadorNombre.setFont(new java.awt.Font("Cooper Black", 1, 24)); // NOI18N
+        jLabelJugadorNombre.setText("JUGADOR");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelJugadorColorLayout = new javax.swing.GroupLayout(jPanelJugadorColor);
+        jPanelJugadorColor.setLayout(jPanelJugadorColorLayout);
+        jPanelJugadorColorLayout.setHorizontalGroup(
+            jPanelJugadorColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelJugadorColorLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabelJugadorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        jPanelJugadorColorLayout.setVerticalGroup(
+            jPanelJugadorColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelJugadorColorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(jLabelJugadorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        panelJugador.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
+        panelJugador.add(jPanelJugadorColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
 
         jLabel56.setText("Propiedades");
         panelJugador.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 122, -1, -1));
@@ -1466,9 +1467,14 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJugador.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 250, 70));
 
-        jButton7.setText("VENDER CARTA \"SALIR CARCEL\"");
-        jButton7.setEnabled(false);
-        panelJugador.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 250, -1));
+        btnVenderCartaCarcel.setText("VENDER CARTA \"SALIR CARCEL\"");
+        btnVenderCartaCarcel.setEnabled(false);
+        btnVenderCartaCarcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVenderCartaCarcelActionPerformed(evt);
+            }
+        });
+        panelJugador.add(btnVenderCartaCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 250, -1));
 
         jButton8.setText("ENTREGAR ADQUISIONES");
         jButton8.setEnabled(false);
@@ -1486,7 +1492,7 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_XMouseClicked
 
 
-    private void tirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarDadosActionPerformed
+    private void btntirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntirarDadosActionPerformed
 
         if (this.doble == null) {
             memo = (ClassJugador) jugadores.desencolar();
@@ -1504,12 +1510,13 @@ public class formJuego extends javax.swing.JFrame {
         } else {
 
             memo.avanzar(casillas, memo.tirarDado());
-            prueba.honorariosMedicos(memo);
             ValidarCasilla();
+            actulizarCamposJugador();
+             
 
         }
 
-    }//GEN-LAST:event_tirarDadosActionPerformed
+    }//GEN-LAST:event_btntirarDadosActionPerformed
 
     public void ValidarCasilla() {
 
@@ -1521,12 +1528,6 @@ public class formJuego extends javax.swing.JFrame {
             btnArcaComunal.setEnabled(true);
         }
 
-        /*  if(memo.getPosicion()==1){
-            String dinero = jTextFieldDinero1.getText();
-            int suma = Integer.parseInt(dinero) + 200;    
-            jTextFieldDinero1.setText(String.valueOf(suma)); 
-        }
-         */
         if (memo.getPosicion() == 5) {
             String dinero = jTextFieldDinero1.getText();
             int resta = Integer.parseInt(dinero) - 200;
@@ -1537,6 +1538,10 @@ public class formJuego extends javax.swing.JFrame {
             String dinero = jTextFieldDinero1.getText();
             int resta = Integer.parseInt(dinero) - 100;
             jTextFieldDinero1.setText(String.valueOf(resta));
+        }
+        
+        if (memo.getPosicion()==31){
+            memo.avanzarPosicion(casillas, 11);
         }
     }
 
@@ -1549,54 +1554,120 @@ public class formJuego extends javax.swing.JFrame {
 
     }
 
+    public void actulizarCamposJugador(){
+        jTextCarcel.setText(String.valueOf(memo.getCartaCarcel()));
+        jPanelJugadorColor.setBackground(memo.getColor());
+    }
+    
+    public void activarBotonVenderCarta(){
+        if(memo.getCartaCarcel()>0){
+            btnVenderCartaCarcel.setEnabled(true);
+        }
+    }
+    
+    
 
-    private void jLabelJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelJugador1MouseClicked
-
-    }//GEN-LAST:event_jLabelJugador1MouseClicked
-
-    private void revovlerDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revovlerDadosActionPerformed
+    private void btnrevovlerDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrevovlerDadosActionPerformed
         ClassDados insertGif = new ClassDados();
         resultadoDado1.setIcon(insertGif.gifDado1());
         resultadoDado2.setIcon(insertGif.gifDado2());
-    }//GEN-LAST:event_revovlerDadosActionPerformed
+    }//GEN-LAST:event_btnrevovlerDadosActionPerformed
 
     private void btnSuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuerteActionPerformed
-        btnSuerte.setEnabled(false);
+      // btnSuerte.setEnabled(false);
+        
+        ClassTarjeta memo1 = (ClassTarjeta) Suerte.retirarEl();
+        JOptionPane.showMessageDialog(null, memo1.getNombre());
 
-        ClassTarjeta memo = (ClassTarjeta) Suerte.retirarEl();
-        JOptionPane.showMessageDialog(null, memo.getNombre());
-
-        auxSuerte.apilar(memo);
+        if(!memo1.getNombre().equals("SALGA DE LA CÁRCEL GRATIS")){
+            auxSuerte.apilar(memo1);
+        }
+        
+        else{
+            memoCarcel = memoTarjeta;
+        }
+        
         if (Suerte.esVacia()) {
             for (Object i = auxSuerte.retirarEl(); i != null; i = auxSuerte.retirarEl()) {
                 Suerte.apilar(i);
             }
             auxSuerte = new Pila();
         }
-
+        
+         switch(memo1.getNombre()){
+            case "Avance a EL MUELLE":
+                memo.avanzarPosicion(casillas, 40);
+            break;
+            
+            case "Por cumplimiento en pago del préstamo de construcción cobre $150":
+                ClassTarjeta.cumplimientoPrestamo(memo);
+            break;
+            
+            case "SALGA DE LA CÁRCEL GRATIS":
+                memo.setCartaCarcel(1);
+                actulizarCamposJugador();
+            break;
+            
+            case "Avance a la SALIDA":
+                
+                memo.avanzarPosicion(casillas, 1);
+            break;
+            
+            case "Pague multa por exceso de velocidad $15":
+                ClassTarjeta.multaVelocidad(memo);
+            break;
+        }
+         
+           activarBotonVenderCarta();
+      
+         
     }//GEN-LAST:event_btnSuerteActionPerformed
 
-    
 
     private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
 
         // btnArcaComunal.setEnabled(false);
-        ClassTarjeta memo = (ClassTarjeta) Comunal.retirarEl();
-        JOptionPane.showMessageDialog(null, memo.getNombre());
+        ClassTarjeta memo1 = (ClassTarjeta) Comunal.retirarEl();
+        JOptionPane.showMessageDialog(null, memo1.getNombre());
 
-        auxComunal.apilar(memo);
+        auxComunal.apilar(memo1);
         if (Comunal.esVacia()) {
             for (Object i = auxComunal.retirarEl(); i != null; i = auxComunal.retirarEl()) {
                 Comunal.apilar(i);
             }
             auxComunal = new Pila();
         }
-
+        
+        switch(memo1.getNombre()){
+            case "Honorarios médicos, pague $50":
+                ClassTarjeta.honorariosMedicos(memo);
+            break;
+            
+            case "Vencimiento de fondo vacacional, reciba $100":
+                ClassTarjeta.vencimientoVacacional(memo);
+            break;
+            
+            case "Pague colegiaturas por $70":
+                ClassTarjeta.colegiatura(memo);
+            break;
+            
+            case "Pague cuenta de hospital por $100":
+                ClassTarjeta.cuentaHospital(memo);
+            break;
+            
+            case "Ganó el segundo lugar en un concurso de belleza, cobre $10":
+                ClassTarjeta.concurso(memo);
+            break;
+        }
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        prueba.avanzarSalida(memo);
+       
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnVenderCartaCarcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderCartaCarcelActionPerformed
+        JOptionPane.showInputDialog(null,"¿Valor en que desea comprar la carta 'SALIR DE LA CARCEL'? (Si no la desea comprar digite 0) ");
+    }//GEN-LAST:event_btnVenderCartaCarcelActionPerformed
 
     public void asignarCarta() {
         Comunal.apilar(comunal1);
@@ -1681,7 +1752,7 @@ public class formJuego extends javax.swing.JFrame {
         jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
         jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
     }
-public static Lista getCasillas() {
+    public static Lista getCasillas() {
         return casillas;
     }
 
@@ -1753,10 +1824,11 @@ public static Lista getCasillas() {
     private javax.swing.JButton btnArcaComunal;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSuerte;
+    private javax.swing.JButton btnVenderCartaCarcel;
+    private javax.swing.JButton btnrevovlerDados;
+    private javax.swing.JButton btntirarDados;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1811,7 +1883,6 @@ public static Lista getCasillas() {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
@@ -1819,8 +1890,8 @@ public static Lista getCasillas() {
     private javax.swing.JLabel jLabelJugador2;
     public static javax.swing.JLabel jLabelJugador3;
     protected static javax.swing.JLabel jLabelJugador4;
+    private javax.swing.JLabel jLabelJugadorNombre;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelAgua;
     private javax.swing.JPanel jPanelArcaComunal1;
     private javax.swing.JPanel jPanelArcaComunal2;
@@ -1855,6 +1926,7 @@ public static Lista getCasillas() {
     private javax.swing.JPanel jPanelImpuestoLujo;
     private javax.swing.JPanel jPanelIrACarcel;
     private javax.swing.JPanel jPanelJardinesMarvin;
+    private javax.swing.JPanel jPanelJugadorColor;
     private javax.swing.JPanel jPanelMuelle;
     private javax.swing.JPanel jPanelPlazaJames;
     private javax.swing.JPanel jPanelPlazaPark;
@@ -1888,8 +1960,6 @@ public static Lista getCasillas() {
     private javax.swing.JPanel panelTarjeta;
     public static javax.swing.JLabel resultadoDado1;
     public static javax.swing.JLabel resultadoDado2;
-    private javax.swing.JButton revovlerDados;
-    private javax.swing.JButton tirarDados;
     public static javax.swing.JTextField turno1;
     public static javax.swing.JTextField turno2;
     public static javax.swing.JTextField turno3;
