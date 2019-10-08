@@ -15,6 +15,7 @@ public class ClassJugador {
     private Integer tiro = 0;
     private Integer puntos=1500;
     private Integer cartaCarcel=0;
+    private Integer oferta=0;
 
 
     public ClassJugador() {
@@ -35,6 +36,15 @@ public class ClassJugador {
         this.cartaCarcel = cartaCarcel;
     }
 
+    public Integer getOferta() {
+        return oferta;
+    }
+
+    public void setOferta(Integer oferta) {
+        this.oferta = oferta;
+    }
+
+    
   
     
     public Integer getPosicion() {

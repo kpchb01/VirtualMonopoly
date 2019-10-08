@@ -133,7 +133,7 @@ public class formJuego extends javax.swing.JFrame {
         jPanelAgua = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jPanelJardinesMarvin = new javax.swing.JPanel();
-        jLabel38 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
         jPanelIrACarcel = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
         jPanelAvPacifico = new javax.swing.JPanel();
@@ -149,7 +149,7 @@ public class formJuego extends javax.swing.JFrame {
         jPanelSuerte3 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jPanelPlazaPark = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
         jPanelImpuestoLujo = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jPanelMuelle = new javax.swing.JPanel();
@@ -187,8 +187,6 @@ public class formJuego extends javax.swing.JFrame {
         panelTarjeta = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel55 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -197,6 +195,8 @@ public class formJuego extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        panelCastillaColor = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextRenta = new javax.swing.JTextField();
@@ -208,6 +208,7 @@ public class formJuego extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextRentaConHotel = new javax.swing.JTextField();
+        btnSubastarPropiedad = new javax.swing.JButton();
         panelJugador = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         jPanelJugadorColor = new javax.swing.JPanel();
@@ -799,19 +800,17 @@ public class formJuego extends javax.swing.JFrame {
         jPanelJardinesMarvin.setBackground(new java.awt.Color(0, 204, 204));
         jPanelJardinesMarvin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/dahlia.png"))); // NOI18N
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/parque.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelJardinesMarvinLayout = new javax.swing.GroupLayout(jPanelJardinesMarvin);
         jPanelJardinesMarvin.setLayout(jPanelJardinesMarvinLayout);
         jPanelJardinesMarvinLayout.setHorizontalGroup(
             jPanelJardinesMarvinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelJardinesMarvinLayout.createSequentialGroup()
-                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 54, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelJardinesMarvinLayout.setVerticalGroup(
             jPanelJardinesMarvinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelJuego.add(jPanelJardinesMarvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(924, 10, 60, 80));
@@ -836,7 +835,7 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(jPanelIrACarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 10, 80, 80));
 
-        jPanelAvPacifico.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelAvPacifico.setBackground(new java.awt.Color(143, 239, 220));
         jPanelAvPacifico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -861,7 +860,7 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(jPanelAvPacifico, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 90, 80, 60));
 
-        jPanelAvCarolinaNorte.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelAvCarolinaNorte.setBackground(new java.awt.Color(143, 239, 220));
         jPanelAvCarolinaNorte.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -911,9 +910,10 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(jPanelArcaComunal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 210, 80, 60));
 
-        jPanelAvPensilvania.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelAvPensilvania.setBackground(new java.awt.Color(143, 239, 220));
         jPanelAvPensilvania.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel42.setBackground(new java.awt.Color(143, 239, 220));
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 0, 0));
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
@@ -943,7 +943,7 @@ public class formJuego extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 0, 0));
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-vagón-de-ferrocarril-40.png"))); // NOI18N
-        jPanelFerroViaRapida.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 60));
+        jPanelFerroViaRapida.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 50, 60));
 
         panelJuego.add(jPanelFerroViaRapida, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 330, 80, 60));
 
@@ -965,23 +965,26 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(jPanelSuerte3, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 390, 80, 60));
 
-        jPanelPlazaPark.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelPlazaPark.setBackground(new java.awt.Color(51, 102, 255));
         jPanelPlazaPark.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/parque.png"))); // NOI18N
+        jLabel61.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-plaza-de-la-ciudad-40.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelPlazaParkLayout = new javax.swing.GroupLayout(jPanelPlazaPark);
         jPanelPlazaPark.setLayout(jPanelPlazaParkLayout);
         jPanelPlazaParkLayout.setHorizontalGroup(
             jPanelPlazaParkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPlazaParkLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPlazaParkLayout.createSequentialGroup()
+                .addGap(0, 18, Short.MAX_VALUE)
+                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelPlazaParkLayout.setVerticalGroup(
             jPanelPlazaParkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelPlazaParkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(7, 7, 7))
         );
 
         panelJuego.add(jPanelPlazaPark, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 450, 80, 60));
@@ -1007,9 +1010,10 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(jPanelImpuestoLujo, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 510, 80, 60));
 
-        jPanelMuelle.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelMuelle.setBackground(new java.awt.Color(51, 102, 255));
         jPanelMuelle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel47.setBackground(new java.awt.Color(51, 102, 255));
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/pier.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelMuelleLayout = new javax.swing.GroupLayout(jPanelMuelle);
@@ -1066,14 +1070,14 @@ public class formJuego extends javax.swing.JFrame {
 
         panelJuego.add(jPanelAvOriental, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 630, 62, 80));
 
-        jPanelAvMediterraneo.setBackground(new java.awt.Color(0, 204, 204));
+        jPanelAvMediterraneo.setBackground(new java.awt.Color(224, 80, 176));
         jPanelAvMediterraneo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelAvMediterraneo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 0, 0));
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casillas/icons8-autopista-48.png"))); // NOI18N
-        jPanelAvMediterraneo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 80));
+        jPanelAvMediterraneo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 0, -1, 80));
 
         panelJuego.add(jPanelAvMediterraneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(922, 630, 62, 80));
 
@@ -1236,157 +1240,85 @@ public class formJuego extends javax.swing.JFrame {
         jLabelJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 204), 5));
         panelJuego.add(jLabelJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 640, 150, 70));
 
+        panelTarjeta.setBackground(new java.awt.Color(242, 249, 249));
+        panelTarjeta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jButton1.setText("jButton1");
+        panelTarjeta.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 419, -1, -1));
 
         jButton2.setText("jButton2");
+        panelTarjeta.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 419, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jLabel1.setText("Renta");
+        panelTarjeta.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, -1, -1));
+
+        jLabel2.setText("Renta grupo de Color");
+        panelTarjeta.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, -1, -1));
+
+        jLabel3.setText("Renta con 1 casa");
+        panelTarjeta.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 187, -1, -1));
+
+        jLabel4.setText("Renta con 2 casas");
+        panelTarjeta.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 218, -1, -1));
+
+        jLabel5.setText("Renta con 3 casas");
+        panelTarjeta.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 249, -1, -1));
+
+        jLabel9.setText("Renta con 4 casas");
+        panelTarjeta.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
+        jLabel10.setText("Renta con 1 hotel ");
+        panelTarjeta.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 311, -1, -1));
+        panelTarjeta.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 334, 250, 10));
+
+        panelCastillaColor.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel55.setText("jLabel33");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelCastillaColorLayout = new javax.swing.GroupLayout(panelCastillaColor);
+        panelCastillaColor.setLayout(panelCastillaColorLayout);
+        panelCastillaColorLayout.setHorizontalGroup(
+            panelCastillaColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCastillaColorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        panelCastillaColorLayout.setVerticalGroup(
+            panelCastillaColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCastillaColorLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        jLabel1.setText("Renta");
-
-        jLabel2.setText("Renta grupo de Color");
-
-        jLabel3.setText("Renta con 1 casa");
-
-        jLabel4.setText("Renta con 2 casas");
-
-        jLabel5.setText("Renta con 3 casas");
-
-        jLabel9.setText("Renta con 4 casas");
-
-        jLabel10.setText("Renta con 1 hotel ");
+        panelTarjeta.add(panelCastillaColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
 
         jLabel11.setText("Costo por casa");
+        panelTarjeta.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 353, -1, -1));
 
         jLabel13.setText("Costo por Hote (con 4 casas)");
         jLabel13.setToolTipText("");
+        panelTarjeta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 384, -1, -1));
+        panelTarjeta.add(jTextRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 122, 91, -1));
+        panelTarjeta.add(jTextRentaDosCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 215, 91, -1));
+        panelTarjeta.add(jTextRentaUnaCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 184, 91, -1));
+        panelTarjeta.add(jTextRentaGC, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 153, 91, -1));
+        panelTarjeta.add(jTextRentaCuatroCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 277, 91, -1));
+        panelTarjeta.add(jTextRentaTresCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 246, 91, -1));
+        panelTarjeta.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 350, 91, -1));
+        panelTarjeta.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 381, 91, -1));
+        panelTarjeta.add(jTextRentaConHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 308, 91, -1));
 
-        javax.swing.GroupLayout panelTarjetaLayout = new javax.swing.GroupLayout(panelTarjeta);
-        panelTarjeta.setLayout(panelTarjetaLayout);
-        panelTarjetaLayout.setHorizontalGroup(
-            panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelTarjetaLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton1)
-                        .addGap(42, 42, 42)
-                        .addComponent(jButton2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelTarjetaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextRentaGC, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextRentaConHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextRentaCuatroCasas, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextRentaTresCasas, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextRentaDosCasas, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelTarjetaLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextRentaUnaCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelTarjetaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextRenta, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        panelTarjetaLayout.setVerticalGroup(
-            panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTarjetaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextRenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextRentaGC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextRentaUnaCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextRentaDosCasas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextRentaTresCasas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextRentaCuatroCasas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextRentaConHotel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(26, 26, 26))
-        );
+        btnSubastarPropiedad.setText("SUBASTAR PROPIEDAD");
+        btnSubastarPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubastarPropiedadActionPerformed(evt);
+            }
+        });
+        panelTarjeta.add(btnSubastarPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 453, 201, -1));
 
-        panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 270, 440));
+        panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 270, 570));
 
         panelJugador.setBackground(new java.awt.Color(242, 249, 249));
         panelJugador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1494,6 +1426,7 @@ public class formJuego extends javax.swing.JFrame {
 
     private void btntirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntirarDadosActionPerformed
 
+        btnVenderCartaCarcel.setEnabled(false);
         if (this.doble == null) {
             memo = (ClassJugador) jugadores.desencolar();
             jugadores.encolar(memo);
@@ -1512,7 +1445,9 @@ public class formJuego extends javax.swing.JFrame {
             memo.avanzar(casillas, memo.tirarDado());
             ValidarCasilla();
             actulizarCamposJugador();
+            activarBotonVenderCarta();
              
+            
 
         }
 
@@ -1529,15 +1464,14 @@ public class formJuego extends javax.swing.JFrame {
         }
 
         if (memo.getPosicion() == 5) {
-            String dinero = jTextFieldDinero1.getText();
-            int resta = Integer.parseInt(dinero) - 200;
-            jTextFieldDinero1.setText(String.valueOf(resta));
+            memo.setPuntos(memo.getPuntos()-200);
+            actualizarDinero(); 
         }
 
         if (memo.getPosicion() == 39) {
-            String dinero = jTextFieldDinero1.getText();
-            int resta = Integer.parseInt(dinero) - 100;
-            jTextFieldDinero1.setText(String.valueOf(resta));
+
+            memo.setPuntos(memo.getPuntos()-100);
+            actualizarDinero();  
         }
         
         if (memo.getPosicion()==31){
@@ -1552,11 +1486,16 @@ public class formJuego extends javax.swing.JFrame {
         jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
         jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
 
+        
     }
 
     public void actulizarCamposJugador(){
         jTextCarcel.setText(String.valueOf(memo.getCartaCarcel()));
         jPanelJugadorColor.setBackground(memo.getColor());
+    }
+    
+    public void actualizarCamposTarjetaCasilla(){
+        
     }
     
     public void activarBotonVenderCarta(){
@@ -1617,16 +1556,15 @@ public class formJuego extends javax.swing.JFrame {
                 ClassTarjeta.multaVelocidad(memo);
             break;
         }
-         
-           activarBotonVenderCarta();
-      
+         activarBotonVenderCarta();
+                 
          
     }//GEN-LAST:event_btnSuerteActionPerformed
 
 
     private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
 
-        // btnArcaComunal.setEnabled(false);
+        btnArcaComunal.setEnabled(false);
         ClassTarjeta memo1 = (ClassTarjeta) Comunal.retirarEl();
         JOptionPane.showMessageDialog(null, memo1.getNombre());
 
@@ -1666,8 +1604,71 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnVenderCartaCarcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderCartaCarcelActionPerformed
-        JOptionPane.showInputDialog(null,"¿Valor en que desea comprar la carta 'SALIR DE LA CARCEL'? (Si no la desea comprar digite 0) ");
+        ClassJugador ganador=null;
+        ClassJugador dueñoCarta=null;
+        for(int j=0; j<Integer.parseInt(formInicio.message); j++){
+               
+               ClassJugador jugadorCarcel = (ClassJugador) jugadores.desencolar();
+                  if(jugadorCarcel.getCartaCarcel()==0){
+                        jugadorCarcel.setOferta(Integer.parseInt(JOptionPane.showInputDialog
+                        (null,"¿Valor en que desea comprar la carta 'SALIR DE LA CARCEL'? (Si no la desea comprar digite 0)"
+                                +jugadorCarcel.getNombre())));
+                        
+                        
+                        if(ganador==null){
+                            ganador = jugadorCarcel;
+                        }
+                        else{
+                            if(ganador.getOferta()<jugadorCarcel.getOferta()){
+                                ganador = jugadorCarcel;
+                            }
+                         }
+                    }
+                  else{
+                      dueñoCarta = jugadorCarcel;
+                  }
+                    jugadores.encolar(jugadorCarcel);
+            }  
+        
+        dueñoCarta.setCartaCarcel(0);
+        dueñoCarta.setPuntos(ganador.getOferta()+dueñoCarta.getPuntos());
+        
+        ganador.setCartaCarcel(1);
+        ganador.setPuntos(ganador.getPuntos()-ganador.getOferta());
+        actulizarCamposJugador();
+        actualizarDinero();
+        btnVenderCartaCarcel.setEnabled(false);
+                
     }//GEN-LAST:event_btnVenderCartaCarcelActionPerformed
+
+    private void btnSubastarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubastarPropiedadActionPerformed
+       ClassJugador ganador=null;
+     
+        for(int i=0; i<Integer.parseInt(formInicio.message); i++){
+               
+               ClassJugador jugadorSubasta = (ClassJugador) jugadores.desencolar();
+                  
+                        jugadorSubasta.setOferta(Integer.parseInt(JOptionPane.showInputDialog
+                        (null,"¿Valor en que desea comprar la propiedad? (Si no la desea comprar digite 0)"
+                                +jugadorSubasta.getNombre())));
+                                                
+                        if(ganador==null){
+                            ganador = jugadorSubasta;
+                        }
+                        else{
+                            if(ganador.getOferta()<jugadorSubasta.getOferta()){
+                                ganador = jugadorSubasta;
+                            }
+                         }
+                    
+                  
+                    jugadores.encolar(jugadorSubasta);
+            }  
+        
+        ganador.setPuntos(ganador.getPuntos()-ganador.getOferta());
+        actualizarDinero();
+        btnSubastarPropiedad.setEnabled(false);
+    }//GEN-LAST:event_btnSubastarPropiedadActionPerformed
 
     public void asignarCarta() {
         Comunal.apilar(comunal1);
@@ -1823,6 +1824,7 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel X;
     private javax.swing.JButton btnArcaComunal;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSubastarPropiedad;
     private javax.swing.JButton btnSuerte;
     private javax.swing.JButton btnVenderCartaCarcel;
     private javax.swing.JButton btnrevovlerDados;
@@ -1859,7 +1861,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -1884,6 +1885,7 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelJugador1;
@@ -1891,7 +1893,6 @@ public class formJuego extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabelJugador3;
     protected static javax.swing.JLabel jLabelJugador4;
     private javax.swing.JLabel jLabelJugadorNombre;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelAgua;
     private javax.swing.JPanel jPanelArcaComunal1;
     private javax.swing.JPanel jPanelArcaComunal2;
@@ -1955,6 +1956,7 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JTextField jTextRentaTresCasas;
     private javax.swing.JTextField jTextRentaTresCasas2;
     private javax.swing.JTextField jTextRentaUnaCasa;
+    private javax.swing.JPanel panelCastillaColor;
     private javax.swing.JPanel panelJuego;
     private javax.swing.JPanel panelJugador;
     private javax.swing.JPanel panelTarjeta;
