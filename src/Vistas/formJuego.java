@@ -1346,6 +1346,7 @@ public class formJuego extends javax.swing.JFrame {
             actualizarCamposTarjetaCasilla(memo);
             validarCasillaPropiedad(memo);
             operacionCobrarRenta(memo);
+            EntrarSalirCarcel(memo);
             quiebra();
              
 
@@ -1636,8 +1637,9 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        //ClassJugador retirado = (ClassJugador) JOptionPane.showInputDialog("¿QUIEN DESEA RETIRARSE?");
         
+        memo = (ClassJugador)  jugadores.desencolar();
+       
     }//GEN-LAST:event_btnSalirActionPerformed
 
     public void enviarOrden(){
@@ -1700,13 +1702,20 @@ public class formJuego extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_btnVenderCartaCarcelActionPerformed
 
-    private void EntrarSalirCarcel(){
+    private void EntrarSalirCarcel(ClassJugador memo){
           if (memo.getPosicion()==31){
               JOptionPane.showMessageDialog(null,"VAS A LA CARCEL");
-              JPanel panel = (JPanel) casillas.get(memo.getPosicion());
-              panel.setBackground(new java.awt.Color(0,204,204));
+              System.out.println("jjuju");
               
-        }
+             // JPanel panel = (JPanel) casillas.get(memo.getPosicion());
+             // panel.setBackground(new java.awt.Color(0,204,204));
+              //memo.setPosicionSinAvanzar(11);
+              
+              memo.avanzarPosicion(casillas, 11);
+             // JPanel panel1 = (JPanel) casillas.get(memo.getPosicion());
+             // panel1.setBackground(memo.getColor());
+              memo.setFueCarcel(true);
+            }
     }
     private void btnSubastarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubastarPropiedadActionPerformed
        ClassJugador ganador=null;

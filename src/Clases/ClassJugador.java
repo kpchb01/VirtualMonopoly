@@ -59,7 +59,89 @@ public class ClassJugador {
       
     }
     
-    public void avanzar (Lista casillas, int posicion){      
+    public void setPosicionSinAvanzar(Integer posiion){
+        this.posicion = posicion;
+    }
+    
+   
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+   
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getTiro() {
+        return tiro;
+    }
+
+    public void setTiro(Integer tiro) {
+        this.tiro = tiro;
+    }
+
+    public Integer getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(Integer puntos) {
+        this.puntos = puntos;
+    }
+
+    public Boolean getPar() {
+        return par;
+    }
+
+    public void setPar(Boolean par) {
+        this.par = par;
+    }
+
+    public Boolean getFueCarcel() {
+        return fueCarcel;
+    }
+
+    public void setFueCarcel(Boolean fueCarcel) {
+        this.fueCarcel = fueCarcel;
+    }
+
+    public Integer getTirosEnCarcelSinPar() {
+        return tirosEnCarcelSinPar;
+    }
+
+    public void setTirosEnCarcelSinPar(Integer tirosEnCarcelSinPar) {
+        this.tirosEnCarcelSinPar = tirosEnCarcelSinPar;
+    }
+    
+    
+    
+     public static void comprarPropiedad(ClassJugador jugador, ClassCasilla rota){
+        jugador.setPuntos(jugador.getPuntos()-rota.getPrecioCompra());
+                    formJuego.actualizarDinero();
+    }
+    
+     public static void pagarRenta(ClassJugador jugador, ClassCasilla rota){
+         jugador.setPuntos(jugador.getPuntos()-rota.getRenta());
+         formJuego.actualizarDinero();
+     }
+     
+     public static void cobrarRenta(ClassJugador jugador, ClassCasilla rota){
+         
+         jugador.setPuntos(jugador.getPuntos()+rota.getRenta());
+         formJuego.actualizarDinero();
+     }
+     
+      public void avanzar (Lista casillas, int posicion){      
       if(this.getPosicion()>-1){
             JPanel panel = (JPanel) casillas.get(this.getPosicion());
             panel.setBackground(new java.awt.Color(0,204,204));
@@ -95,54 +177,5 @@ public class ClassJugador {
         this.tiro=sumaDados;
         return sumaDados;
     }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-   
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Integer getTiro() {
-        return tiro;
-    }
-
-    public void setTiro(Integer tiro) {
-        this.tiro = tiro;
-    }
-
-    public Integer getPuntos() {
-        return puntos;
-    }
-
-    public void setPuntos(Integer puntos) {
-        this.puntos = puntos;
-    }
-    
-     public static void comprarPropiedad(ClassJugador jugador, ClassCasilla rota){
-        jugador.setPuntos(jugador.getPuntos()-rota.getPrecioCompra());
-                    formJuego.actualizarDinero();
-    }
-    
-     public static void pagarRenta(ClassJugador jugador, ClassCasilla rota){
-         jugador.setPuntos(jugador.getPuntos()-rota.getRenta());
-         formJuego.actualizarDinero();
-     }
-     
-     public static void cobrarRenta(ClassJugador jugador, ClassCasilla rota){
-         jugador.setPuntos(jugador.getPuntos()+rota.getRenta());
-         formJuego.actualizarDinero();
-     }
     
 }
