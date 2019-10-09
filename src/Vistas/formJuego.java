@@ -1639,7 +1639,7 @@ public class formJuego extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         
         memo = (ClassJugador)  jugadores.desencolar();
-       
+        
     }//GEN-LAST:event_btnSalirActionPerformed
 
     public void enviarOrden(){
