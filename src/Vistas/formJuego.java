@@ -1440,10 +1440,11 @@ public class formJuego extends javax.swing.JFrame {
     public void operacionCobrarRenta(ClassJugador memo) {
         ClassJugador dueno = null;
         ClassCasilla casilla = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
+        System.out.println();
         dueno = casilla.getDueno();
         jugadores.encolar(dueno);
 
-        if (rota.getDueno().getNombre() != "") {
+        if (rota.getDueno() != null) {
             if (rota.getDueno().getNombre() != memo.getNombre()) {
                 ClassJugador.pagarRenta(memo, rota);
 
