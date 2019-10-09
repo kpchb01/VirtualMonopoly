@@ -4,6 +4,7 @@ package Clases;
 import java.awt.Color;
 
 public class ClassCasilla {
+    private String Dueno;
     private Integer posicion;
     private Color color;
     private String nombre;
@@ -17,12 +18,13 @@ public class ClassCasilla {
     private int rentaConHotel;
     private int costoCasa;
     private int costoHotel;
-    private String Dueno="";
+   
 
     public ClassCasilla() {
     }
 
-    public ClassCasilla(Integer posicion, Color color, String nombre, int precioCompra, int renta, int rentaGrupo, int renta1casa, int renta2casas, int renta3casas, int renta4casas, int rentaConHotel, int costoCasa, int costoHotel) {
+    public ClassCasilla(String Dueno, Integer posicion, Color color, String nombre, int precioCompra, int renta, int rentaGrupo, int renta1casa, int renta2casas, int renta3casas, int renta4casas, int rentaConHotel, int costoCasa, int costoHotel) {
+        this.Dueno = Dueno;
         this.posicion = posicion;
         this.color = color;
         this.nombre = nombre;
@@ -37,6 +39,8 @@ public class ClassCasilla {
         this.costoCasa = costoCasa;
         this.costoHotel = costoHotel;
     }
+
+    
 
     
 

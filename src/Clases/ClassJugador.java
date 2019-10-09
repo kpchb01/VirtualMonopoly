@@ -16,7 +16,9 @@ public class ClassJugador {
     private Integer puntos=1500;
     private Integer cartaCarcel=0;
     private Integer oferta=0;
-
+    private Boolean par;
+    private Boolean fueCarcel = false;
+    private Integer tirosEnCarcelSinPar=0;
 
     public ClassJugador() {
     }
@@ -133,5 +135,14 @@ public class ClassJugador {
                     formJuego.actualizarDinero();
     }
     
+     public static void pagarRenta(ClassJugador jugador, ClassCasilla rota){
+         jugador.setPuntos(jugador.getPuntos()-rota.getRenta());
+         formJuego.actualizarDinero();
+     }
+     
+     public static void cobrarRenta(ClassJugador jugador, ClassCasilla rota){
+         jugador.setPuntos(jugador.getPuntos()+rota.getRenta());
+         formJuego.actualizarDinero();
+     }
     
 }

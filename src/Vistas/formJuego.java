@@ -29,50 +29,7 @@ public class formJuego extends javax.swing.JFrame {
 
     public static int seleccion = Integer.parseInt(formInicio.message);
 
-    //CASILLAS
-    
-    static ClassCasilla uno = new ClassCasilla(1, new java.awt.Color(0,204,204),"GO!",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla dos = new ClassCasilla(2, new java.awt.Color(162,0,0),"AVENIDA MEDITERRANEO",60,2,4,10,30,90,160,250,50,50);
-    static ClassCasilla tres = new ClassCasilla(3, new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla cuatro = new ClassCasilla(4, new java.awt.Color(162,0,0),"AVENIDA BALTICA",60,2,4,10,30,90,160,250,50,50);
-    static ClassCasilla cinco = new ClassCasilla(5, new java.awt.Color(0,204,204),"IMPUESTO SOBRE INGRESOS",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla seis = new ClassCasilla(6,new java.awt.Color(0,204,204),"FERROCARRIL READING",200,25,0,50,100,200,0,0,0,0);
-    static ClassCasilla siete = new ClassCasilla(7,new java.awt.Color(177,3,179),"AVENIDA ORIENTAL",100,6,12,30,90,270,400,550,50,50);
-    static ClassCasilla ocho = new ClassCasilla(8, new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla nueve = new ClassCasilla(9, new java.awt.Color(177,3,179),"AVENIDA VERMONT",100,6,12,30,90,270,400,550,50,50);
-    static ClassCasilla diez = new ClassCasilla(10,new java.awt.Color(177,3,179),"AVENIDA CONNECTICUT",120,8,16,40,100,300,450,600,50,50);
-    static ClassCasilla once = new ClassCasilla(11, new java.awt.Color(0,204,204),"CARCEL",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla doce = new ClassCasilla(12, new java.awt.Color(255,102,0),"PLAZA SAN CARLOS",140,10,20,50,150,450,675,750,100,100);
-    static ClassCasilla trece = new ClassCasilla(13, new java.awt.Color(0,204,204),"COMPAÑIA DE ELECTRICIDAD",150,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla catorce = new ClassCasilla(14,new java.awt.Color(255,102,0),"AVENIDA ESTADOS",140,10,20,50,150,450,625,750,100,100);
-    static ClassCasilla quince = new ClassCasilla(15,new java.awt.Color(255,102,0),"AVENIDA VIRGINIA",160,12,24,60,180,500,700,900,100,100);
-    static ClassCasilla dieciseis = new ClassCasilla(16,new java.awt.Color(0,204,204),"FERROCARRIL DE PENSILVANIA",200,25,0,50,100,200,0,0,0,0);
-    static ClassCasilla diecisiete = new ClassCasilla(17,new java.awt.Color( 226,14,141),"PLAZA ST. JAIMES",180,14,28,70,200,550,750,950,100,100);
-    static ClassCasilla dieciocho = new ClassCasilla(18,new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla diecinueve = new ClassCasilla(19,new java.awt.Color( 226,14,141),"AVENIDA TENNESSEE",180,14,28,70,200,550,750,950,100,100);
-    static ClassCasilla veinte = new ClassCasilla(20,new java.awt.Color( 226,14,141),"AVENIDA NEW YORK",200,16,32,80,220,600,800,1000,100,100);
-    static ClassCasilla veintiuno = new ClassCasilla(21,new java.awt.Color(0,204,204),"PARADA LIBRE",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla veintidos = new ClassCasilla(22,new java.awt.Color(255,0,0),"AVENIDA KENTUCKY",220,18,36,90,250,700,875,1050,150,150);
-    static ClassCasilla veintitres = new ClassCasilla(23,new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla veinticuatro = new ClassCasilla(24,new java.awt.Color(255,0,0),"AVENIDA INDIANA",220,18,36,90,250,700,875,1050,150,150);
-    static ClassCasilla veinticinco = new ClassCasilla(25,new java.awt.Color(255,0,0),"AVENIDA ILLINOIS",240,20,40,100,300,750,925,1100,150,150);
-    static ClassCasilla veintiseis = new ClassCasilla(26,new java.awt.Color(0,204,204),"FERROCARRIL B & O",200,25,0,50,100,200,0,0,0,0);
-    static ClassCasilla veintisiete = new ClassCasilla(27,new java.awt.Color(255,255,0),"AVENIDA ATLANTICO",260,22,44,110,330,800,975,1150,150,150);
-    static ClassCasilla veintiocho = new ClassCasilla(28,new java.awt.Color(255,255,0),"AVENIDA VENTNOR",260,22,44,110,330,800,875,1150,150,150);
-    static ClassCasilla veintinueve = new ClassCasilla(29,new java.awt.Color(0,204,204),"COMPAÑIA DE AGUA",150,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla treinta = new ClassCasilla(30,new java.awt.Color(0,204,204),"JARDINES DE MARVIN",280,24,48,120,360,850,1025,1200,150,150);
-    static ClassCasilla treintaiuno = new ClassCasilla(31,new java.awt.Color(0,204,204),"VAYASE A LA CARCEL",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla treintaidos = new ClassCasilla(32,new java.awt.Color(51,255,0),"AVENIDA PACIFICO",300,26,52,130,390,900,1100,1275,200,200);
-    static ClassCasilla treintaitres = new ClassCasilla(33,new java.awt.Color(51,255,0),"AVENIDA CAROLINA DEL NORTE",300,26,52,130,390,900,1100,1275,200,200);
-    static ClassCasilla treintaicuatro = new ClassCasilla(34,new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla treintaicinco = new ClassCasilla(35,new java.awt.Color(51,255,0),"AVENIDA PENSYLVANIA",320,28,56,150,450,1000,1200,1400,200,200);
-    static ClassCasilla treintaiseis = new ClassCasilla(36,new java.awt.Color(0,204,204),"FERROCARIL VIA RAPIDA",200,25,0,50,100,200,0,0,0,0);
-    static ClassCasilla treintaisiete = new ClassCasilla(37,new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla treintaiocho = new ClassCasilla(38,new java.awt.Color(0,0,153),"PLAZA PARK",350,35,70,175,500,1100,1300,1500,200,200);
-    static ClassCasilla treintainueve = new ClassCasilla(39,new java.awt.Color(0,204,204),"IMPUESTO SOBRE POSESIONES DE LUJO",0,1,2,3,4,5,6,7,8,9);
-    static ClassCasilla cuarenta = new ClassCasilla(40,new java.awt.Color(0,0,153),"EL MUELLE",400,50,100,200,600,1400,1700,2000,200,200);
-            
-    
+  
     //JUGADORES
     static ClassJugador jugador1 = new ClassJugador(1, Color.RED, "Rojo");
     static ClassJugador jugador2 = new ClassJugador(1, new java.awt.Color(255, 204, 0), "Amarillo");
@@ -119,7 +76,7 @@ public class formJuego extends javax.swing.JFrame {
         jLabelJugador4.setVisible(false);
         jTextFieldDinero4.setVisible(false);
         turno4.setVisible(false);
-        btnAdquirir.setEnabled(false);
+       
        
         asignar();
         asignarCarta();
@@ -269,7 +226,7 @@ public class formJuego extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         panelCastillaColor = new javax.swing.JPanel();
-        jLabel55 = new javax.swing.JLabel();
+        labelCasilla = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextRenta = new javax.swing.JTextField();
@@ -283,7 +240,11 @@ public class formJuego extends javax.swing.JFrame {
         jTextRentaConHotel = new javax.swing.JTextField();
         btnSubastarPropiedad = new javax.swing.JButton();
         jLabel74 = new javax.swing.JLabel();
-        jTextDueño = new javax.swing.JTextField();
+        jTextDueno = new javax.swing.JTextField();
+        jLabel81 = new javax.swing.JLabel();
+        jTextPrecioCompra = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         panelJugador = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         jPanelJugadorColor = new javax.swing.JPanel();
@@ -1135,6 +1096,7 @@ public class formJuego extends javax.swing.JFrame {
         panelTarjeta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAdquirir.setText("ADQUIRIR");
+        btnAdquirir.setEnabled(false);
         btnAdquirir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdquirirActionPerformed(evt);
@@ -1142,34 +1104,34 @@ public class formJuego extends javax.swing.JFrame {
         });
         panelTarjeta.add(btnAdquirir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 200, -1));
 
-        jButton2.setText("jButton2");
-        panelTarjeta.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, -1, -1));
+        jButton2.setText("VENDER");
+        panelTarjeta.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 200, -1));
 
         jLabel1.setText("Renta");
-        panelTarjeta.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        panelTarjeta.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         jLabel2.setText("Renta grupo de Color");
-        panelTarjeta.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        panelTarjeta.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         jLabel3.setText("Renta con 1 casa");
-        panelTarjeta.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+        panelTarjeta.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         jLabel4.setText("Renta con 2 casas");
-        panelTarjeta.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        panelTarjeta.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabel5.setText("Renta con 3 casas");
-        panelTarjeta.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        panelTarjeta.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         jLabel9.setText("Renta con 4 casas");
-        panelTarjeta.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+        panelTarjeta.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
         jLabel10.setText("Renta con 1 hotel ");
-        panelTarjeta.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
-        panelTarjeta.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 250, 10));
+        panelTarjeta.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+        panelTarjeta.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 250, 10));
 
         panelCastillaColor.setBackground(new java.awt.Color(0, 204, 204));
 
-        jLabel55.setText("jLabel33");
+        labelCasilla.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout panelCastillaColorLayout = new javax.swing.GroupLayout(panelCastillaColor);
         panelCastillaColor.setLayout(panelCastillaColorLayout);
@@ -1177,36 +1139,55 @@ public class formJuego extends javax.swing.JFrame {
             panelCastillaColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCastillaColorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelCasilla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelCastillaColorLayout.setVerticalGroup(
             panelCastillaColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCastillaColorLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelCasilla, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
         panelTarjeta.add(panelCastillaColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, 80));
 
         jLabel11.setText("Costo por casa");
-        panelTarjeta.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+        panelTarjeta.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
         jLabel13.setText("Costo por Hote (con 4 casas)");
         jLabel13.setToolTipText("");
-        panelTarjeta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
-        panelTarjeta.add(jTextRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 91, -1));
-        panelTarjeta.add(jTextRentaDosCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 91, -1));
-        panelTarjeta.add(jTextRentaUnaCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 91, -1));
-        panelTarjeta.add(jTextRentaGC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 91, -1));
-        panelTarjeta.add(jTextRentaCuatroCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 91, -1));
-        panelTarjeta.add(jTextRentaTresCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 91, -1));
-        panelTarjeta.add(jTextCostoCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 91, -1));
-        panelTarjeta.add(jTextCostoHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 91, -1));
-        panelTarjeta.add(jTextRentaConHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 91, -1));
+        panelTarjeta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
+
+        jTextRenta.setEditable(false);
+        panelTarjeta.add(jTextRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 91, -1));
+
+        jTextRentaDosCasas.setEditable(false);
+        panelTarjeta.add(jTextRentaDosCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 91, -1));
+
+        jTextRentaUnaCasa.setEditable(false);
+        panelTarjeta.add(jTextRentaUnaCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 91, -1));
+
+        jTextRentaGC.setEditable(false);
+        panelTarjeta.add(jTextRentaGC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 91, -1));
+
+        jTextRentaCuatroCasas.setEditable(false);
+        panelTarjeta.add(jTextRentaCuatroCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 91, -1));
+
+        jTextRentaTresCasas.setEditable(false);
+        panelTarjeta.add(jTextRentaTresCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 91, -1));
+
+        jTextCostoCasa.setEditable(false);
+        panelTarjeta.add(jTextCostoCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 91, -1));
+
+        jTextCostoHotel.setEditable(false);
+        panelTarjeta.add(jTextCostoHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 91, -1));
+
+        jTextRentaConHotel.setEditable(false);
+        panelTarjeta.add(jTextRentaConHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 91, -1));
 
         btnSubastarPropiedad.setText("SUBASTAR PROPIEDAD");
+        btnSubastarPropiedad.setEnabled(false);
         btnSubastarPropiedad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubastarPropiedadActionPerformed(evt);
@@ -1214,13 +1195,25 @@ public class formJuego extends javax.swing.JFrame {
         });
         panelTarjeta.add(btnSubastarPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 201, -1));
 
-        jLabel74.setText("Dueño");
-        panelTarjeta.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jLabel74.setText("Precio Compra");
+        panelTarjeta.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        jTextDueño.setEditable(false);
-        panelTarjeta.add(jTextDueño, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 90, -1));
+        jTextDueno.setEditable(false);
+        panelTarjeta.add(jTextDueno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 90, -1));
 
-        panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 270, 570));
+        jLabel81.setText("Dueño");
+        panelTarjeta.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+
+        jTextPrecioCompra.setEditable(false);
+        panelTarjeta.add(jTextPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 90, -1));
+
+        jButton3.setText("HIPOTECAR");
+        panelTarjeta.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 200, -1));
+
+        jButton4.setText("LEVANTAR HIPOTECA");
+        panelTarjeta.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 200, -1));
+
+        panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 270, 630));
 
         panelJugador.setBackground(new java.awt.Color(242, 249, 249));
         panelJugador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1347,14 +1340,14 @@ public class formJuego extends javax.swing.JFrame {
         } else {
             
             memo.avanzar(casillas,memo.tirarDado());
-          
+            ValidarCasilla();
             activarBotonVenderCarta();
             actulizarCamposJugador();
-            actualizarCamposTarjetaCasilla();
-             ValidarCasilla();
-             operacionCompraPropiedad();
-            
-            
+            actualizarCamposTarjetaCasilla(memo);
+            validarCasillaPropiedad(memo);
+            operacionCobrarRenta(memo);
+            quiebra();
+             
 
         }
 
@@ -1381,9 +1374,7 @@ public class formJuego extends javax.swing.JFrame {
             actualizarDinero();  
         }
         
-        if (memo.getPosicion()==31){
-            memo.avanzarPosicion(casillas, 11);
-        }
+      
         
     }
 
@@ -1401,21 +1392,26 @@ public class formJuego extends javax.swing.JFrame {
         jTextCarcel.setText(String.valueOf(memo.getCartaCarcel()));
         jPanelJugadorColor.setBackground(memo.getColor());
     }
-    
-    public void actualizarCamposTarjetaCasilla(){
-        
-        jTextDueño.setText(rota.getDueno());
-        jTextRenta.setText(Integer.toString(rota.getRenta()));
-        jTextRentaGC.setText(Integer.toString(rota.getRentaGrupo()));
-        jTextRentaUnaCasa.setText(Integer.toString(rota.getRenta1casa()));
-        jTextRentaDosCasas.setText(Integer.toString(rota.getRenta2casas()));
-        jTextRentaTresCasas.setText(Integer.toString(rota.getRenta3casas()));
-        jTextRentaCuatroCasas.setText(Integer.toString(rota.getRenta4casas()));
-        jTextRentaConHotel.setText(Integer.toString(rota.getRentaConHotel()));
-        jTextCostoCasa.setText(Integer.toString(rota.getCostoCasa()));
-        jTextCostoHotel.setText(Integer.toString(rota.getCostoHotel()));
-        
-        
+    public void quiebra(){
+        if(memo.getPuntos()<rota.getRenta()){
+            JOptionPane.showMessageDialog(null,"QUEDO EN QUIEBRA");
+        }
+    }
+    public void actualizarCamposTarjetaCasilla(ClassJugador jugador){
+        rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
+        jTextDueno.setText(rota.getDueno());
+        jTextPrecioCompra.setText(String.valueOf(rota.getPrecioCompra()));
+        jTextRenta.setText(String.valueOf(rota.getRenta()));
+        jTextRentaGC.setText(String.valueOf(rota.getRentaGrupo()));
+        jTextRentaUnaCasa.setText(String.valueOf(rota.getRenta1casa()));
+        jTextRentaDosCasas.setText(String.valueOf(rota.getRenta2casas()));
+        jTextRentaTresCasas.setText(String.valueOf(rota.getRenta3casas()));
+        jTextRentaCuatroCasas.setText(String.valueOf(rota.getRenta4casas()));
+        jTextRentaConHotel.setText(String.valueOf(rota.getRentaConHotel()));
+        jTextCostoCasa.setText(String.valueOf(rota.getCostoCasa()));
+        jTextCostoHotel.setText(String.valueOf(rota.getCostoHotel()));
+        panelCastillaColor.setBackground(rota.getColor());
+        labelCasilla.setText(rota.getNombre());
     }
     
     public void activarBotonVenderCarta(){
@@ -1424,31 +1420,24 @@ public class formJuego extends javax.swing.JFrame {
         }
     }
     
-    public void mostrarTarjeta(){
-       
-        
-        int a = memo.getPosicion();
-        
-        if(jTextDueño.getText().isEmpty() && a!=1 && a!=3 && a!=5 && a!=8 && a!=11 && a!=18 && a!=21 && a!=23 && a!=31 && a!=34 && a!=37 && a!=39) {
-            btnAdquirir.setEnabled(true);
-        }else{
-            btnAdquirir.setEnabled(false);
-        }
     
-    }
-    
-    public void operacionCompraPropiedad(){
+    public void validarCasillaPropiedad(ClassJugador memo){
           rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
-          actualizarCamposTarjetaCasilla();
-           if(jTextDueño.getText()=="" && memo.getPosicion()!=1 && memo.getPosicion()!=3 &&
+          
+           if(jTextDueno.getText().isEmpty() && memo.getPosicion()!=1 && memo.getPosicion()!=3 &&
                  memo.getPosicion()!=5 && memo.getPosicion()!=8 && memo.getPosicion()!=11 && memo.getPosicion()!=18 &&
                  memo.getPosicion()!=21 && memo.getPosicion()!=23 && memo.getPosicion()!=31 && memo.getPosicion()!=34 &&
                  memo.getPosicion()!=37 && memo.getPosicion()!=39) {
-            btnAdquirir.setEnabled(true);
+                btnAdquirir.setEnabled(true);
+                btnSubastarPropiedad.setEnabled(true);
         }else{
             btnAdquirir.setEnabled(false);
-        }
-          if(rota.getDueno()==""){
+            btnSubastarPropiedad.setEnabled(false);
+        }  
+}
+    public void operacionComprarPropiedad(ClassJugador memo){
+             
+          if(rota.getDueno()!=""){
                 if(memo.getNombre()=="Rojo"){
                     ClassJugador.comprarPropiedad(memo, rota);
                 }
@@ -1466,9 +1455,92 @@ public class formJuego extends javax.swing.JFrame {
                 if(memo.getNombre()=="Morado"){
                     ClassJugador.comprarPropiedad(memo, rota);
                 }
+          }
+    }
+    
+    public void operacionCobrarRenta(ClassJugador memo){
+        String dueño = rota.getDueno();
+        if(rota.getDueno()!=""){
+            if(rota.getDueno()!= memo.getNombre()){
 
-        }  
-}
+           // if(memo.getNombre()=="Rojo"){
+                ClassJugador.pagarRenta(memo, rota);
+                
+                
+                switch(rota.getDueno()){
+                    case "Amarillo":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Verde":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Morado":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Rojo":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                }
+            
+            
+           /* else{ if(memo.getNombre()=="Amarillo"){
+                ClassJugador.pagarRenta(memo, rota);
+                
+                switch(rota.getDueno()){
+                    case "Rojo":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Verde":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Morado":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                }
+            }
+                else{
+                     if(memo.getNombre()=="Verde"){
+                    ClassJugador.pagarRenta(memo, rota);
+                
+                    switch(rota.getDueno()){
+                    case "Amarillo":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Rojo":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Morado":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                        }
+                    }
+                     
+                     else{
+                         
+               if(memo.getNombre()=="Morado"){
+                ClassJugador.pagarRenta(memo, rota);
+                
+                switch(rota.getDueno()){
+                    case "Amarillo":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Verde":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                    case "Morado":
+                        ClassJugador.cobrarRenta(memo, rota);
+                    break;
+                }
+            }
+                     }
+                }
+            
+            
+            } */   
+   
+        }
+       }
+    }
 
     private void btnrevovlerDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrevovlerDadosActionPerformed
         ClassDados insertGif = new ClassDados();
@@ -1564,7 +1636,8 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-       
+        //ClassJugador retirado = (ClassJugador) JOptionPane.showInputDialog("¿QUIEN DESEA RETIRARSE?");
+        
     }//GEN-LAST:event_btnSalirActionPerformed
 
     public void enviarOrden(){
@@ -1627,6 +1700,14 @@ public class formJuego extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_btnVenderCartaCarcelActionPerformed
 
+    private void EntrarSalirCarcel(){
+          if (memo.getPosicion()==31){
+              JOptionPane.showMessageDialog(null,"VAS A LA CARCEL");
+              JPanel panel = (JPanel) casillas.get(memo.getPosicion());
+              panel.setBackground(new java.awt.Color(0,204,204));
+              
+        }
+    }
     private void btnSubastarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubastarPropiedadActionPerformed
        ClassJugador ganador=null;
      
@@ -1644,6 +1725,11 @@ public class formJuego extends javax.swing.JFrame {
                         else{
                             if(ganador.getOferta()<jugadorSubasta.getOferta()){
                                 ganador = jugadorSubasta;
+                                        rota = (ClassCasilla) casillasTarjetas.get(ganador.getPosicion());
+                                        rota.setDueno(ganador.getNombre());
+                                        actualizarCamposTarjetaCasilla(ganador);
+                                        operacionComprarPropiedad(ganador);
+                                        btnAdquirir.setEnabled(false);
                             }
                          }
                     
@@ -1656,6 +1742,7 @@ public class formJuego extends javax.swing.JFrame {
         btnSubastarPropiedad.setEnabled(false);
     }//GEN-LAST:event_btnSubastarPropiedadActionPerformed
 
+    
     private void turno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turno1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_turno1ActionPerformed
@@ -1663,8 +1750,8 @@ public class formJuego extends javax.swing.JFrame {
     private void btnAdquirirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdquirirActionPerformed
         rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
         rota.setDueno(memo.getNombre());
-        actualizarCamposTarjetaCasilla();
-        operacionCompraPropiedad();
+        actualizarCamposTarjetaCasilla(memo);
+        operacionComprarPropiedad(memo);
         btnAdquirir.setEnabled(false);
     }//GEN-LAST:event_btnAdquirirActionPerformed
 
@@ -1684,6 +1771,7 @@ public class formJuego extends javax.swing.JFrame {
     }
 
     public void asignar() {
+        
         casillas.add(jPanelGo);
         casillas.add(jPanelAvMediterraneo);
         casillas.add(jPanelArcaComunal1);
@@ -1724,6 +1812,7 @@ public class formJuego extends javax.swing.JFrame {
         casillas.add(jPanelPlazaPark);
         casillas.add(jPanelImpuestoLujo);
         casillas.add(jPanelMuelle);
+       
         switch (formInicio.message) {
 
             case "2":
@@ -1756,44 +1845,85 @@ public class formJuego extends javax.swing.JFrame {
     }
     
     public void asignarCasilla(){
+        ClassCasilla uno = new ClassCasilla("",1, new java.awt.Color(0,204,204),"GO!",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(uno);
+        ClassCasilla dos = new ClassCasilla("",2, new java.awt.Color(162,0,0),"AVENIDA MEDITERRANEO",60,2,4,10,30,90,160,250,50,50);
         casillasTarjetas.add(dos);
+        ClassCasilla tres = new ClassCasilla("",3, new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(tres);
+        ClassCasilla cuatro = new ClassCasilla("",4, new java.awt.Color(162,0,0),"AVENIDA BALTICA",60,2,4,10,30,90,160,250,50,50);
         casillasTarjetas.add(cuatro);
+        ClassCasilla cinco = new ClassCasilla("",5, new java.awt.Color(0,204,204),"IMPUESTO SOBRE INGRESOS",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(cinco);
+        ClassCasilla seis = new ClassCasilla("",6,new java.awt.Color(0,204,204),"FERROCARRIL READING",200,25,0,50,100,200,0,0,0,0);
         casillasTarjetas.add(seis);
+        ClassCasilla siete = new ClassCasilla("",7,new java.awt.Color(177,3,179),"AVENIDA ORIENTAL",100,6,12,30,90,270,400,550,50,50);
         casillasTarjetas.add(siete);
+        ClassCasilla ocho = new ClassCasilla("",8, new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(ocho);
+        ClassCasilla nueve = new ClassCasilla("",9, new java.awt.Color(177,3,179),"AVENIDA VERMONT",100,6,12,30,90,270,400,550,50,50);
         casillasTarjetas.add(nueve);
+        ClassCasilla diez = new ClassCasilla("",10,new java.awt.Color(177,3,179),"AVENIDA CONNECTICUT",120,8,16,40,100,300,450,600,50,50);
         casillasTarjetas.add(diez);
+        ClassCasilla once = new ClassCasilla("",11, new java.awt.Color(0,204,204),"CARCEL",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(once);
+        ClassCasilla doce = new ClassCasilla("",12, new java.awt.Color(255,102,0),"PLAZA SAN CARLOS",140,10,20,50,150,450,675,750,100,100);
         casillasTarjetas.add(doce);
+        ClassCasilla trece = new ClassCasilla("",13, new java.awt.Color(0,204,204),"COMPAÑIA DE ELECTRICIDAD",150,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(trece);
+        ClassCasilla catorce = new ClassCasilla("",14,new java.awt.Color(255,102,0),"AVENIDA ESTADOS",140,10,20,50,150,450,625,750,100,100);
         casillasTarjetas.add(catorce);
+        ClassCasilla quince = new ClassCasilla("",15,new java.awt.Color(255,102,0),"AVENIDA VIRGINIA",160,12,24,60,180,500,700,900,100,100);
         casillasTarjetas.add(quince);
+        ClassCasilla dieciseis = new ClassCasilla("",16,new java.awt.Color(0,204,204),"FERROCARRIL DE PENSILVANIA",200,25,0,50,100,200,0,0,0,0);
         casillasTarjetas.add(dieciseis);
+        ClassCasilla diecisiete = new ClassCasilla("",17,new java.awt.Color( 226,14,141),"PLAZA ST. JAIMES",180,14,28,70,200,550,750,950,100,100);
         casillasTarjetas.add(diecisiete);
+        ClassCasilla dieciocho = new ClassCasilla("",18,new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(dieciocho);
+        ClassCasilla diecinueve = new ClassCasilla("",19,new java.awt.Color( 226,14,141),"AVENIDA TENNESSEE",180,14,28,70,200,550,750,950,100,100);
         casillasTarjetas.add(diecinueve);
+        ClassCasilla veinte = new ClassCasilla("",20,new java.awt.Color( 226,14,141),"AVENIDA NEW YORK",200,16,32,80,220,600,800,1000,100,100);
         casillasTarjetas.add(veinte);
+        ClassCasilla veintiuno = new ClassCasilla("",21,new java.awt.Color(0,204,204),"PARADA LIBRE",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(veintiuno);
+        ClassCasilla veintidos = new ClassCasilla("",22,new java.awt.Color(255,0,0),"AVENIDA KENTUCKY",220,18,36,90,250,700,875,1050,150,150);
         casillasTarjetas.add(veintidos);
+        ClassCasilla veintitres = new ClassCasilla("",23,new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(veintitres);
+        ClassCasilla veinticuatro = new ClassCasilla("",24,new java.awt.Color(255,0,0),"AVENIDA INDIANA",220,18,36,90,250,700,875,1050,150,150);
         casillasTarjetas.add(veinticuatro);
+        ClassCasilla veinticinco = new ClassCasilla("",25,new java.awt.Color(255,0,0),"AVENIDA ILLINOIS",240,20,40,100,300,750,925,1100,150,150);
         casillasTarjetas.add(veinticinco);
+        ClassCasilla veintiseis = new ClassCasilla("",26,new java.awt.Color(0,204,204),"FERROCARRIL B & O",200,25,0,50,100,200,0,0,0,0);
         casillasTarjetas.add(veintiseis);
+        ClassCasilla veintisiete = new ClassCasilla("",27,new java.awt.Color(255,255,0),"AVENIDA ATLANTICO",260,22,44,110,330,800,975,1150,150,150);
+        casillasTarjetas.add(veintisiete);
+        ClassCasilla veintiocho = new ClassCasilla("",28,new java.awt.Color(255,255,0),"AVENIDA VENTNOR",260,22,44,110,330,800,875,1150,150,150);
         casillasTarjetas.add(veintiocho);
+        ClassCasilla veintinueve = new ClassCasilla("",29,new java.awt.Color(0,204,204),"COMPAÑIA DE AGUA",150,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(veintinueve);
+        ClassCasilla treinta = new ClassCasilla("",30,new java.awt.Color(0,204,204),"JARDINES DE MARVIN",280,24,48,120,360,850,1025,1200,150,150);
         casillasTarjetas.add(treinta);
+        ClassCasilla treintaiuno = new ClassCasilla("",31,new java.awt.Color(0,204,204),"VAYASE A LA CARCEL",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(treintaiuno);
+        ClassCasilla treintaidos = new ClassCasilla("",32,new java.awt.Color(51,255,0),"AVENIDA PACIFICO",300,26,52,130,390,900,1100,1275,200,200);
         casillasTarjetas.add(treintaidos);
+        ClassCasilla treintaitres = new ClassCasilla("",33,new java.awt.Color(51,255,0),"AVENIDA CAROLINA DEL NORTE",300,26,52,130,390,900,1100,1275,200,200);
         casillasTarjetas.add(treintaitres);
+        ClassCasilla treintaicuatro = new ClassCasilla("",34,new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(treintaicuatro);
+        ClassCasilla treintaicinco = new ClassCasilla("",35,new java.awt.Color(51,255,0),"AVENIDA PENSYLVANIA",320,28,56,150,450,1000,1200,1400,200,200);
         casillasTarjetas.add(treintaicinco);
+        ClassCasilla treintaiseis = new ClassCasilla("",36,new java.awt.Color(0,204,204),"FERROCARIL VIA RAPIDA",200,25,0,50,100,200,0,0,0,0);
         casillasTarjetas.add(treintaiseis);
+        ClassCasilla treintaisiete = new ClassCasilla("",37,new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(treintaisiete);
+        ClassCasilla treintaiocho = new ClassCasilla("",38,new java.awt.Color(0,0,153),"PLAZA PARK",350,35,70,175,500,1100,1300,1500,200,200);
         casillasTarjetas.add(treintaiocho);
+        ClassCasilla treintainueve = new ClassCasilla("",39,new java.awt.Color(0,204,204),"IMPUESTO SOBRE POSESIONES DE LUJO",0,1,2,3,4,5,6,7,8,9);
         casillasTarjetas.add(treintainueve);
+        ClassCasilla cuarenta = new ClassCasilla("",40,new java.awt.Color(0,0,153),"EL MUELLE",400,50,100,200,600,1400,1700,2000,200,200);
         casillasTarjetas.add(cuarenta);
     }
 
@@ -1871,6 +2001,8 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JButton btnrevovlerDados;
     private javax.swing.JButton btntirarDados;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1922,7 +2054,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
@@ -1951,6 +2082,7 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelJugador1;
     private javax.swing.JLabel jLabelJugador2;
@@ -2007,11 +2139,12 @@ public class formJuego extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextCarcel;
     private javax.swing.JTextField jTextCostoCasa;
     private javax.swing.JTextField jTextCostoHotel;
-    private javax.swing.JTextField jTextDueño;
+    private javax.swing.JTextField jTextDueno;
     public static javax.swing.JTextField jTextFieldDinero1;
     public static javax.swing.JTextField jTextFieldDinero2;
     public static javax.swing.JTextField jTextFieldDinero3;
     public static javax.swing.JTextField jTextFieldDinero4;
+    private javax.swing.JTextField jTextPrecioCompra;
     private javax.swing.JTextField jTextRenta;
     private javax.swing.JTextField jTextRentaConHotel;
     private javax.swing.JTextField jTextRentaCuatroCasas;
@@ -2021,6 +2154,7 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JTextField jTextRentaTresCasas;
     private javax.swing.JTextField jTextRentaTresCasas2;
     private javax.swing.JTextField jTextRentaUnaCasa;
+    private javax.swing.JLabel labelCasilla;
     private javax.swing.JPanel panelCastillaColor;
     private javax.swing.JPanel panelJuego;
     private javax.swing.JPanel panelJugador;
