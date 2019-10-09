@@ -81,7 +81,7 @@ public class ClassJugador {
         ClassDados dados = new ClassDados();
         int valorDado1 = (int)(Math.random()*6)+1;
         int valorDado2 = (int)(Math.random()*6)+1;
-        if(valorDado1==valorDado2 && (formJuego.seleccion < 0) ){
+        if(valorDado1==valorDado2){
             formJuego.doble = this;
         }
         else{
@@ -128,7 +128,10 @@ public class ClassJugador {
         this.puntos = puntos;
     }
     
-    
+     public static void comprarPropiedad(ClassJugador jugador, ClassCasilla rota){
+        jugador.setPuntos(jugador.getPuntos()-rota.getPrecioCompra());
+                    formJuego.actualizarDinero();
+    }
     
     
 }
