@@ -29,7 +29,6 @@ public class formJuego extends javax.swing.JFrame {
 
     public static int seleccion = Integer.parseInt(formInicio.message);
 
-  
     //JUGADORES
     static ClassJugador jugador1 = new ClassJugador(1, Color.RED, "Rojo");
     static ClassJugador jugador2 = new ClassJugador(1, new java.awt.Color(255, 204, 0), "Amarillo");
@@ -53,7 +52,7 @@ public class formJuego extends javax.swing.JFrame {
     ClassTarjeta suerte5 = new ClassTarjeta("Pague multa por exceso de velocidad $15");
     ClassTarjeta pruebaCarta = new ClassTarjeta();
     Cola jugadores = new Cola();
-    
+
     ClassTarjeta memoCarcel = null;
     ClassTarjeta memoTarjeta;
     ClassCasilla rota;
@@ -76,12 +75,10 @@ public class formJuego extends javax.swing.JFrame {
         jLabelJugador4.setVisible(false);
         jTextFieldDinero4.setVisible(false);
         turno4.setVisible(false);
-       
-       
+
         asignar();
         asignarCarta();
         asignarCasilla();
-       
 
     }
 
@@ -1284,12 +1281,12 @@ public class formJuego extends javax.swing.JFrame {
 
     private void btntirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntirarDadosActionPerformed
 
-      btnVenderCartaCarcel.setEnabled(false);
+        btnVenderCartaCarcel.setEnabled(false);
         if (this.doble == null) {
             memo = (ClassJugador) jugadores.desencolar();
             jugadores.encolar(memo);
-            
-        }else{
+
+        } else {
             memo = this.doble;
         }
 
@@ -1301,30 +1298,30 @@ public class formJuego extends javax.swing.JFrame {
                 enviarOrden();
             }
         } else {
-            
-            if(memo.getTirosEnCarcelSinPar()==3){
-            memo.setFueCarcel(false);
-            memo.setTirosEnCarcelSinPar(0);
+
+            if (memo.getTirosEnCarcelSinPar() == 3) {
+                memo.setFueCarcel(false);
+                memo.setTirosEnCarcelSinPar(0);
             }
-            
-            if(memo.getFueCarcel()){
+
+            if (memo.getFueCarcel()) {
                 memo.tirarDado();
-                
-                if(memo.getPar()) {
-                  JPanel panel = (JPanel) casillas.get(memo.getPosicion());
-                  panel.setBackground(new java.awt.Color(0,204,204));
-                  memo.setPosicion(memo.getTiro());
-                  JPanel panel1 = (JPanel) casillas.get(memo.getPosicion());
-                  panel1.setBackground(memo.getColor());
-                  memo.setFueCarcel(false);
-                }else{
-                    memo.setTirosEnCarcelSinPar(memo.getTirosEnCarcelSinPar()+1);
+
+                if (memo.getPar()) {
+                    JPanel panel = (JPanel) casillas.get(memo.getPosicion());
+                    panel.setBackground(new java.awt.Color(0, 204, 204));
+                    memo.setPosicion(memo.getTiro());
+                    JPanel panel1 = (JPanel) casillas.get(memo.getPosicion());
+                    panel1.setBackground(memo.getColor());
+                    memo.setFueCarcel(false);
+                } else {
+                    memo.setTirosEnCarcelSinPar(memo.getTirosEnCarcelSinPar() + 1);
                 }
-            }else{
-            
-            memo.avanzar(casillas,memo.tirarDado());
+            } else {
+
+                memo.avanzar(casillas, memo.tirarDado());
             }
-            
+
             ValidarCasilla();
             activarBotonVenderCarta();
             actualizarCamposJugador();
@@ -1348,20 +1345,19 @@ public class formJuego extends javax.swing.JFrame {
         }
 
         if (memo.getPosicion() == 5) {
-            memo.setPuntos(memo.getPuntos()-200);
-            actualizarDinero(); 
+            memo.setPuntos(memo.getPuntos() - 200);
+            actualizarDinero();
         }
 
         if (memo.getPosicion() == 39) {
 
-            memo.setPuntos(memo.getPuntos()-100);
-            actualizarDinero();  
+            memo.setPuntos(memo.getPuntos() - 100);
+            actualizarDinero();
         }
-        
-      
-        if (memo.getPosicion()==1){
-            memo.setPuntos(memo.getPuntos()+200);
-            actualizarDinero(); 
+
+        if (memo.getPosicion() == 1) {
+            memo.setPuntos(memo.getPuntos() + 200);
+            actualizarDinero();
         }
     }
 
@@ -1372,21 +1368,22 @@ public class formJuego extends javax.swing.JFrame {
         jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
         jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
 
-        
     }
 
-    public void actualizarCamposJugador(){
+    public void actualizarCamposJugador() {
         jTextCarcel.setText(String.valueOf(memo.getCartaCarcel()));
         jPanelJugadorColor.setBackground(memo.getColor());
     }
-    public void quiebra(){
-        if(memo.getPuntos()<rota.getRenta()){
-            JOptionPane.showMessageDialog(null,"QUEDO EN QUIEBRA");
+
+    public void quiebra() {
+        if (memo.getPuntos() < rota.getRenta()) {
+            JOptionPane.showMessageDialog(null, "QUEDO EN QUIEBRA");
         }
     }
-    public void actualizarCamposTarjetaCasilla(ClassJugador jugador){
+
+    public void actualizarCamposTarjetaCasilla(ClassJugador jugador) {
         rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
-        jTextDueno.setText(rota.getDueno());
+        jTextDueno.setText(rota.getDueno().getNombre());
         jTextPrecioCompra.setText(String.valueOf(rota.getPrecioCompra()));
         jTextRenta.setText(String.valueOf(rota.getRenta()));
         jTextRentaGC.setText(String.valueOf(rota.getRentaGrupo()));
@@ -1395,96 +1392,88 @@ public class formJuego extends javax.swing.JFrame {
         panelCastillaColor.setBackground(rota.getColor());
         labelCasilla.setText(rota.getNombre());
     }
-    
-    public void activarBotonVenderCarta(){
-        if(memo.getCartaCarcel()>0){
+
+    public void activarBotonVenderCarta() {
+        if (memo.getCartaCarcel() > 0) {
             btnVenderCartaCarcel.setEnabled(true);
         }
     }
-    
-    
-    public void validarCasillaPropiedad(ClassJugador memo){
-          rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
-          
-           if(jTextDueno.getText().isEmpty() && memo.getPosicion()!=1 && memo.getPosicion()!=3 &&
-                 memo.getPosicion()!=5 && memo.getPosicion()!=8 && memo.getPosicion()!=11 && memo.getPosicion()!=18 &&
-                 memo.getPosicion()!=21 && memo.getPosicion()!=23 && memo.getPosicion()!=31 && memo.getPosicion()!=34 &&
-                 memo.getPosicion()!=37 && memo.getPosicion()!=39) {
-                btnAdquirir.setEnabled(true);
-                btnSubastarPropiedad.setEnabled(true);
-        }else{
+
+    public void validarCasillaPropiedad(ClassJugador memo) {
+        rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
+
+        if (jTextDueno.getText().isEmpty() && memo.getPosicion() != 1 && memo.getPosicion() != 3
+                && memo.getPosicion() != 5 && memo.getPosicion() != 8 && memo.getPosicion() != 11 && memo.getPosicion() != 18
+                && memo.getPosicion() != 21 && memo.getPosicion() != 23 && memo.getPosicion() != 31 && memo.getPosicion() != 34
+                && memo.getPosicion() != 37 && memo.getPosicion() != 39) {
+            btnAdquirir.setEnabled(true);
+            btnSubastarPropiedad.setEnabled(true);
+        } else {
             btnAdquirir.setEnabled(false);
             btnSubastarPropiedad.setEnabled(false);
-        }  
-}
-    public void operacionComprarPropiedad(ClassJugador memo){
-             
-          if(rota.getDueno()!=""){
-                if(memo.getNombre()=="Rojo"){
-                    ClassJugador.comprarPropiedad(memo, rota);
-                }
-                
-                if(memo.getNombre()=="Amarillo"){
-                   ClassJugador.comprarPropiedad(memo, rota);
-                    
-                }
-                
-                if(memo.getNombre()=="Verde"){
-                    ClassJugador.comprarPropiedad(memo, rota);
-                    
-                }
-                
-                if(memo.getNombre()=="Morado"){
-                    ClassJugador.comprarPropiedad(memo, rota);
-                }
-          }
+        }
     }
-    
-    public void operacionCobrarRenta(ClassJugador memo){
-         ClassJugador dueno=null;
-        
-         for(int i=0; i<memo.getPosicion(); i++){
-             dueno = (ClassJugador) jugadores.desencolar();
-             jugadores.encolar(dueno);
-         }
 
-          
-            
-             if(rota.getDueno()!=""){
-            if(rota.getDueno()!= memo.getNombre()){
+    public void operacionComprarPropiedad(ClassJugador memo) {
+
+        if (rota.getDueno().getNombre() != "") {
+            if (memo.getNombre() == "Rojo") {
+                ClassJugador.comprarPropiedad(memo, rota);
+            }
+
+            if (memo.getNombre() == "Amarillo") {
+                ClassJugador.comprarPropiedad(memo, rota);
+
+            }
+
+            if (memo.getNombre() == "Verde") {
+                ClassJugador.comprarPropiedad(memo, rota);
+
+            }
+
+            if (memo.getNombre() == "Morado") {
+                ClassJugador.comprarPropiedad(memo, rota);
+            }
+        }
+    }
+
+    public void operacionCobrarRenta(ClassJugador memo) {
+        ClassJugador dueno = null;
+        ClassCasilla casilla = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
+        dueno = casilla.getDueno();
+        jugadores.encolar(dueno);
+
+        if (rota.getDueno().getNombre() != "") {
+            if (rota.getDueno().getNombre() != memo.getNombre()) {
                 ClassJugador.pagarRenta(memo, rota);
-                
-                
-                switch(rota.getDueno()){
+
+                switch (rota.getDueno().getNombre()) {
                     case "Amarillo":
-                        ClassJugador.cobrarRenta(dueno,rota);
-                        
-                    break;
+                        ClassJugador.cobrarRenta(dueno, rota);
+
+                        break;
                     case "Verde":
                         ClassJugador.cobrarRenta(dueno, rota);
-                    break;
+                        break;
                     case "Morado":
                         ClassJugador.cobrarRenta(dueno, rota);
-                    break;
+                        break;
                     case "Rojo":
                         ClassJugador.cobrarRenta(dueno, rota);
-                    break;
+                        break;
                 }
-            
-   
+
+            }
         }
-       }
-       
-        
-       
+
     }
-    
-    public void operacionCobrarRentaDoble(Class Jugador){
-      ClassJugador dueno=null;
-      for(int i=0; i<memo.getPosicion(); i++){
-            dueno = (ClassJugador) jugadores.desencolar(); 
+
+    public void operacionCobrarRentaDoble(Class Jugador) {
+        ClassJugador dueno = null;
+        for (int i = 0; i < memo.getPosicion(); i++) {
+            dueno = (ClassJugador) jugadores.desencolar();
             jugadores.encolar(dueno);
-       }
+        }
     }
 
     private void btnrevovlerDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrevovlerDadosActionPerformed
@@ -1494,52 +1483,50 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnrevovlerDadosActionPerformed
 
     private void btnSuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuerteActionPerformed
-      btnSuerte.setEnabled(false);
-        
+        btnSuerte.setEnabled(false);
+
         ClassTarjeta memo1 = (ClassTarjeta) Suerte.retirarEl();
         JOptionPane.showMessageDialog(null, memo1.getNombre());
 
-        if(!memo1.getNombre().equals("SALGA DE LA CÁRCEL GRATIS")){
+        if (!memo1.getNombre().equals("SALGA DE LA CÁRCEL GRATIS")) {
             auxSuerte.apilar(memo1);
-        }
-        
-        else{
+        } else {
             memoCarcel = memoTarjeta;
         }
-        
+
         if (Suerte.esVacia()) {
             for (Object i = auxSuerte.retirarEl(); i != null; i = auxSuerte.retirarEl()) {
                 Suerte.apilar(i);
             }
             auxSuerte = new Pila();
         }
-        
-         switch(memo1.getNombre()){
+
+        switch (memo1.getNombre()) {
             case "Avance a EL MUELLE":
                 memo.avanzarPosicion(casillas, 40);
-            break;
-            
+                break;
+
             case "Por cumplimiento en pago del préstamo de construcción cobre $150":
                 ClassTarjeta.cumplimientoPrestamo(memo);
-            break;
-            
+                break;
+
             case "SALGA DE LA CÁRCEL GRATIS":
                 memo.setCartaCarcel(1);
                 actualizarCamposJugador();
-            break;
-            
+                break;
+
             case "Avance a la SALIDA":
-                
+
                 memo.avanzarPosicion(casillas, 1);
-            break;
-            
+                break;
+
             case "Pague multa por exceso de velocidad $15":
                 ClassTarjeta.multaVelocidad(memo);
-            break;
+                break;
         }
-         activarBotonVenderCarta();
-                 
-         
+        activarBotonVenderCarta();
+
+
     }//GEN-LAST:event_btnSuerteActionPerformed
 
     private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
@@ -1555,149 +1542,143 @@ public class formJuego extends javax.swing.JFrame {
             }
             auxComunal = new Pila();
         }
-        
-        switch(memo1.getNombre()){
+
+        switch (memo1.getNombre()) {
             case "Honorarios médicos, pague $50":
                 ClassTarjeta.honorariosMedicos(memo);
-            break;
-            
+                break;
+
             case "Vencimiento de fondo vacacional, reciba $100":
                 ClassTarjeta.vencimientoVacacional(memo);
-            break;
-            
+                break;
+
             case "Pague colegiaturas por $70":
                 ClassTarjeta.colegiatura(memo);
-            break;
-            
+                break;
+
             case "Pague cuenta de hospital por $100":
                 ClassTarjeta.cuentaHospital(memo);
-            break;
-            
+                break;
+
             case "Ganó el segundo lugar en un concurso de belleza, cobre $10":
                 ClassTarjeta.concurso(memo);
-            break;
+                break;
         }
     }//GEN-LAST:event_btnArcaComunalActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        
-       // ClassJugador eliminado = (ClassJugador)  jugadores.desencolar();
-        //liminado.setColor(new java.awt.Color(0,204,204));
-        
-        
+        int contador = 0;
+        for (ClassJugador i = (ClassJugador) jugadores.desencolar(); contador < jugadores.size(); i = (ClassJugador) jugadores.desencolar()) {
+            if (!i.getNombre().equalsIgnoreCase(memo.getNombre())) {
+                jugadores.encolar(i);
+            }
+            contador++;
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    public void enviarOrden(){
+    public void enviarOrden() {
         ArrayList<ClassJugador> jugadoresList = Util.colaToArrayList(jugadores);
-        
-        
-        for(int i=0; i<jugadoresList.size();i++){
-                ClassJugador mayor = jugadoresList.get(i);
-                System.out.println("Este -->" + mayor.getNombre());
-                if(mayor.getNombre()=="Rojo"){
-                    turno1.setText(""+(i+1));
-                }
-                if(mayor.getNombre()=="Amarillo"){
-                    turno2.setText(""+(i+1));
-                }
-                if(mayor.getNombre()=="Verde"){
-                    turno3.setText(""+(i+1));
-                }
-                if(mayor.getNombre()=="Morado"){
-                    turno4.setText(""+(i+1));
-                }
+
+        for (int i = 0; i < jugadoresList.size(); i++) {
+            ClassJugador mayor = jugadoresList.get(i);
+            System.out.println("Este -->" + mayor.getNombre());
+            if (mayor.getNombre() == "Rojo") {
+                turno1.setText("" + (i + 1));
+            }
+            if (mayor.getNombre() == "Amarillo") {
+                turno2.setText("" + (i + 1));
+            }
+            if (mayor.getNombre() == "Verde") {
+                turno3.setText("" + (i + 1));
+            }
+            if (mayor.getNombre() == "Morado") {
+                turno4.setText("" + (i + 1));
+            }
         }
- 
+
     }
-    
+
     private void btnVenderCartaCarcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderCartaCarcelActionPerformed
-        ClassJugador ganador=null;
-        ClassJugador dueñoCarta=null;
-        for(int j=0; j<Integer.parseInt(formInicio.message); j++){
-               
-               ClassJugador jugadorCarcel = (ClassJugador) jugadores.desencolar();
-                  if(jugadorCarcel.getCartaCarcel()==0){
-                        jugadorCarcel.setOferta(Integer.parseInt(JOptionPane.showInputDialog
-                        (null,"¿Valor en que desea comprar la carta 'SALIR DE LA CARCEL'? (Si no la desea comprar digite 0)"
-                                +jugadorCarcel.getNombre())));
-                        
-                        
-                        if(ganador==null){
-                            ganador = jugadorCarcel;
-                        }
-                        else{
-                            if(ganador.getOferta()<jugadorCarcel.getOferta()){
-                                ganador = jugadorCarcel;
-                            }
-                         }
+        ClassJugador ganador = null;
+        ClassJugador dueñoCarta = null;
+        for (int j = 0; j < Integer.parseInt(formInicio.message); j++) {
+
+            ClassJugador jugadorCarcel = (ClassJugador) jugadores.desencolar();
+            if (jugadorCarcel.getCartaCarcel() == 0) {
+                jugadorCarcel.setOferta(Integer.parseInt(JOptionPane.showInputDialog(null, "¿Valor en que desea comprar la carta 'SALIR DE LA CARCEL'? (Si no la desea comprar digite 0)"
+                        + jugadorCarcel.getNombre())));
+
+                if (ganador == null) {
+                    ganador = jugadorCarcel;
+                } else {
+                    if (ganador.getOferta() < jugadorCarcel.getOferta()) {
+                        ganador = jugadorCarcel;
                     }
-                  else{
-                      dueñoCarta = jugadorCarcel;
-                  }
-                    jugadores.encolar(jugadorCarcel);
-            }  
-        
+                }
+            } else {
+                dueñoCarta = jugadorCarcel;
+            }
+            jugadores.encolar(jugadorCarcel);
+        }
+
         dueñoCarta.setCartaCarcel(0);
-        dueñoCarta.setPuntos(ganador.getOferta()+dueñoCarta.getPuntos());
-        
+        dueñoCarta.setPuntos(ganador.getOferta() + dueñoCarta.getPuntos());
+
         ganador.setCartaCarcel(1);
-        ganador.setPuntos(ganador.getPuntos()-ganador.getOferta());
+        ganador.setPuntos(ganador.getPuntos() - ganador.getOferta());
         actualizarCamposJugador();
         actualizarDinero();
         btnVenderCartaCarcel.setEnabled(false);
-                
+
     }//GEN-LAST:event_btnVenderCartaCarcelActionPerformed
 
-    private void EntrarSalirCarcel(ClassJugador memo){
-          if (memo.getPosicion()==31){
-              JOptionPane.showMessageDialog(null,"VAS A LA CARCEL");
-              System.out.println("jjuju");
-              memo.avanzarPosicion(casillas, 11);
-              memo.setFueCarcel(true);
-            }
+    private void EntrarSalirCarcel(ClassJugador memo) {
+        if (memo.getPosicion() == 31) {
+            JOptionPane.showMessageDialog(null, "VAS A LA CARCEL");
+            System.out.println("jjuju");
+            memo.avanzarPosicion(casillas, 11);
+            memo.setFueCarcel(true);
+        }
     }
     private void btnSubastarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubastarPropiedadActionPerformed
-       ClassJugador ganador=null;
-     
-        for(int i=0; i<Integer.parseInt(formInicio.message); i++){
-               
-               ClassJugador jugadorSubasta = (ClassJugador) jugadores.desencolar();
-                  
-                        jugadorSubasta.setOferta(Integer.parseInt(JOptionPane.showInputDialog
-                        (null,"¿Valor en que desea comprar la propiedad? (Si no la desea comprar digite 0)"
-                                +jugadorSubasta.getNombre())));
-                                                
-                        if(ganador==null){
-                            ganador = jugadorSubasta;
-                        }
-                        else{
-                            if(ganador.getOferta()<jugadorSubasta.getOferta()){
-                                ganador = jugadorSubasta;
-                                        rota = (ClassCasilla) casillasTarjetas.get(ganador.getPosicion());
-                                        rota.setDueno(ganador.getNombre());
-                                        actualizarCamposTarjetaCasilla(ganador);
-                                        operacionComprarPropiedad(ganador);
-                                        btnAdquirir.setEnabled(false);
-                            }
-                         }
-                    
-                  
-                    jugadores.encolar(jugadorSubasta);
-            }  
-        
-        ganador.setPuntos(ganador.getPuntos()-ganador.getOferta());
+        ClassJugador ganador = null;
+
+        for (int i = 0; i < Integer.parseInt(formInicio.message); i++) {
+
+            ClassJugador jugadorSubasta = (ClassJugador) jugadores.desencolar();
+
+            jugadorSubasta.setOferta(Integer.parseInt(JOptionPane.showInputDialog(null, "¿Valor en que desea comprar la propiedad? (Si no la desea comprar digite 0)"
+                    + jugadorSubasta.getNombre())));
+
+            if (ganador == null) {
+                ganador = jugadorSubasta;
+            } else {
+                if (ganador.getOferta() < jugadorSubasta.getOferta()) {
+                    ganador = jugadorSubasta;
+                    rota = (ClassCasilla) casillasTarjetas.get(ganador.getPosicion());
+                    rota.setDueno(ganador);
+                    actualizarCamposTarjetaCasilla(ganador);
+                    operacionComprarPropiedad(ganador);
+                    btnAdquirir.setEnabled(false);
+                }
+            }
+
+            jugadores.encolar(jugadorSubasta);
+        }
+
+        ganador.setPuntos(ganador.getPuntos() - ganador.getOferta());
         actualizarDinero();
         btnSubastarPropiedad.setEnabled(false);
     }//GEN-LAST:event_btnSubastarPropiedadActionPerformed
 
-    
+
     private void turno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turno1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_turno1ActionPerformed
 
     private void btnAdquirirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdquirirActionPerformed
         rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
-        rota.setDueno(memo.getNombre());
+        rota.setDueno(memo);
         actualizarCamposTarjetaCasilla(memo);
         operacionComprarPropiedad(memo);
         btnAdquirir.setEnabled(false);
@@ -1720,7 +1701,7 @@ public class formJuego extends javax.swing.JFrame {
     }
 
     public void asignar() {
-        
+
         casillas.add(jPanelGo);
         casillas.add(jPanelAvMediterraneo);
         casillas.add(jPanelArcaComunal1);
@@ -1761,7 +1742,7 @@ public class formJuego extends javax.swing.JFrame {
         casillas.add(jPanelPlazaPark);
         casillas.add(jPanelImpuestoLujo);
         casillas.add(jPanelMuelle);
-       
+
         switch (formInicio.message) {
 
             case "2":
@@ -1789,90 +1770,91 @@ public class formJuego extends javax.swing.JFrame {
         jTextFieldDinero3.setText(String.valueOf(jugador3.getPuntos()));
         jTextFieldDinero4.setText(String.valueOf(jugador4.getPuntos()));
     }
+
     public static Lista getCasillas() {
         return casillas;
     }
-    
-    public void asignarCasilla(){
-        ClassCasilla uno = new ClassCasilla("",1, new java.awt.Color(0,204,204),"GO!",0,1,2,3,4,5,6,7,8,9);
+
+    public void asignarCasilla() {
+        ClassCasilla uno = new ClassCasilla(null, 1, new java.awt.Color(0, 204, 204), "GO!", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(uno);
-        ClassCasilla dos = new ClassCasilla("",2, new java.awt.Color(162,0,0),"AVENIDA MEDITERRANEO",60,2,4,10,30,90,160,250,50,50);
+        ClassCasilla dos = new ClassCasilla(null, 2, new java.awt.Color(162, 0, 0), "AVENIDA MEDITERRANEO", 60, 2, 4, 10, 30, 90, 160, 250, 50, 50);
         casillasTarjetas.add(dos);
-        ClassCasilla tres = new ClassCasilla("",3, new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla tres = new ClassCasilla(null, 3, new java.awt.Color(0, 204, 204), "ARCA COMUNAL", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(tres);
-        ClassCasilla cuatro = new ClassCasilla("",4, new java.awt.Color(162,0,0),"AVENIDA BALTICA",60,2,4,10,30,90,160,250,50,50);
+        ClassCasilla cuatro = new ClassCasilla(null, 4, new java.awt.Color(162, 0, 0), "AVENIDA BALTICA", 60, 2, 4, 10, 30, 90, 160, 250, 50, 50);
         casillasTarjetas.add(cuatro);
-        ClassCasilla cinco = new ClassCasilla("",5, new java.awt.Color(0,204,204),"IMPUESTO SOBRE INGRESOS",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla cinco = new ClassCasilla(null, 5, new java.awt.Color(0, 204, 204), "IMPUESTO SOBRE INGRESOS", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(cinco);
-        ClassCasilla seis = new ClassCasilla("",6,new java.awt.Color(0,204,204),"FERROCARRIL READING",200,25,0,50,100,200,0,0,0,0);
+        ClassCasilla seis = new ClassCasilla(null, 6, new java.awt.Color(0, 204, 204), "FERROCARRIL READING", 200, 25, 0, 50, 100, 200, 0, 0, 0, 0);
         casillasTarjetas.add(seis);
-        ClassCasilla siete = new ClassCasilla("",7,new java.awt.Color(177,3,179),"AVENIDA ORIENTAL",100,6,12,30,90,270,400,550,50,50);
+        ClassCasilla siete = new ClassCasilla(null, 7, new java.awt.Color(177, 3, 179), "AVENIDA ORIENTAL", 100, 6, 12, 30, 90, 270, 400, 550, 50, 50);
         casillasTarjetas.add(siete);
-        ClassCasilla ocho = new ClassCasilla("",8, new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla ocho = new ClassCasilla(null, 8, new java.awt.Color(0, 204, 204), "FORTUNA", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(ocho);
-        ClassCasilla nueve = new ClassCasilla("",9, new java.awt.Color(177,3,179),"AVENIDA VERMONT",100,6,12,30,90,270,400,550,50,50);
+        ClassCasilla nueve = new ClassCasilla(null, 9, new java.awt.Color(177, 3, 179), "AVENIDA VERMONT", 100, 6, 12, 30, 90, 270, 400, 550, 50, 50);
         casillasTarjetas.add(nueve);
-        ClassCasilla diez = new ClassCasilla("",10,new java.awt.Color(177,3,179),"AVENIDA CONNECTICUT",120,8,16,40,100,300,450,600,50,50);
+        ClassCasilla diez = new ClassCasilla(null, 10, new java.awt.Color(177, 3, 179), "AVENIDA CONNECTICUT", 120, 8, 16, 40, 100, 300, 450, 600, 50, 50);
         casillasTarjetas.add(diez);
-        ClassCasilla once = new ClassCasilla("",11, new java.awt.Color(0,204,204),"CARCEL",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla once = new ClassCasilla(null, 11, new java.awt.Color(0, 204, 204), "CARCEL", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(once);
-        ClassCasilla doce = new ClassCasilla("",12, new java.awt.Color(255,102,0),"PLAZA SAN CARLOS",140,10,20,50,150,450,675,750,100,100);
+        ClassCasilla doce = new ClassCasilla(null, 12, new java.awt.Color(255, 102, 0), "PLAZA SAN CARLOS", 140, 10, 20, 50, 150, 450, 675, 750, 100, 100);
         casillasTarjetas.add(doce);
-        ClassCasilla trece = new ClassCasilla("",13, new java.awt.Color(0,204,204),"COMPAÑIA DE ELECTRICIDAD",150,1,2,3,4,5,6,7,8,9);
+        ClassCasilla trece = new ClassCasilla(null, 13, new java.awt.Color(0, 204, 204), "COMPAÑIA DE ELECTRICIDAD", 150, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(trece);
-        ClassCasilla catorce = new ClassCasilla("",14,new java.awt.Color(255,102,0),"AVENIDA ESTADOS",140,10,20,50,150,450,625,750,100,100);
+        ClassCasilla catorce = new ClassCasilla(null, 14, new java.awt.Color(255, 102, 0), "AVENIDA ESTADOS", 140, 10, 20, 50, 150, 450, 625, 750, 100, 100);
         casillasTarjetas.add(catorce);
-        ClassCasilla quince = new ClassCasilla("",15,new java.awt.Color(255,102,0),"AVENIDA VIRGINIA",160,12,24,60,180,500,700,900,100,100);
+        ClassCasilla quince = new ClassCasilla(null, 15, new java.awt.Color(255, 102, 0), "AVENIDA VIRGINIA", 160, 12, 24, 60, 180, 500, 700, 900, 100, 100);
         casillasTarjetas.add(quince);
-        ClassCasilla dieciseis = new ClassCasilla("",16,new java.awt.Color(0,204,204),"FERROCARRIL DE PENSILVANIA",200,25,0,50,100,200,0,0,0,0);
+        ClassCasilla dieciseis = new ClassCasilla(null, 16, new java.awt.Color(0, 204, 204), "FERROCARRIL DE PENSILVANIA", 200, 25, 0, 50, 100, 200, 0, 0, 0, 0);
         casillasTarjetas.add(dieciseis);
-        ClassCasilla diecisiete = new ClassCasilla("",17,new java.awt.Color( 226,14,141),"PLAZA ST. JAIMES",180,14,28,70,200,550,750,950,100,100);
+        ClassCasilla diecisiete = new ClassCasilla(null, 17, new java.awt.Color(226, 14, 141), "PLAZA ST. JAIMES", 180, 14, 28, 70, 200, 550, 750, 950, 100, 100);
         casillasTarjetas.add(diecisiete);
-        ClassCasilla dieciocho = new ClassCasilla("",18,new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla dieciocho = new ClassCasilla(null, 18, new java.awt.Color(0, 204, 204), "ARCA COMUNAL", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(dieciocho);
-        ClassCasilla diecinueve = new ClassCasilla("",19,new java.awt.Color( 226,14,141),"AVENIDA TENNESSEE",180,14,28,70,200,550,750,950,100,100);
+        ClassCasilla diecinueve = new ClassCasilla(null, 19, new java.awt.Color(226, 14, 141), "AVENIDA TENNESSEE", 180, 14, 28, 70, 200, 550, 750, 950, 100, 100);
         casillasTarjetas.add(diecinueve);
-        ClassCasilla veinte = new ClassCasilla("",20,new java.awt.Color( 226,14,141),"AVENIDA NEW YORK",200,16,32,80,220,600,800,1000,100,100);
+        ClassCasilla veinte = new ClassCasilla(null, 20, new java.awt.Color(226, 14, 141), "AVENIDA NEW YORK", 200, 16, 32, 80, 220, 600, 800, 1000, 100, 100);
         casillasTarjetas.add(veinte);
-        ClassCasilla veintiuno = new ClassCasilla("",21,new java.awt.Color(0,204,204),"PARADA LIBRE",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla veintiuno = new ClassCasilla(null, 21, new java.awt.Color(0, 204, 204), "PARADA LIBRE", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(veintiuno);
-        ClassCasilla veintidos = new ClassCasilla("",22,new java.awt.Color(255,0,0),"AVENIDA KENTUCKY",220,18,36,90,250,700,875,1050,150,150);
+        ClassCasilla veintidos = new ClassCasilla(null, 22, new java.awt.Color(255, 0, 0), "AVENIDA KENTUCKY", 220, 18, 36, 90, 250, 700, 875, 1050, 150, 150);
         casillasTarjetas.add(veintidos);
-        ClassCasilla veintitres = new ClassCasilla("",23,new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla veintitres = new ClassCasilla(null, 23, new java.awt.Color(0, 204, 204), "FORTUNA", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(veintitres);
-        ClassCasilla veinticuatro = new ClassCasilla("",24,new java.awt.Color(255,0,0),"AVENIDA INDIANA",220,18,36,90,250,700,875,1050,150,150);
+        ClassCasilla veinticuatro = new ClassCasilla(null, 24, new java.awt.Color(255, 0, 0), "AVENIDA INDIANA", 220, 18, 36, 90, 250, 700, 875, 1050, 150, 150);
         casillasTarjetas.add(veinticuatro);
-        ClassCasilla veinticinco = new ClassCasilla("",25,new java.awt.Color(255,0,0),"AVENIDA ILLINOIS",240,20,40,100,300,750,925,1100,150,150);
+        ClassCasilla veinticinco = new ClassCasilla(null, 25, new java.awt.Color(255, 0, 0), "AVENIDA ILLINOIS", 240, 20, 40, 100, 300, 750, 925, 1100, 150, 150);
         casillasTarjetas.add(veinticinco);
-        ClassCasilla veintiseis = new ClassCasilla("",26,new java.awt.Color(0,204,204),"FERROCARRIL B & O",200,25,0,50,100,200,0,0,0,0);
+        ClassCasilla veintiseis = new ClassCasilla(null, 26, new java.awt.Color(0, 204, 204), "FERROCARRIL B & O", 200, 25, 0, 50, 100, 200, 0, 0, 0, 0);
         casillasTarjetas.add(veintiseis);
-        ClassCasilla veintisiete = new ClassCasilla("",27,new java.awt.Color(255,255,0),"AVENIDA ATLANTICO",260,22,44,110,330,800,975,1150,150,150);
+        ClassCasilla veintisiete = new ClassCasilla(null, 27, new java.awt.Color(255, 255, 0), "AVENIDA ATLANTICO", 260, 22, 44, 110, 330, 800, 975, 1150, 150, 150);
         casillasTarjetas.add(veintisiete);
-        ClassCasilla veintiocho = new ClassCasilla("",28,new java.awt.Color(255,255,0),"AVENIDA VENTNOR",260,22,44,110,330,800,875,1150,150,150);
+        ClassCasilla veintiocho = new ClassCasilla(null, 28, new java.awt.Color(255, 255, 0), "AVENIDA VENTNOR", 260, 22, 44, 110, 330, 800, 875, 1150, 150, 150);
         casillasTarjetas.add(veintiocho);
-        ClassCasilla veintinueve = new ClassCasilla("",29,new java.awt.Color(0,204,204),"COMPAÑIA DE AGUA",150,1,2,3,4,5,6,7,8,9);
+        ClassCasilla veintinueve = new ClassCasilla(null, 29, new java.awt.Color(0, 204, 204), "COMPAÑIA DE AGUA", 150, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(veintinueve);
-        ClassCasilla treinta = new ClassCasilla("",30,new java.awt.Color(0,204,204),"JARDINES DE MARVIN",280,24,48,120,360,850,1025,1200,150,150);
+        ClassCasilla treinta = new ClassCasilla(null, 30, new java.awt.Color(0, 204, 204), "JARDINES DE MARVIN", 280, 24, 48, 120, 360, 850, 1025, 1200, 150, 150);
         casillasTarjetas.add(treinta);
-        ClassCasilla treintaiuno = new ClassCasilla("",31,new java.awt.Color(0,204,204),"VAYASE A LA CARCEL",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla treintaiuno = new ClassCasilla(null, 31, new java.awt.Color(0, 204, 204), "VAYASE A LA CARCEL", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(treintaiuno);
-        ClassCasilla treintaidos = new ClassCasilla("",32,new java.awt.Color(51,255,0),"AVENIDA PACIFICO",300,26,52,130,390,900,1100,1275,200,200);
+        ClassCasilla treintaidos = new ClassCasilla(null, 32, new java.awt.Color(51, 255, 0), "AVENIDA PACIFICO", 300, 26, 52, 130, 390, 900, 1100, 1275, 200, 200);
         casillasTarjetas.add(treintaidos);
-        ClassCasilla treintaitres = new ClassCasilla("",33,new java.awt.Color(51,255,0),"AVENIDA CAROLINA DEL NORTE",300,26,52,130,390,900,1100,1275,200,200);
+        ClassCasilla treintaitres = new ClassCasilla(null, 33, new java.awt.Color(51, 255, 0), "AVENIDA CAROLINA DEL NORTE", 300, 26, 52, 130, 390, 900, 1100, 1275, 200, 200);
         casillasTarjetas.add(treintaitres);
-        ClassCasilla treintaicuatro = new ClassCasilla("",34,new java.awt.Color(0,204,204),"ARCA COMUNAL",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla treintaicuatro = new ClassCasilla(null, 34, new java.awt.Color(0, 204, 204), "ARCA COMUNAL", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(treintaicuatro);
-        ClassCasilla treintaicinco = new ClassCasilla("",35,new java.awt.Color(51,255,0),"AVENIDA PENSYLVANIA",320,28,56,150,450,1000,1200,1400,200,200);
+        ClassCasilla treintaicinco = new ClassCasilla(null, 35, new java.awt.Color(51, 255, 0), "AVENIDA PENSYLVANIA", 320, 28, 56, 150, 450, 1000, 1200, 1400, 200, 200);
         casillasTarjetas.add(treintaicinco);
-        ClassCasilla treintaiseis = new ClassCasilla("",36,new java.awt.Color(0,204,204),"FERROCARIL VIA RAPIDA",200,25,0,50,100,200,0,0,0,0);
+        ClassCasilla treintaiseis = new ClassCasilla(null, 36, new java.awt.Color(0, 204, 204), "FERROCARIL VIA RAPIDA", 200, 25, 0, 50, 100, 200, 0, 0, 0, 0);
         casillasTarjetas.add(treintaiseis);
-        ClassCasilla treintaisiete = new ClassCasilla("",37,new java.awt.Color(0,204,204),"FORTUNA",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla treintaisiete = new ClassCasilla(null, 37, new java.awt.Color(0, 204, 204), "FORTUNA", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(treintaisiete);
-        ClassCasilla treintaiocho = new ClassCasilla("",38,new java.awt.Color(0,0,153),"PLAZA PARK",350,35,70,175,500,1100,1300,1500,200,200);
+        ClassCasilla treintaiocho = new ClassCasilla(null, 38, new java.awt.Color(0, 0, 153), "PLAZA PARK", 350, 35, 70, 175, 500, 1100, 1300, 1500, 200, 200);
         casillasTarjetas.add(treintaiocho);
-        ClassCasilla treintainueve = new ClassCasilla("",39,new java.awt.Color(0,204,204),"IMPUESTO SOBRE POSESIONES DE LUJO",0,1,2,3,4,5,6,7,8,9);
+        ClassCasilla treintainueve = new ClassCasilla(null, 39, new java.awt.Color(0, 204, 204), "IMPUESTO SOBRE POSESIONES DE LUJO", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         casillasTarjetas.add(treintainueve);
-        ClassCasilla cuarenta = new ClassCasilla("",40,new java.awt.Color(0,0,153),"EL MUELLE",400,50,100,200,600,1400,1700,2000,200,200);
+        ClassCasilla cuarenta = new ClassCasilla(null, 40, new java.awt.Color(0, 0, 153), "EL MUELLE", 400, 50, 100, 200, 600, 1400, 1700, 2000, 200, 200);
         casillasTarjetas.add(cuarenta);
     }
 
