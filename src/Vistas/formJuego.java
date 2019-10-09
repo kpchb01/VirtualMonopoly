@@ -35,7 +35,7 @@ public class formJuego extends javax.swing.JFrame {
     static ClassJugador jugador3 = new ClassJugador(1, new java.awt.Color(102, 204, 0), "Verde");
     static ClassJugador jugador4 = new ClassJugador(1, new java.awt.Color(102, 0, 204), "Morado");
     public static ClassJugador doble = null;
-    static ClassJugador memo;
+    public static ClassJugador memo;
 
     //COMUNAL
     ClassTarjeta comunal1 = new ClassTarjeta("Honorarios médicos, pague $50");
@@ -1416,7 +1416,7 @@ public class formJuego extends javax.swing.JFrame {
 
     public void operacionComprarPropiedad(ClassJugador memo) {
 
-        if (rota.getDueno().getNombre() != "") {
+        if (rota.getDueno() != null) {
             if (memo.getNombre() == "Rojo") {
                 ClassJugador.comprarPropiedad(memo, rota);
             }
@@ -1887,40 +1887,7 @@ public class formJuego extends javax.swing.JFrame {
         this.Comunal = Comunal;
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(formJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(formJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(formJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(formJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formJuego().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel X;

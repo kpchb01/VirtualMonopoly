@@ -7,6 +7,7 @@ package Clases;
 
 import Util.Cola;
 import Util.Lista;
+import Vistas.formJuego;
 import javax.swing.JFrame;
 
 /**
@@ -14,12 +15,12 @@ import javax.swing.JFrame;
  * @author Tober
  */
 public class Juego {
-    JFrame vistaJuego;
+    formJuego vistaJuego;
     Cola jugadores;
     Lista casillas;
     Lista tarjetas;
 
-    public Juego(JFrame vistaJuego, Cola jugadores, Lista casillas, Lista tarjetas) {
+    public Juego(formJuego vistaJuego, Cola jugadores, Lista casillas, Lista tarjetas) {
         this.vistaJuego = vistaJuego;
         this.jugadores = jugadores;
         this.casillas = casillas;
