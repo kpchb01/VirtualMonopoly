@@ -167,9 +167,11 @@ public class ClassJugador {
         int valorDado2 = (int)(Math.random()*6)+1;
         if(valorDado1==valorDado2){
             formJuego.doble = this;
+            this.par = true;
         }
         else{
             formJuego.doble = null;
+            this.par = false;
         }
         int sumaDados = dados.SumaDados(valorDado1, valorDado2);
         formJuego.resultadoDado1.setIcon(dados.pngDado(valorDado1));

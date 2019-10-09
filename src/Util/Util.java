@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Util {
 
     public static Cola ordenarCola(Cola jugadores) {
-        ArrayList<ClassJugador> jugadoresList = Util.colaToArrayList(jugadores);
+       ArrayList<ClassJugador> jugadoresList = Util.colaToArrayList(jugadores);
         System.out.println("cantidad de jugadores: " + jugadoresList.size());
         jugadores = new Cola();
         for (ClassJugador classJugador : jugadoresList) {
@@ -38,7 +38,8 @@ public class Util {
     }
 
     public static ArrayList colaToArrayList(Cola cola) {
-        System.out.println("tamaño cola :" + cola.size());
+ 
+         System.out.println("tamaño cola :" + cola.size());
         ArrayList list = new ArrayList();
         Cola aux = new Cola();
         int contador = 0;

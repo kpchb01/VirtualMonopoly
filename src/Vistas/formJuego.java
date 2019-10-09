@@ -219,25 +219,15 @@ public class formJuego extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         panelCastillaColor = new javax.swing.JPanel();
         labelCasilla = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextRenta = new javax.swing.JTextField();
-        jTextRentaDosCasas = new javax.swing.JTextField();
-        jTextRentaUnaCasa = new javax.swing.JTextField();
         jTextRentaGC = new javax.swing.JTextField();
-        jTextRentaCuatroCasas = new javax.swing.JTextField();
-        jTextRentaTresCasas = new javax.swing.JTextField();
         jTextCostoCasa = new javax.swing.JTextField();
         jTextCostoHotel = new javax.swing.JTextField();
-        jTextRentaConHotel = new javax.swing.JTextField();
         btnSubastarPropiedad = new javax.swing.JButton();
         jLabel74 = new javax.swing.JLabel();
         jTextDueno = new javax.swing.JTextField();
@@ -1102,32 +1092,18 @@ public class formJuego extends javax.swing.JFrame {
                 btnAdquirirActionPerformed(evt);
             }
         });
-        panelTarjeta.add(btnAdquirir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 200, -1));
+        panelTarjeta.add(btnAdquirir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 200, -1));
 
         jButton2.setText("VENDER");
-        panelTarjeta.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 200, -1));
+        jButton2.setEnabled(false);
+        panelTarjeta.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 200, -1));
 
         jLabel1.setText("Renta");
         panelTarjeta.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         jLabel2.setText("Renta grupo de Color");
         panelTarjeta.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
-
-        jLabel3.setText("Renta con 1 casa");
-        panelTarjeta.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
-
-        jLabel4.setText("Renta con 2 casas");
-        panelTarjeta.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-
-        jLabel5.setText("Renta con 3 casas");
-        panelTarjeta.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
-
-        jLabel9.setText("Renta con 4 casas");
-        panelTarjeta.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
-
-        jLabel10.setText("Renta con 1 hotel ");
-        panelTarjeta.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
-        panelTarjeta.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 250, 10));
+        panelTarjeta.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 250, 10));
 
         panelCastillaColor.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -1153,38 +1129,23 @@ public class formJuego extends javax.swing.JFrame {
         panelTarjeta.add(panelCastillaColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, 80));
 
         jLabel11.setText("Costo por casa");
-        panelTarjeta.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+        panelTarjeta.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         jLabel13.setText("Costo por Hote (con 4 casas)");
         jLabel13.setToolTipText("");
-        panelTarjeta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
+        panelTarjeta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         jTextRenta.setEditable(false);
         panelTarjeta.add(jTextRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 91, -1));
 
-        jTextRentaDosCasas.setEditable(false);
-        panelTarjeta.add(jTextRentaDosCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 91, -1));
-
-        jTextRentaUnaCasa.setEditable(false);
-        panelTarjeta.add(jTextRentaUnaCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 91, -1));
-
         jTextRentaGC.setEditable(false);
         panelTarjeta.add(jTextRentaGC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 91, -1));
 
-        jTextRentaCuatroCasas.setEditable(false);
-        panelTarjeta.add(jTextRentaCuatroCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 91, -1));
-
-        jTextRentaTresCasas.setEditable(false);
-        panelTarjeta.add(jTextRentaTresCasas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 91, -1));
-
         jTextCostoCasa.setEditable(false);
-        panelTarjeta.add(jTextCostoCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 91, -1));
+        panelTarjeta.add(jTextCostoCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 91, -1));
 
         jTextCostoHotel.setEditable(false);
-        panelTarjeta.add(jTextCostoHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 91, -1));
-
-        jTextRentaConHotel.setEditable(false);
-        panelTarjeta.add(jTextRentaConHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 91, -1));
+        panelTarjeta.add(jTextCostoHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 91, -1));
 
         btnSubastarPropiedad.setText("SUBASTAR PROPIEDAD");
         btnSubastarPropiedad.setEnabled(false);
@@ -1193,7 +1154,7 @@ public class formJuego extends javax.swing.JFrame {
                 btnSubastarPropiedadActionPerformed(evt);
             }
         });
-        panelTarjeta.add(btnSubastarPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 201, -1));
+        panelTarjeta.add(btnSubastarPropiedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 201, -1));
 
         jLabel74.setText("Precio Compra");
         panelTarjeta.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
@@ -1208,12 +1169,14 @@ public class formJuego extends javax.swing.JFrame {
         panelTarjeta.add(jTextPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 90, -1));
 
         jButton3.setText("HIPOTECAR");
-        panelTarjeta.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 200, -1));
+        jButton3.setEnabled(false);
+        panelTarjeta.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 200, -1));
 
         jButton4.setText("LEVANTAR HIPOTECA");
-        panelTarjeta.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 200, -1));
+        jButton4.setEnabled(false);
+        panelTarjeta.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 200, -1));
 
-        panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 270, 630));
+        panelJuego.add(panelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 270, 530));
 
         panelJugador.setBackground(new java.awt.Color(242, 249, 249));
         panelJugador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1321,7 +1284,7 @@ public class formJuego extends javax.swing.JFrame {
 
     private void btntirarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntirarDadosActionPerformed
 
-        btnVenderCartaCarcel.setEnabled(false);
+      btnVenderCartaCarcel.setEnabled(false);
         if (this.doble == null) {
             memo = (ClassJugador) jugadores.desencolar();
             jugadores.encolar(memo);
@@ -1339,17 +1302,37 @@ public class formJuego extends javax.swing.JFrame {
             }
         } else {
             
+            if(memo.getTirosEnCarcelSinPar()==3){
+            memo.setFueCarcel(false);
+            memo.setTirosEnCarcelSinPar(0);
+            }
+            
+            if(memo.getFueCarcel()){
+                memo.tirarDado();
+                
+                if(memo.getPar()) {
+                  JPanel panel = (JPanel) casillas.get(memo.getPosicion());
+                  panel.setBackground(new java.awt.Color(0,204,204));
+                  memo.setPosicion(memo.getTiro());
+                  JPanel panel1 = (JPanel) casillas.get(memo.getPosicion());
+                  panel1.setBackground(memo.getColor());
+                  memo.setFueCarcel(false);
+                }else{
+                    memo.setTirosEnCarcelSinPar(memo.getTirosEnCarcelSinPar()+1);
+                }
+            }else{
+            
             memo.avanzar(casillas,memo.tirarDado());
+            }
+            
             ValidarCasilla();
             activarBotonVenderCarta();
-            actulizarCamposJugador();
+            actualizarCamposJugador();
             actualizarCamposTarjetaCasilla(memo);
             validarCasillaPropiedad(memo);
             operacionCobrarRenta(memo);
             EntrarSalirCarcel(memo);
             quiebra();
-             
-
         }
 
     }//GEN-LAST:event_btntirarDadosActionPerformed
@@ -1376,7 +1359,10 @@ public class formJuego extends javax.swing.JFrame {
         }
         
       
-        
+        if (memo.getPosicion()==1){
+            memo.setPuntos(memo.getPuntos()+200);
+            actualizarDinero(); 
+        }
     }
 
     public static void actualizarDinero() {
@@ -1389,7 +1375,7 @@ public class formJuego extends javax.swing.JFrame {
         
     }
 
-    public void actulizarCamposJugador(){
+    public void actualizarCamposJugador(){
         jTextCarcel.setText(String.valueOf(memo.getCartaCarcel()));
         jPanelJugadorColor.setBackground(memo.getColor());
     }
@@ -1404,11 +1390,6 @@ public class formJuego extends javax.swing.JFrame {
         jTextPrecioCompra.setText(String.valueOf(rota.getPrecioCompra()));
         jTextRenta.setText(String.valueOf(rota.getRenta()));
         jTextRentaGC.setText(String.valueOf(rota.getRentaGrupo()));
-        jTextRentaUnaCasa.setText(String.valueOf(rota.getRenta1casa()));
-        jTextRentaDosCasas.setText(String.valueOf(rota.getRenta2casas()));
-        jTextRentaTresCasas.setText(String.valueOf(rota.getRenta3casas()));
-        jTextRentaCuatroCasas.setText(String.valueOf(rota.getRenta4casas()));
-        jTextRentaConHotel.setText(String.valueOf(rota.getRentaConHotel()));
         jTextCostoCasa.setText(String.valueOf(rota.getCostoCasa()));
         jTextCostoHotel.setText(String.valueOf(rota.getCostoHotel()));
         panelCastillaColor.setBackground(rota.getColor());
@@ -1460,86 +1441,49 @@ public class formJuego extends javax.swing.JFrame {
     }
     
     public void operacionCobrarRenta(ClassJugador memo){
-        String dueño = rota.getDueno();
-        if(rota.getDueno()!=""){
-            if(rota.getDueno()!= memo.getNombre()){
+         ClassJugador dueno=null;
+        
+         for(int i=0; i<memo.getPosicion(); i++){
+             dueno = (ClassJugador) jugadores.desencolar();
+             jugadores.encolar(dueno);
+         }
 
-           // if(memo.getNombre()=="Rojo"){
+          
+            
+             if(rota.getDueno()!=""){
+            if(rota.getDueno()!= memo.getNombre()){
                 ClassJugador.pagarRenta(memo, rota);
                 
                 
                 switch(rota.getDueno()){
                     case "Amarillo":
-                        ClassJugador.cobrarRenta(memo, rota);
+                        ClassJugador.cobrarRenta(dueno,rota);
+                        
                     break;
                     case "Verde":
-                        ClassJugador.cobrarRenta(memo, rota);
+                        ClassJugador.cobrarRenta(dueno, rota);
                     break;
                     case "Morado":
-                        ClassJugador.cobrarRenta(memo, rota);
+                        ClassJugador.cobrarRenta(dueno, rota);
                     break;
                     case "Rojo":
-                        ClassJugador.cobrarRenta(memo, rota);
+                        ClassJugador.cobrarRenta(dueno, rota);
                     break;
                 }
             
-            
-           /* else{ if(memo.getNombre()=="Amarillo"){
-                ClassJugador.pagarRenta(memo, rota);
-                
-                switch(rota.getDueno()){
-                    case "Rojo":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                    case "Verde":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                    case "Morado":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                }
-            }
-                else{
-                     if(memo.getNombre()=="Verde"){
-                    ClassJugador.pagarRenta(memo, rota);
-                
-                    switch(rota.getDueno()){
-                    case "Amarillo":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                    case "Rojo":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                    case "Morado":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                        }
-                    }
-                     
-                     else{
-                         
-               if(memo.getNombre()=="Morado"){
-                ClassJugador.pagarRenta(memo, rota);
-                
-                switch(rota.getDueno()){
-                    case "Amarillo":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                    case "Verde":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                    case "Morado":
-                        ClassJugador.cobrarRenta(memo, rota);
-                    break;
-                }
-            }
-                     }
-                }
-            
-            
-            } */   
    
         }
+       }
+       
+        
+       
+    }
+    
+    public void operacionCobrarRentaDoble(Class Jugador){
+      ClassJugador dueno=null;
+      for(int i=0; i<memo.getPosicion(); i++){
+            dueno = (ClassJugador) jugadores.desencolar(); 
+            jugadores.encolar(dueno);
        }
     }
 
@@ -1550,7 +1494,7 @@ public class formJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnrevovlerDadosActionPerformed
 
     private void btnSuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuerteActionPerformed
-      // btnSuerte.setEnabled(false);
+      btnSuerte.setEnabled(false);
         
         ClassTarjeta memo1 = (ClassTarjeta) Suerte.retirarEl();
         JOptionPane.showMessageDialog(null, memo1.getNombre());
@@ -1581,7 +1525,7 @@ public class formJuego extends javax.swing.JFrame {
             
             case "SALGA DE LA CÁRCEL GRATIS":
                 memo.setCartaCarcel(1);
-                actulizarCamposJugador();
+                actualizarCamposJugador();
             break;
             
             case "Avance a la SALIDA":
@@ -1597,7 +1541,6 @@ public class formJuego extends javax.swing.JFrame {
                  
          
     }//GEN-LAST:event_btnSuerteActionPerformed
-
 
     private void btnArcaComunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArcaComunalActionPerformed
 
@@ -1638,12 +1581,15 @@ public class formJuego extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         
-        memo = (ClassJugador)  jugadores.desencolar();
+       // ClassJugador eliminado = (ClassJugador)  jugadores.desencolar();
+        //liminado.setColor(new java.awt.Color(0,204,204));
+        
         
     }//GEN-LAST:event_btnSalirActionPerformed
 
     public void enviarOrden(){
         ArrayList<ClassJugador> jugadoresList = Util.colaToArrayList(jugadores);
+        
         
         for(int i=0; i<jugadoresList.size();i++){
                 ClassJugador mayor = jugadoresList.get(i);
@@ -1696,7 +1642,7 @@ public class formJuego extends javax.swing.JFrame {
         
         ganador.setCartaCarcel(1);
         ganador.setPuntos(ganador.getPuntos()-ganador.getOferta());
-        actulizarCamposJugador();
+        actualizarCamposJugador();
         actualizarDinero();
         btnVenderCartaCarcel.setEnabled(false);
                 
@@ -1706,14 +1652,7 @@ public class formJuego extends javax.swing.JFrame {
           if (memo.getPosicion()==31){
               JOptionPane.showMessageDialog(null,"VAS A LA CARCEL");
               System.out.println("jjuju");
-              
-             // JPanel panel = (JPanel) casillas.get(memo.getPosicion());
-             // panel.setBackground(new java.awt.Color(0,204,204));
-              //memo.setPosicionSinAvanzar(11);
-              
               memo.avanzarPosicion(casillas, 11);
-             // JPanel panel1 = (JPanel) casillas.get(memo.getPosicion());
-             // panel1.setBackground(memo.getColor());
               memo.setFueCarcel(true);
             }
     }
@@ -1762,6 +1701,7 @@ public class formJuego extends javax.swing.JFrame {
         actualizarCamposTarjetaCasilla(memo);
         operacionComprarPropiedad(memo);
         btnAdquirir.setEnabled(false);
+        btnSubastarPropiedad.setEnabled(false);
     }//GEN-LAST:event_btnAdquirirActionPerformed
 
     public void asignarCarta() {
@@ -2014,7 +1954,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2035,7 +1974,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -2046,7 +1984,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -2057,7 +1994,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -2092,7 +2028,6 @@ public class formJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelJugador1;
     private javax.swing.JLabel jLabelJugador2;
     public static javax.swing.JLabel jLabelJugador3;
@@ -2155,14 +2090,9 @@ public class formJuego extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextFieldDinero4;
     private javax.swing.JTextField jTextPrecioCompra;
     private javax.swing.JTextField jTextRenta;
-    private javax.swing.JTextField jTextRentaConHotel;
-    private javax.swing.JTextField jTextRentaCuatroCasas;
-    private javax.swing.JTextField jTextRentaDosCasas;
     private javax.swing.JTextField jTextRentaDosCasas2;
     private javax.swing.JTextField jTextRentaGC;
-    private javax.swing.JTextField jTextRentaTresCasas;
     private javax.swing.JTextField jTextRentaTresCasas2;
-    private javax.swing.JTextField jTextRentaUnaCasa;
     private javax.swing.JLabel labelCasilla;
     private javax.swing.JPanel panelCastillaColor;
     private javax.swing.JPanel panelJuego;
