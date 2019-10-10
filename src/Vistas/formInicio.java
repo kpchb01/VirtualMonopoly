@@ -90,6 +90,7 @@ public class formInicio extends javax.swing.JFrame {
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         main.vistaJuego = new formJuego();
+        this.setVisible(false);
         if (Integer.parseInt(message)==3){
             formJuego.jLabelJugador3.setVisible(true);
             formJuego.jTextFieldDinero3.setVisible(true);

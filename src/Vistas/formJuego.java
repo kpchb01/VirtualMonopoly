@@ -1383,7 +1383,7 @@ public class formJuego extends javax.swing.JFrame {
 
     public void actualizarCamposTarjetaCasilla(ClassJugador jugador) {
         rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
-        jTextDueno.setText(rota.getDueno().getNombre());
+        if(rota.getDueno() != null) jTextDueno.setText(rota.getDueno().getNombre());
         jTextPrecioCompra.setText(String.valueOf(rota.getPrecioCompra()));
         jTextRenta.setText(String.valueOf(rota.getRenta()));
         jTextRentaGC.setText(String.valueOf(rota.getRentaGrupo()));
