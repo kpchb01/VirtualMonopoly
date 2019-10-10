@@ -38,10 +38,7 @@ public class Lista {
          int  contador = 1;
           System.out.println(posicion);
         for (Node i = head; i != null; i = i.getNextElement()) {
-          
-            
-             
-            if(contador==posicion){
+           if(contador==posicion){
             System.out.print(":(");
             return i.getValue();
             }

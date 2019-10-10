@@ -59,5 +59,15 @@ public class Cola {
         }
         txtArea.setText(impresion);
     }
-
+    public void listar() {
+        // Crea una copia de la pila.
+        Node aux = cola.getPrimero();
+        String impresion = "";
+        // Recorre la pila hasta el ultimo nodo.
+        while (aux != null) {
+            impresion += ("|\t" + aux.getValue() + "\t| \n");
+            impresion += ("----------------------------- \n");
+            aux = aux.getNextElement();
+        }
+    }
 }

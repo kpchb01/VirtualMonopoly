@@ -79,7 +79,6 @@ public class formJuego extends javax.swing.JFrame {
         asignar();
         asignarCarta();
         asignarCasilla();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -1299,6 +1298,7 @@ public class formJuego extends javax.swing.JFrame {
             }
         } else {
 
+            
             if (memo.getTirosEnCarcelSinPar() == 3) {
                 memo.setFueCarcel(false);
                 memo.setTirosEnCarcelSinPar(0);
@@ -1308,11 +1308,12 @@ public class formJuego extends javax.swing.JFrame {
                 memo.tirarDado();
 
                 if (memo.getPar()) {
-                    JPanel panel = (JPanel) casillas.get(memo.getPosicion());
+                    /*JPanel panel = (JPanel) casillas.get(memo.getPosicion());
                     panel.setBackground(new java.awt.Color(0, 204, 204));
                     memo.setPosicion(memo.getTiro());
                     JPanel panel1 = (JPanel) casillas.get(memo.getPosicion());
-                    panel1.setBackground(memo.getColor());
+                    panel1.setBackground(memo.getColor());*/
+                    memo.avanzar(casillas, memo.getTiro());
                     memo.setFueCarcel(false);
                 } else {
                     memo.setTirosEnCarcelSinPar(memo.getTirosEnCarcelSinPar() + 1);
@@ -1326,9 +1327,9 @@ public class formJuego extends javax.swing.JFrame {
             activarBotonVenderCarta();
             actualizarCamposJugador();
             actualizarCamposTarjetaCasilla(memo);
-            validarCasillaPropiedad(memo);
-            operacionCobrarRenta(memo);
-            EntrarSalirCarcel(memo);
+            validarCasillaPropiedad();
+            EntrarSalirCarcel();
+            operacionCobrarRenta();
             quiebra();
         }
 
@@ -1381,7 +1382,7 @@ public class formJuego extends javax.swing.JFrame {
         }
     }
 
-    public void actualizarCamposTarjetaCasilla(ClassJugador jugador) {
+    public void actualizarCamposTarjetaCasilla(ClassJugador memo) {
         rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
         if(rota.getDueno() != null) jTextDueno.setText(rota.getDueno().getNombre());
         jTextPrecioCompra.setText(String.valueOf(rota.getPrecioCompra()));
@@ -1399,7 +1400,7 @@ public class formJuego extends javax.swing.JFrame {
         }
     }
 
-    public void validarCasillaPropiedad(ClassJugador memo) {
+    public void validarCasillaPropiedad() {
         rota = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
 
         if (jTextDueno.getText().isEmpty() && memo.getPosicion() != 1 && memo.getPosicion() != 3
@@ -1437,12 +1438,11 @@ public class formJuego extends javax.swing.JFrame {
         }
     }
 
-    public void operacionCobrarRenta(ClassJugador memo) {
+    public void operacionCobrarRenta() {
         ClassJugador dueno = null;
         ClassCasilla casilla = (ClassCasilla) casillasTarjetas.get(memo.getPosicion());
-        System.out.println();
+        System.out.println(casilla.getNombre());
         dueno = casilla.getDueno();
-        jugadores.encolar(dueno);
 
         if (rota.getDueno() != null) {
             if (rota.getDueno().getNombre() != memo.getNombre()) {
@@ -1633,7 +1633,7 @@ public class formJuego extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnVenderCartaCarcelActionPerformed
 
-    private void EntrarSalirCarcel(ClassJugador memo) {
+    private void EntrarSalirCarcel() {
         if (memo.getPosicion() == 31) {
             JOptionPane.showMessageDialog(null, "VAS A LA CARCEL");
             System.out.println("jjuju");
